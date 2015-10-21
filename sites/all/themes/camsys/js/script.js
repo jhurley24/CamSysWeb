@@ -18,6 +18,15 @@ Drupal.behaviors.my_custom_behavior = {
   attach: function(context, settings) {
 
     // Place your code here.
+    /* mobile menu - add action */
+    $('.region-header .main-menu .block-title').click(function() {
+      if ($('.main-menu').hasClass('active')) {
+        $('.main-menu').removeClass('active');
+      }
+      else {
+        $('.main-menu').addClass('active');
+      }
+    });
 
   }
 };

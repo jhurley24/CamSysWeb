@@ -72,6 +72,10 @@ $zen-auto-include-item-base: false;
   @include zen-grid-container();
 }
 
+// CamSys responsive elements
+
+
+
 /* Navigation bar */
 @media all and (min-width: 780px) {
   #main {
@@ -85,6 +89,12 @@ $zen-auto-include-item-base: false;
     top: 0;
     height: $nav-height;
     width: $zen-grid-width;
+  }
+  .group-left, .group-right {
+    float: left;
+    box-sizing: border-box;
+    width: 50%;
+    padding: 16px;
   }
 }
 
@@ -284,13 +294,26 @@ $zen-auto-include-item-base: false;
 /* header section */
 
 .header {
-  @include tablet-min {
-    $zen-column-count: 12 !global;
+  $zen-column-count: 12 !global;
+  @include mobile {
     #logo {
-      @include zen-grid-item(3, 1);
+      @include zen-grid-item(6, 1);
     }
     .region-header {
-      @include zen-grid-item(9, 4);
+      @include zen-grid-item(6, 7);
+      clear: none;
+      .search-form, .secondary-menu {
+        display: none;
+      }
+    }
+  }
+  @include tablet-min {
+    #logo {
+      @include zen-grid-item(4, 1);
+
+    }
+    .region-header {
+      @include zen-grid-item(8, 5);
       clear: none;
     }
   }

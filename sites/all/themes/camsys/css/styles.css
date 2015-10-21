@@ -761,20 +761,28 @@ table {
 
 /* Navigation bar */
 @media all and (min-width: 780px) {
-  /* line 77, ../sass/layouts/_responsive.scss */
+  /* line 81, ../sass/layouts/_responsive.scss */
   #main {
     /* Move all the children of #main down to make room. */
     padding-top: 100px;
     position: relative;
   }
 
-  /* line 82, ../sass/layouts/_responsive.scss */
+  /* line 86, ../sass/layouts/_responsive.scss */
   #navigation {
     /* Move the navbar up inside #main's padding. */
     position: absolute;
     top: 0;
     height: 3em;
     width: 100%;
+  }
+
+  /* line 93, ../sass/layouts/_responsive.scss */
+  .group-left, .group-right {
+    float: left;
+    box-sizing: border-box;
+    width: 50%;
+    padding: 16px;
   }
 }
 /**
@@ -784,19 +792,19 @@ table {
   /**
    * The layout when there is only one sidebar, the left one.
    */
-  /* line 103, ../sass/layouts/_responsive.scss */
+  /* line 113, ../sass/layouts/_responsive.scss */
   .sidebar-first {
     /* Span 2 columns, starting in 2nd column from left. */
     /* Span 1 column, starting in 1st column from left. */
   }
-  /* line 105, ../sass/layouts/_responsive.scss */
+  /* line 115, ../sass/layouts/_responsive.scss */
   .sidebar-first #content {
     float: left;
     width: 66.66667%;
     margin-left: 33.33333%;
     margin-right: -100%;
   }
-  /* line 110, ../sass/layouts/_responsive.scss */
+  /* line 120, ../sass/layouts/_responsive.scss */
   .sidebar-first .region-sidebar-first {
     float: left;
     width: 33.33333%;
@@ -807,19 +815,19 @@ table {
   /**
    * The layout when there is only one sidebar, the right one.
    */
-  /* line 118, ../sass/layouts/_responsive.scss */
+  /* line 128, ../sass/layouts/_responsive.scss */
   .sidebar-second {
     /* Span 2 columns, starting in 1st column from left. */
     /* Span 1 column, starting in 3rd column from left. */
   }
-  /* line 120, ../sass/layouts/_responsive.scss */
+  /* line 130, ../sass/layouts/_responsive.scss */
   .sidebar-second #content {
     float: left;
     width: 66.66667%;
     margin-left: 0%;
     margin-right: -66.66667%;
   }
-  /* line 125, ../sass/layouts/_responsive.scss */
+  /* line 135, ../sass/layouts/_responsive.scss */
   .sidebar-second .region-sidebar-second {
     float: left;
     width: 33.33333%;
@@ -830,27 +838,27 @@ table {
   /**
    * The layout when there are two sidebars.
    */
-  /* line 133, ../sass/layouts/_responsive.scss */
+  /* line 143, ../sass/layouts/_responsive.scss */
   .two-sidebars {
     /* Span 2 columns, starting in 2nd column from left. */
     /* Span 1 column, starting in 1st column from left. */
     /* Start a new row and span all 3 columns. */
   }
-  /* line 135, ../sass/layouts/_responsive.scss */
+  /* line 145, ../sass/layouts/_responsive.scss */
   .two-sidebars #content {
     float: left;
     width: 66.66667%;
     margin-left: 33.33333%;
     margin-right: -100%;
   }
-  /* line 140, ../sass/layouts/_responsive.scss */
+  /* line 150, ../sass/layouts/_responsive.scss */
   .two-sidebars .region-sidebar-first {
     float: left;
     width: 33.33333%;
     margin-left: 0%;
     margin-right: -33.33333%;
   }
-  /* line 145, ../sass/layouts/_responsive.scss */
+  /* line 155, ../sass/layouts/_responsive.scss */
   .two-sidebars .region-sidebar-second {
     float: left;
     width: 100%;
@@ -864,7 +872,7 @@ table {
     /* Span 1 column, starting in the 2nd column from left. */
     /* Span 1 column, starting in the 3rd column from left. */
   }
-  /* line 151, ../sass/layouts/_responsive.scss */
+  /* line 161, ../sass/layouts/_responsive.scss */
   .two-sidebars .region-sidebar-second .block {
     padding-left: 10px;
     padding-right: 10px;
@@ -874,7 +882,7 @@ table {
     box-sizing: border-box;
     word-wrap: break-word;
   }
-  /* line 155, ../sass/layouts/_responsive.scss */
+  /* line 165, ../sass/layouts/_responsive.scss */
   .two-sidebars .region-sidebar-second .block:nth-child(3n+1) {
     float: left;
     width: 33.33333%;
@@ -882,14 +890,14 @@ table {
     margin-right: -33.33333%;
     clear: left;
   }
-  /* line 160, ../sass/layouts/_responsive.scss */
+  /* line 170, ../sass/layouts/_responsive.scss */
   .two-sidebars .region-sidebar-second .block:nth-child(3n+2) {
     float: left;
     width: 33.33333%;
     margin-left: 33.33333%;
     margin-right: -66.66667%;
   }
-  /* line 164, ../sass/layouts/_responsive.scss */
+  /* line 174, ../sass/layouts/_responsive.scss */
   .two-sidebars .region-sidebar-second .block:nth-child(3n) {
     float: left;
     width: 33.33333%;
@@ -904,19 +912,19 @@ table {
   /**
    * The layout when there is only one sidebar, the left one.
    */
-  /* line 181, ../sass/layouts/_responsive.scss */
+  /* line 191, ../sass/layouts/_responsive.scss */
   .sidebar-first {
     /* Span 4 columns, starting in 2nd column from left. */
     /* Span 1 column, starting in 1st column from left. */
   }
-  /* line 183, ../sass/layouts/_responsive.scss */
+  /* line 193, ../sass/layouts/_responsive.scss */
   .sidebar-first #content {
     float: left;
     width: 80%;
     margin-left: 20%;
     margin-right: -100%;
   }
-  /* line 188, ../sass/layouts/_responsive.scss */
+  /* line 198, ../sass/layouts/_responsive.scss */
   .sidebar-first .region-sidebar-first {
     float: left;
     width: 20%;
@@ -927,19 +935,19 @@ table {
   /**
    * The layout when there is only one sidebar, the right one.
    */
-  /* line 196, ../sass/layouts/_responsive.scss */
+  /* line 206, ../sass/layouts/_responsive.scss */
   .sidebar-second {
     /* Span 4 columns, starting in 1st column from left. */
     /* Span 1 column, starting in 5th column from left. */
   }
-  /* line 198, ../sass/layouts/_responsive.scss */
+  /* line 208, ../sass/layouts/_responsive.scss */
   .sidebar-second #content {
     float: left;
     width: 80%;
     margin-left: 0%;
     margin-right: -80%;
   }
-  /* line 203, ../sass/layouts/_responsive.scss */
+  /* line 213, ../sass/layouts/_responsive.scss */
   .sidebar-second .region-sidebar-second {
     float: left;
     width: 20%;
@@ -950,27 +958,27 @@ table {
   /**
    * The layout when there are two sidebars.
    */
-  /* line 211, ../sass/layouts/_responsive.scss */
+  /* line 221, ../sass/layouts/_responsive.scss */
   .two-sidebars {
     /* Span 3 columns, starting in 2nd column from left. */
     /* Span 1 column, starting in 1st column from left. */
     /* Span 1 column, starting in 5th column from left. */
   }
-  /* line 213, ../sass/layouts/_responsive.scss */
+  /* line 223, ../sass/layouts/_responsive.scss */
   .two-sidebars #content {
     float: left;
     width: 60%;
     margin-left: 20%;
     margin-right: -80%;
   }
-  /* line 218, ../sass/layouts/_responsive.scss */
+  /* line 228, ../sass/layouts/_responsive.scss */
   .two-sidebars .region-sidebar-first {
     float: left;
     width: 20%;
     margin-left: 0%;
     margin-right: -20%;
   }
-  /* line 223, ../sass/layouts/_responsive.scss */
+  /* line 233, ../sass/layouts/_responsive.scss */
   .two-sidebars .region-sidebar-second {
     float: left;
     width: 20%;
@@ -982,19 +990,19 @@ table {
   /**
    * The layout when there is only one sidebar, the left one.
    */
-  /* line 234, ../sass/layouts/_responsive.scss */
+  /* line 244, ../sass/layouts/_responsive.scss */
   .sidebar-first {
     /* Span 4 columns, starting in 2nd column from left. */
     /* Span 1 column, starting in 1st column from left. */
   }
-  /* line 236, ../sass/layouts/_responsive.scss */
+  /* line 246, ../sass/layouts/_responsive.scss */
   .sidebar-first #content {
     float: left;
     width: 66.66667%;
     margin-left: 25%;
     margin-right: -91.66667%;
   }
-  /* line 242, ../sass/layouts/_responsive.scss */
+  /* line 252, ../sass/layouts/_responsive.scss */
   .sidebar-first .region-sidebar-first {
     float: left;
     width: 16.66667%;
@@ -1005,19 +1013,19 @@ table {
   /**
    * The layout when there is only one sidebar, the right one.
    */
-  /* line 250, ../sass/layouts/_responsive.scss */
+  /* line 260, ../sass/layouts/_responsive.scss */
   .sidebar-second {
     /* Span 4 columns, starting in 1st column from left. */
     /* Span 1 column, starting in 5th column from left. */
   }
-  /* line 252, ../sass/layouts/_responsive.scss */
+  /* line 262, ../sass/layouts/_responsive.scss */
   .sidebar-second #content {
     float: left;
     width: 66.66667%;
     margin-left: 0%;
     margin-right: -66.66667%;
   }
-  /* line 257, ../sass/layouts/_responsive.scss */
+  /* line 267, ../sass/layouts/_responsive.scss */
   .sidebar-second .region-sidebar-second {
     float: left;
     width: 16.66667%;
@@ -1028,27 +1036,27 @@ table {
   /**
    * The layout when there are two sidebars.
    */
-  /* line 265, ../sass/layouts/_responsive.scss */
+  /* line 275, ../sass/layouts/_responsive.scss */
   .two-sidebars {
     /* Span 3 columns, starting in 2nd column from left. */
     /* Span 1 column, starting in 1st column from left. */
     /* Span 1 column, starting in 5th column from left. */
   }
-  /* line 267, ../sass/layouts/_responsive.scss */
+  /* line 277, ../sass/layouts/_responsive.scss */
   .two-sidebars #content {
     float: left;
     width: 50%;
     margin-left: 25%;
     margin-right: -75%;
   }
-  /* line 272, ../sass/layouts/_responsive.scss */
+  /* line 282, ../sass/layouts/_responsive.scss */
   .two-sidebars .region-sidebar-first {
     float: left;
     width: 16.66667%;
     margin-left: 0%;
     margin-right: -16.66667%;
   }
-  /* line 277, ../sass/layouts/_responsive.scss */
+  /* line 287, ../sass/layouts/_responsive.scss */
   .two-sidebars .region-sidebar-second {
     float: left;
     width: 16.66667%;
@@ -1057,19 +1065,40 @@ table {
   }
 }
 /* header section */
-@media (min-width: 780px) {
-  /* line 289, ../sass/layouts/_responsive.scss */
+@media (max-width: 779px) {
+  /* line 299, ../sass/layouts/_responsive.scss */
   .header #logo {
     float: left;
-    width: 25%;
+    width: 50%;
     margin-left: 0%;
-    margin-right: -25%;
+    margin-right: -50%;
   }
-  /* line 292, ../sass/layouts/_responsive.scss */
+  /* line 302, ../sass/layouts/_responsive.scss */
   .header .region-header {
     float: left;
-    width: 75%;
-    margin-left: 25%;
+    width: 50%;
+    margin-left: 50%;
+    margin-right: -100%;
+    clear: none;
+  }
+  /* line 305, ../sass/layouts/_responsive.scss */
+  .header .region-header .search-form, .header .region-header .secondary-menu {
+    display: none;
+  }
+}
+@media (min-width: 780px) {
+  /* line 311, ../sass/layouts/_responsive.scss */
+  .header #logo {
+    float: left;
+    width: 33.33333%;
+    margin-left: 0%;
+    margin-right: -33.33333%;
+  }
+  /* line 315, ../sass/layouts/_responsive.scss */
+  .header .region-header {
+    float: left;
+    width: 66.66667%;
+    margin-left: 33.33333%;
     margin-right: -100%;
     clear: none;
   }
@@ -2025,82 +2054,89 @@ h1, h2, h3 {
   font-family: "univers_cond", Arial, Helvetica;
 }
 
-/* line 10, ../sass/_camsys.scss */
+/* line 7, ../sass/_camsys.scss */
+a {
+  text-decoration: none;
+  color: #148BCC;
+}
+
+/* line 13, ../sass/_camsys.scss */
 .menu {
   margin: 0;
   padding: 0;
 }
-/* line 13, ../sass/_camsys.scss */
+/* line 16, ../sass/_camsys.scss */
 .menu li.menu__item {
   list-style: none;
 }
-/* line 15, ../sass/_camsys.scss */
-.menu li.menu__item a {
-  text-decoration: none;
-}
 
-/* line 21, ../sass/_camsys.scss */
+/* line 24, ../sass/_camsys.scss */
 .header {
   padding-top: 40px;
   position: relative;
+  z-index: 2;
 }
-/* line 24, ../sass/_camsys.scss */
+/* line 28, ../sass/_camsys.scss */
 .header #logo {
   box-sizing: border-box;
   padding-right: 20px;
 }
-/* line 29, ../sass/_camsys.scss */
+/* line 31, ../sass/_camsys.scss */
+.header #logo img {
+  max-width: 260px;
+}
+/* line 36, ../sass/_camsys.scss */
 .header .region-header div {
   margin: 0;
 }
-/* line 32, ../sass/_camsys.scss */
+/* line 39, ../sass/_camsys.scss */
 .header .region-header .secondary-menu {
   float: right;
   margin-bottom: 10px;
 }
-/* line 35, ../sass/_camsys.scss */
+/* line 42, ../sass/_camsys.scss */
 .header .region-header .secondary-menu .menu {
   font-family: "univers_cond_light", Arial, Helvetica;
   text-transform: uppercase;
   margin: 0;
 }
-/* line 39, ../sass/_camsys.scss */
+/* line 46, ../sass/_camsys.scss */
 .header .region-header .secondary-menu .menu li {
   float: left;
   margin-left: 20px;
 }
-/* line 42, ../sass/_camsys.scss */
+/* line 49, ../sass/_camsys.scss */
 .header .region-header .secondary-menu .menu li a {
   color: #f88113;
 }
-/* line 48, ../sass/_camsys.scss */
+/* line 55, ../sass/_camsys.scss */
 .header .region-header .block-search {
   float: right;
   clear: right;
 }
-/* line 51, ../sass/_camsys.scss */
+/* line 58, ../sass/_camsys.scss */
 .header .region-header .block-search .btn {
   background-color: #8DC63F;
   border: none;
   height: 25px;
   color: #ffffff;
 }
-/* line 57, ../sass/_camsys.scss */
+/* line 64, ../sass/_camsys.scss */
 .header .region-header .block-search .form-item {
   display: block;
   float: left;
 }
-/* line 60, ../sass/_camsys.scss */
+/* line 67, ../sass/_camsys.scss */
 .header .region-header .block-search .form-item input[type=text] {
   height: 25px;
 }
-/* line 65, ../sass/_camsys.scss */
+/* line 72, ../sass/_camsys.scss */
 .header .region-header .main-menu {
   position: absolute;
   bottom: -10px;
   right: 0;
 }
-/* line 69, ../sass/_camsys.scss */
+/* line 76, ../sass/_camsys.scss */
 .header .region-header .main-menu .block-title {
   text-transform: uppercase;
   font-weight: normal;
@@ -2109,211 +2145,312 @@ h1, h2, h3 {
   float: right;
   cursor: pointer;
 }
-/* line 76, ../sass/_camsys.scss */
+/* line 83, ../sass/_camsys.scss */
 .header .region-header .main-menu .block-title:before {
   font-family: FontAwesome;
   content: '\f0c9';
   display: block;
   font-size: 55px;
 }
-/* line 83, ../sass/_camsys.scss */
+/* line 90, ../sass/_camsys.scss */
 .header .region-header .main-menu .menu {
   padding: 0;
   font-family: "univers_cond_light", Arial, Helvetica;
   text-transform: uppercase;
 }
-/* line 87, ../sass/_camsys.scss */
+/* line 94, ../sass/_camsys.scss */
 .header .region-header .main-menu .menu li {
   text-transform: uppercase;
 }
-/* line 89, ../sass/_camsys.scss */
+/* line 96, ../sass/_camsys.scss */
 .header .region-header .main-menu .menu li a {
   display: block;
   padding: 5px 20px;
 }
-/* line 94, ../sass/_camsys.scss */
+/* line 101, ../sass/_camsys.scss */
 .header .region-header .main-menu .menu li .menu {
   display: none;
 }
+/* line 103, ../sass/_camsys.scss */
+.header .region-header .main-menu .menu li .menu li {
+  text-transform: none;
+}
 @media (max-width: 1199px) {
-  /* line 102, ../sass/_camsys.scss */
+  /* line 112, ../sass/_camsys.scss */
+  .header .region-header .block-search, .header .region-header .secondary-menu {
+    margin-right: 100px;
+  }
+  /* line 115, ../sass/_camsys.scss */
+  .header .region-header .main-menu {
+    bottom: inherit;
+    right: 20px;
+    top: 50px;
+    width: 50%;
+  }
+  /* line 120, ../sass/_camsys.scss */
+  .header .region-header .main-menu .menu {
+    display: none;
+    font-family: "univers", Arial, Helvetica;
+  }
+  /* line 123, ../sass/_camsys.scss */
   .header .region-header .main-menu .menu li {
-    background-color: #8DC63F;
     color: #ffffff;
     border-bottom: 1px #ffffff solid;
     display: table;
     width: 100%;
   }
-  /* line 108, ../sass/_camsys.scss */
+  /* line 128, ../sass/_camsys.scss */
   .header .region-header .main-menu .menu li a {
     color: #ffffff;
+    background-color: #8DC63F;
+    display: block;
   }
-  /* line 112, ../sass/_camsys.scss */
+  /* line 134, ../sass/_camsys.scss */
+  .header .region-header .main-menu .menu li.about a {
+    background-color: #8DC63F;
+  }
+  /* line 137, ../sass/_camsys.scss */
+  .header .region-header .main-menu .menu li.about.expanded {
+    background-color: #72a230;
+  }
+  /* line 142, ../sass/_camsys.scss */
+  .header .region-header .main-menu .menu li.markets a {
+    background-color: #6478BA;
+  }
+  /* line 145, ../sass/_camsys.scss */
+  .header .region-header .main-menu .menu li.markets.expanded {
+    background-color: #485da3;
+  }
+  /* line 150, ../sass/_camsys.scss */
+  .header .region-header .main-menu .menu li.services-products a {
+    background-color: #28B67C;
+  }
+  /* line 153, ../sass/_camsys.scss */
+  .header .region-header .main-menu .menu li.services-products.expanded {
+    background-color: #1f8c60;
+  }
+  /* line 158, ../sass/_camsys.scss */
+  .header .region-header .main-menu .menu li.publications a {
+    background-color: #148BCC;
+  }
+  /* line 161, ../sass/_camsys.scss */
+  .header .region-header .main-menu .menu li.publications.expanded {
+    background-color: #0f6b9e;
+  }
+  /* line 166, ../sass/_camsys.scss */
+  .header .region-header .main-menu .menu li.insights a {
+    background-color: #19BEF0;
+  }
+  /* line 169, ../sass/_camsys.scss */
+  .header .region-header .main-menu .menu li.insights.expanded {
+    background-color: #0d9dc9;
+  }
+  /* line 174, ../sass/_camsys.scss */
+  .header .region-header .main-menu .menu li.contact a {
+    background-color: #f88113;
+  }
+  /* line 177, ../sass/_camsys.scss */
+  .header .region-header .main-menu .menu li.contact.expanded {
+    background-color: #d26806;
+  }
+  /* line 181, ../sass/_camsys.scss */
+  .header .region-header .main-menu .menu li.expanded {
+    background-color: #72a230;
+  }
+  /* line 183, ../sass/_camsys.scss */
   .header .region-header .main-menu .menu li.expanded > a {
+    width: calc(100% - 40px);
     border-right: 1px #ffffff solid;
-    width: calc(100% - 30px);
   }
-  /* line 116, ../sass/_camsys.scss */
+  /* line 187, ../sass/_camsys.scss */
   .header .region-header .main-menu .menu li.expanded:after {
     content: "\f078";
     font-family: 'FontAwesome';
     display: block;
-    vertical-align: middle;
+    vertical-align: top;
     color: #ffffff;
     display: table-cell;
-    padding: 0 10px;
-    width: 10px;
     cursor: pointer;
+    width: 25px;
+    padding-top: 5px;
+    padding-left: 10px;
   }
-  /* line 123, ../sass/_camsys.scss */
+  /* line 199, ../sass/_camsys.scss */
   .header .region-header .main-menu .menu li.expanded:hover:after {
     content: "\f077";
   }
+  /* line 204, ../sass/_camsys.scss */
+  .header .region-header .main-menu .menu li:hover > a {
+    border: none;
+  }
+  /* line 207, ../sass/_camsys.scss */
+  .header .region-header .main-menu .menu li:hover .menu {
+    display: block;
+  }
+  /* line 209, ../sass/_camsys.scss */
+  .header .region-header .main-menu .menu li:hover .menu li {
+    border: none;
+  }
+  /* line 211, ../sass/_camsys.scss */
+  .header .region-header .main-menu .menu li:hover .menu li a {
+    background: none;
+  }
+  /* line 220, ../sass/_camsys.scss */
+  .header .region-header .main-menu.active .menu {
+    display: block;
+  }
 }
 @media (min-width: 1200px) {
-  /* line 65, ../sass/_camsys.scss */
+  /* line 229, ../sass/_camsys.scss */
   .header .region-header .main-menu {
     clear: both;
   }
-  /* line 133, ../sass/_camsys.scss */
+  /* line 231, ../sass/_camsys.scss */
   .header .region-header .main-menu .block-title {
     display: none;
   }
-  /* line 137, ../sass/_camsys.scss */
+  /* line 235, ../sass/_camsys.scss */
   .header .region-header .main-menu .menu li {
     float: left;
     display: block;
     width: auto;
     background: none;
   }
-  /* line 142, ../sass/_camsys.scss */
-  .header .region-header .main-menu .menu li a {
-    color: #148BCC;
-  }
-  /* line 146, ../sass/_camsys.scss */
+  /* line 244, ../sass/_camsys.scss */
   .header .region-header .main-menu .menu li.active a, .header .region-header .main-menu .menu li:hover a {
     color: #f88113;
   }
-  /* line 151, ../sass/_camsys.scss */
+  /* line 249, ../sass/_camsys.scss */
   .header .region-header .main-menu .menu li.expanded:after {
     display: none;
   }
-  /* line 155, ../sass/_camsys.scss */
+  /* line 253, ../sass/_camsys.scss */
   .header .region-header .main-menu .menu li.contact {
     display: none;
   }
 }
 
-/* line 166, ../sass/_camsys.scss */
+/* line 263, ../sass/_camsys.scss */
+#main {
+  line-height: 1.5em;
+}
+/* line 265, ../sass/_camsys.scss */
 #main h1.page__title {
   line-height: 1em;
   margin-bottom: .5em;
 }
-/* line 170, ../sass/_camsys.scss */
+/* line 269, ../sass/_camsys.scss */
 #main p {
   margin-top: 0;
 }
-/* line 173, ../sass/_camsys.scss */
+/* line 272, ../sass/_camsys.scss */
 #main .breadcrumb {
   margin-top: -60px;
   height: 60px;
   font-size: .875em;
+  clear: both;
 }
-/* line 177, ../sass/_camsys.scss */
-#main .breadcrumb a {
-  color: #19BEF0;
-  text-decoration: none;
-}
-/* line 184, ../sass/_camsys.scss */
+/* line 282, ../sass/_camsys.scss */
 #main .region-sidebar-first .sidebar-menu {
   border-top: 5px #8DC63F solid;
 }
-/* line 186, ../sass/_camsys.scss */
-#main .region-sidebar-first .sidebar-menu a {
-  text-decoration: none;
-  color: #148BCC;
-}
-/* line 190, ../sass/_camsys.scss */
+/* line 287, ../sass/_camsys.scss */
 #main .region-sidebar-first .sidebar-menu .block-title {
   font-family: "univers_cond_light", Arial, Helvetica;
   font-weight: normal;
   text-transform: uppercase;
 }
-/* line 195, ../sass/_camsys.scss */
+/* line 292, ../sass/_camsys.scss */
 #main .region-sidebar-first .sidebar-menu .menu {
   font-family: "univers_light", Arial, Helvetica;
 }
-/* line 197, ../sass/_camsys.scss */
+/* line 294, ../sass/_camsys.scss */
 #main .region-sidebar-first .sidebar-menu .menu li {
   border-top: 1px #8f8f8f solid;
 }
-/* line 199, ../sass/_camsys.scss */
+/* line 296, ../sass/_camsys.scss */
 #main .region-sidebar-first .sidebar-menu .menu li a {
   display: block;
   padding: 5px 0;
 }
-/* line 203, ../sass/_camsys.scss */
+/* line 300, ../sass/_camsys.scss */
 #main .region-sidebar-first .sidebar-menu .menu li:last-child {
   border-bottom: 1px #8f8f8f solid;
 }
-/* line 210, ../sass/_camsys.scss */
-#main .region-sidebar-second {
+/* line 307, ../sass/_camsys.scss */
+#main .region-sidebar-second, #main .sidebar-block-style {
   color: #8f8f8f;
 }
-/* line 212, ../sass/_camsys.scss */
-#main .region-sidebar-second .block-title {
+/* line 309, ../sass/_camsys.scss */
+#main .region-sidebar-second .block-title, #main .sidebar-block-style .block-title {
   font-size: 18px;
   text-transform: uppercase;
   margin: 0;
 }
-/* line 217, ../sass/_camsys.scss */
-#main .region-sidebar-second p {
+/* line 314, ../sass/_camsys.scss */
+#main .region-sidebar-second h3, #main .sidebar-block-style h3 {
+  font-size: 18px;
+  margin-top: 0;
+  color: #8f8f8f;
+  font-weight: normal;
+}
+/* line 320, ../sass/_camsys.scss */
+#main .region-sidebar-second p, #main .sidebar-block-style p {
   margin: 0;
 }
-/* line 220, ../sass/_camsys.scss */
-#main .region-sidebar-second .caption {
+/* line 323, ../sass/_camsys.scss */
+#main .region-sidebar-second .caption, #main .sidebar-block-style .caption {
   font-size: .875rem;
 }
-/* line 224, ../sass/_camsys.scss */
+/* line 327, ../sass/_camsys.scss */
 #main #content {
   padding-bottom: 20px;
 }
-/* line 226, ../sass/_camsys.scss */
+/* line 40, ../sass/_mixins.scss */
+#main #content:before, #main #content:after {
+  content: "";
+  display: table;
+}
+/* line 41, ../sass/_mixins.scss */
+#main #content:after {
+  clear: both;
+}
+/* line 330, ../sass/_camsys.scss */
 #main #content h3 {
-  color: #19BEF0;
+  color: #148BCC;
   margin: 0;
 }
-/* line 233, ../sass/_camsys.scss */
+/* line 337, ../sass/_camsys.scss */
 #main #content .columns {
   list-style: none;
   margin: 0;
   padding: 0;
 }
-/* line 237, ../sass/_camsys.scss */
+/* line 341, ../sass/_camsys.scss */
 #main #content .columns li {
   float: left;
   margin: 0;
   padding-right: 20px;
   box-sizing: border-box;
 }
-/* line 242, ../sass/_camsys.scss */
+/* line 346, ../sass/_camsys.scss */
 #main #content .columns li:last-child {
   padding: 0;
 }
-/* line 246, ../sass/_camsys.scss */
+/* line 350, ../sass/_camsys.scss */
 #main #content .columns p {
   margin: 0;
 }
 @media (min-width: 780px) {
-  /* line 252, ../sass/_camsys.scss */
+  /* line 356, ../sass/_camsys.scss */
   #main #content .columns.col-3 li {
     width: 33.3%;
   }
 }
 
-/* line 260, ../sass/_camsys.scss */
+/* line 364, ../sass/_camsys.scss */
 #footer {
-  background-color: #19BEF0;
+  background-color: #148BCC;
   padding: 20px;
   color: #ffffff;
   position: relative;
@@ -2327,36 +2464,324 @@ h1, h2, h3 {
 #footer .inner:after {
   clear: both;
 }
-/* line 268, ../sass/_camsys.scss */
+/* line 372, ../sass/_camsys.scss */
 #footer a {
   color: #ffffff;
 }
-/* line 271, ../sass/_camsys.scss */
+/* line 375, ../sass/_camsys.scss */
 #footer p {
   margin: 0;
 }
-/* line 274, ../sass/_camsys.scss */
+/* line 378, ../sass/_camsys.scss */
 #footer .social-links {
   text-align: right;
 }
-/* line 276, ../sass/_camsys.scss */
+/* line 380, ../sass/_camsys.scss */
 #footer .social-links .fa {
   padding: 10px 12px;
   background-color: #414143;
   margin-left: 20px;
   display: inline-block;
 }
-/* line 283, ../sass/_camsys.scss */
+/* line 387, ../sass/_camsys.scss */
 #footer .copyright {
   position: absolute;
   bottom: 20px;
   right: 20px;
 }
 @media (min-width: 780px) {
-  /* line 291, ../sass/_camsys.scss */
+  /* line 395, ../sass/_camsys.scss */
   #footer .block {
     float: left;
     width: 25%;
     box-sizing: border-box;
+  }
+}
+
+/* line 406, ../sass/_camsys.scss */
+.front #main {
+  padding-top: 20px;
+}
+/* line 408, ../sass/_camsys.scss */
+.front #main p {
+  margin: 0;
+}
+/* line 412, ../sass/_camsys.scss */
+.front #main .readmore a {
+  font-weight: bold;
+}
+/* line 417, ../sass/_camsys.scss */
+.front #main #content .help-form, .front #main #content .case-study {
+  color: #ffffff;
+  background-size: cover;
+  text-align: center;
+  padding: 20px;
+  box-sizing: border-box;
+  line-height: normal;
+}
+/* line 424, ../sass/_camsys.scss */
+.front #main #content .help-form .inner, .front #main #content .case-study .inner {
+  max-width: 800px;
+  margin: 0 auto;
+}
+/* line 430, ../sass/_camsys.scss */
+.front #main #content .help-form {
+  background-image: url(../images/home_top_image.jpg);
+  font-family: "univers_cond_light", Arial, Helvetica;
+  font-size: 1.875em;
+  padding: 40px;
+}
+/* line 435, ../sass/_camsys.scss */
+.front #main #content .help-form p.feature {
+  font-family: "univers_light", Arial, Helvetica;
+  font-size: 3rem;
+  padding: 10px 0;
+}
+/* line 440, ../sass/_camsys.scss */
+.front #main #content .help-form .btn {
+  background-color: #8DC63F;
+  border: none;
+  height: 25px;
+  width: 25px;
+  color: #ffffff;
+  vertical-align: top;
+}
+/* line 447, ../sass/_camsys.scss */
+.front #main #content .help-form .btn .fa {
+  display: none;
+}
+/* line 451, ../sass/_camsys.scss */
+.front #main #content .help-form .form-item {
+  margin: 0;
+  display: block;
+}
+/* line 454, ../sass/_camsys.scss */
+.front #main #content .help-form .form-item input[type=text] {
+  height: 25px;
+}
+/* line 459, ../sass/_camsys.scss */
+.front #main #content .case-study {
+  background-image: url(../images/home_case_study_image.jpg);
+  font-size: 1.5em;
+  line-height: 1.5em;
+}
+/* line 463, ../sass/_camsys.scss */
+.front #main #content .case-study .inner {
+  max-width: 590px;
+}
+/* line 466, ../sass/_camsys.scss */
+.front #main #content .case-study h3 {
+  font-family: univers_cond_light;
+  color: #ffffff;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+  font-size: 1.875rem;
+}
+/* line 473, ../sass/_camsys.scss */
+.front #main #content .case-study .title {
+  font-weight: bold;
+}
+/* line 477, ../sass/_camsys.scss */
+.front #main #content .cs-sections {
+  background-color: #f3f3f3;
+  padding: 30px 75px;
+  margin-bottom: 20px;
+}
+/* line 40, ../sass/_mixins.scss */
+.front #main #content .cs-sections:before, .front #main #content .cs-sections:after {
+  content: "";
+  display: table;
+}
+/* line 41, ../sass/_mixins.scss */
+.front #main #content .cs-sections:after {
+  clear: both;
+}
+/* line 482, ../sass/_camsys.scss */
+.front #main #content .cs-sections .section {
+  padding: 35px;
+  box-sizing: border-box;
+  font-size: 1.5em;
+  color: #ffffff;
+  background-color: #8DC63F;
+  float: left;
+  min-height: 350px;
+  width: calc(33% - 30px);
+  margin: 0 15px 30px 15px;
+  line-height: 1.5em;
+}
+/* line 493, ../sass/_camsys.scss */
+.front #main #content .cs-sections .section:last-child {
+  margin-right: 0;
+}
+/* line 496, ../sass/_camsys.scss */
+.front #main #content .cs-sections .section .title {
+  font-family: univers_cond_light;
+  color: #ffffff;
+  text-transform: uppercase;
+  font-size: 1.875rem;
+  line-height: normal;
+}
+/* line 507, ../sass/_camsys.scss */
+.front #main #content .cs-sections .section .readmore a {
+  color: #ffffff;
+}
+/* line 511, ../sass/_camsys.scss */
+.front #main #content .cs-sections .section.markets {
+  background-color: #6478BA;
+}
+/* line 514, ../sass/_camsys.scss */
+.front #main #content .cs-sections .section.services-products {
+  background-color: #28B67C;
+}
+/* line 517, ../sass/_camsys.scss */
+.front #main #content .cs-sections .section.publications {
+  background-color: #148BCC;
+}
+/* line 520, ../sass/_camsys.scss */
+.front #main #content .cs-sections .section.insights {
+  background-color: #19BEF0;
+}
+/* line 523, ../sass/_camsys.scss */
+.front #main #content .cs-sections .section.contact {
+  background-color: #f88113;
+}
+@media (min-width: 1200px) {
+  /* line 528, ../sass/_camsys.scss */
+  .front #main #content .news-events {
+    width: 66%;
+    margin: 0 auto;
+  }
+  /* line 40, ../sass/_mixins.scss */
+  .front #main #content .news-events:before, .front #main #content .news-events:after {
+    content: "";
+    display: table;
+  }
+  /* line 41, ../sass/_mixins.scss */
+  .front #main #content .news-events:after {
+    clear: both;
+  }
+}
+/* line 534, ../sass/_camsys.scss */
+.front #main #content .news-events .item {
+  margin-bottom: 10px;
+}
+@media (max-width: 779px) {
+  /* line 544, ../sass/_camsys.scss */
+  .front #main #content .cs-sections .section {
+    width: 100%;
+  }
+}
+@media (min-width: 780px) and (max-width: 1199px) {
+  /* line 555, ../sass/_camsys.scss */
+  .front #main #content .cs-sections .section {
+    width: calc(50% - 30px);
+  }
+}
+
+/* line 566, ../sass/_camsys.scss */
+.node-type-landing-page h1.page__title {
+  display: none;
+}
+/* line 569, ../sass/_camsys.scss */
+.node-type-landing-page #main {
+  padding-top: 20px;
+}
+/* line 570, ../sass/_camsys.scss */
+.node-type-landing-page #main .breadcrumb {
+  display: none;
+}
+/* line 574, ../sass/_camsys.scss */
+.node-type-landing-page #main .node {
+  background-color: #8DC63F;
+  color: #ffffff;
+  margin-bottom: 20px;
+}
+/* line 578, ../sass/_camsys.scss */
+.node-type-landing-page #main .node p {
+  margin: 0;
+  font-size: 1.5em;
+  line-height: 1.5em;
+}
+/* line 583, ../sass/_camsys.scss */
+.node-type-landing-page #main .node h2 {
+  margin-bottom: 0;
+  font-size: 1.875rem;
+}
+/* line 587, ../sass/_camsys.scss */
+.node-type-landing-page #main .node img {
+  display: block;
+}
+/* line 591, ../sass/_camsys.scss */
+.node-type-landing-page #main .node .group-left .field {
+  margin: 0px 20px;
+}
+/* line 597, ../sass/_camsys.scss */
+.node-type-landing-page #main .landing-page-subpages .views-row {
+  margin-bottom: 20px;
+}
+/* line 600, ../sass/_camsys.scss */
+.node-type-landing-page #main .landing-page-subpages .views-field-title {
+  font-family: "univers_cond", Arial, Helvetica;
+  font-size: 1.875em;
+  line-height: 1.5em;
+}
+/* line 605, ../sass/_camsys.scss */
+.node-type-landing-page #main .landing-page-subpages .views-field-body {
+  font-size: 1.5em;
+  line-height: 1.5em;
+}
+@media (max-width: 779px) {
+  /* line 614, ../sass/_camsys.scss */
+  .node-type-landing-page .group-left, .node-type-landing-page .group-right {
+    width: 100%;
+  }
+}
+@media (min-width: 1200px) {
+  /* line 621, ../sass/_camsys.scss */
+  .node-type-landing-page #main .node .group-left, .node-type-landing-page #main .node .group-right {
+    padding: 0;
+  }
+  /* line 624, ../sass/_camsys.scss */
+  .node-type-landing-page #main .node .group-left {
+    float: left;
+    width: 33.33333%;
+    margin-left: 0%;
+    margin-right: -33.33333%;
+  }
+  /* line 628, ../sass/_camsys.scss */
+  .node-type-landing-page #main .node .group-right {
+    float: left;
+    width: 66.66667%;
+    margin-left: 33.33333%;
+    margin-right: -100%;
+  }
+  /* line 633, ../sass/_camsys.scss */
+  .node-type-landing-page #main .landing-page-subpages {
+    float: left;
+    width: 75%;
+    margin-left: 0%;
+    margin-right: -75%;
+  }
+  /* line 635, ../sass/_camsys.scss */
+  .node-type-landing-page #main .landing-page-subpages .views-row {
+    float: left;
+    box-sizing: border-box;
+    width: 33%;
+    padding-right: 20px;
+  }
+  /* line 640, ../sass/_camsys.scss */
+  .node-type-landing-page #main .landing-page-subpages .views-row:nth-child(4) {
+    clear: both;
+  }
+  /* line 645, ../sass/_camsys.scss */
+  .node-type-landing-page #main .insights-block {
+    float: left;
+    width: 16.66667%;
+    margin-left: 83.33333%;
+    margin-right: -100%;
+  }
+  /* line 647, ../sass/_camsys.scss */
+  .node-type-landing-page #main .insights-block h3 {
+    color: #8f8f8f;
   }
 }
