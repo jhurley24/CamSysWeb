@@ -1,0 +1,299 @@
+// Cambridge Systematics styles
+
+// general styles
+h1, h2, h3 {
+  font-family: $univers-cond;
+}
+
+
+
+.menu {
+  margin: 0;
+  padding: 0;
+  li.menu__item {
+    list-style: none;
+    a {
+      text-decoration: none;
+    }
+  }
+}
+
+.header {
+  padding-top:40px;
+  position: relative;
+  #logo {
+    box-sizing: border-box;
+    padding-right: 20px;
+  }
+  .region-header {
+    div {
+      margin: 0;
+    }
+    .secondary-menu {
+      float: right;
+      margin-bottom: 10px;
+      .menu {
+        font-family: $univers-cond-light;
+        text-transform: uppercase;
+        margin: 0;
+        li {
+          float: left;
+          margin-left: 20px;
+          a {
+            color: $orange;
+          }
+        }
+      }
+    }
+    .block-search {
+      float: right;
+      clear: right;
+      .btn {
+        background-color: $light-green;
+        border: none;
+        height: 25px;
+        color: $white;
+      }
+      .form-item {
+        display: block;
+        float: left;
+        input[type=text] {
+          height: 25px;
+        }
+      }
+    }
+    .main-menu {
+      position: absolute;
+      bottom: -10px;
+      right: 0;
+      .block-title {
+        text-transform: uppercase;
+        font-weight: normal;
+        font-size: 1rem;
+        color: $light-blue;
+        float: right;
+        cursor: pointer;
+        &:before {
+          font-family: FontAwesome;
+          content: '\f0c9';
+          display: block;
+          font-size: 55px;
+        }
+      }
+      .menu {
+        padding: 0;
+        font-family: $univers-cond-light;
+        text-transform: uppercase;
+        li {
+          text-transform: uppercase;
+          a {
+            display: block;
+            padding: 5px 20px;
+          }
+
+          .menu {
+            display: none;
+          }
+        }
+
+      }
+      @include desktop-max {
+        .menu {
+          li {
+            background-color: $light-green;
+            color: $white;
+            border-bottom: 1px $white solid;
+            display: table;
+            width: 100%;
+            a {
+              color: $white;
+            }
+            &.expanded  {
+              > a {
+                border-right: 1px $white solid;
+                width: calc(100% - 30px);
+              }
+              &:after {
+                content: "\f078"; font-family: 'FontAwesome';
+                display: block; vertical-align: middle;
+                color: $white;
+                display: table-cell; padding: 0 10px;
+                width: 10px; cursor: pointer;
+              }
+              &:hover:after {
+                content: "\f077";
+              }
+            }
+          }
+        }
+      }
+
+      @include desktop {
+        clear: both;
+        .block-title {
+          display: none;
+        }
+        .menu {
+          li {
+            float: left;
+            display: block;
+            width: auto;
+            background: none;
+            a {
+              color: $dark-blue;
+            }
+            &.active, &:hover {
+              a {
+                color: $orange;
+              }
+            }
+            &.expanded {
+              &:after {
+                display: none;
+              }
+            }
+            &.contact {
+              display: none;
+            }
+          }
+        }
+      }
+    }
+  }
+
+}
+#main {
+  h1.page__title {
+    line-height: 1em;
+    margin-bottom: .5em;
+  }
+  p {
+    margin-top: 0;
+  }
+  .breadcrumb {
+    margin-top: -60px;
+    height: 60px;
+    font-size: .875em;
+    a {
+      color: $light-blue;
+      text-decoration: none;
+    }
+
+  }
+  .region-sidebar-first {
+    .sidebar-menu {
+      border-top: 5px $light-green solid;
+      a {
+        text-decoration: none;
+        color: $dark-blue;
+      }
+      .block-title {
+        font-family: $univers-cond-light;
+        font-weight: normal;
+        text-transform: uppercase;
+      }
+      .menu {
+        font-family: $univers-light;
+        li {
+          border-top: 1px $gray solid;
+          a {
+            display: block;
+            padding: 5px 0;
+          }
+          &:last-child {
+            border-bottom: 1px $gray solid;
+          }
+        }
+      }
+    }
+  }
+  .region-sidebar-second {
+    color: $gray;
+    .block-title {
+      font-size: 18px;
+      text-transform: uppercase;
+      margin: 0;
+    }
+    p {
+      margin: 0;
+    }
+    .caption {
+      font-size: .875rem;
+    }
+  }
+  #content {
+    padding-bottom: 20px;
+    @include clearfix;
+    h3 {
+      color: $light-blue;
+      margin: 0;
+    }
+    .node {
+
+    }
+    .columns {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      li {
+        float: left;
+        margin: 0;
+        padding-right:20px;
+        box-sizing: border-box;
+        &:last-child {
+          padding: 0;
+        }
+      }
+      p {
+        margin: 0;
+      }
+    }
+    @include tablet-min {
+      .columns.col-3 {
+        li {
+          width: 33.3%;
+        }
+
+      }
+    }
+  }
+}
+#footer {
+  background-color: $light-blue;
+  padding: 20px;
+  color: $white;
+  position: relative;
+  .inner {
+    @include clearfix;
+  }
+  a {
+    color: $white;
+  }
+  p {
+    margin: 0;
+  }
+  .social-links {
+    text-align: right;
+    .fa {
+      padding: 10px 12px;
+      background-color: $dark-gray;
+      margin-left: 20px;
+      display: inline-block;
+    }
+  }
+  .copyright {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+
+  }
+
+  @include tablet-min {
+    .block {
+      float: left;
+      width: 25%;
+      box-sizing: border-box;
+    }
+  }
+
+}
