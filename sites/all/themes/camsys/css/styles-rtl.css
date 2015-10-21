@@ -326,7 +326,7 @@ ul {
     margin-right: 0%;
     margin-left: -50%;
   }
-  /* line 302, ../sass/layouts/_responsive.scss */
+  /* line 303, ../sass/layouts/_responsive.scss */
   .header .region-header {
     float: right;
     width: 50%;
@@ -334,20 +334,20 @@ ul {
     margin-left: -100%;
     clear: none;
   }
-  /* line 305, ../sass/layouts/_responsive.scss */
+  /* line 306, ../sass/layouts/_responsive.scss */
   .header .region-header .search-form, .header .region-header .secondary-menu {
     display: none;
   }
 }
 @media (min-width: 780px) {
-  /* line 311, ../sass/layouts/_responsive.scss */
+  /* line 312, ../sass/layouts/_responsive.scss */
   .header #logo {
     float: right;
     width: 33.33333%;
     margin-right: 0%;
     margin-left: -33.33333%;
   }
-  /* line 315, ../sass/layouts/_responsive.scss */
+  /* line 316, ../sass/layouts/_responsive.scss */
   .header .region-header {
     float: right;
     width: 66.66667%;

@@ -298,6 +298,7 @@ $zen-auto-include-item-base: false;
   @include mobile {
     #logo {
       @include zen-grid-item(6, 1);
+
     }
     .region-header {
       @include zen-grid-item(6, 7);

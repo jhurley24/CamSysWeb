@@ -66,6 +66,7 @@ a {
         float: left;
         input[type=text] {
           height: 25px;
+          border: 1px $very-dark-blue solid;
         }
       }
     }
@@ -259,8 +260,22 @@ a {
 
     }
   }
+  @include mobile {
+    #logo {
+      img {
+        max-width: 200px;
+      }
+    }
+    .region-header {
+      .main-menu {
+        width: calc(100% - 36px);
+      }
+    }
+  }
+
 }
 #main {
+  color: $very-dark-blue;
   line-height: 1.5em;
   h1.page__title {
     line-height: 1em;
@@ -357,6 +372,30 @@ a {
           width: 33.3%;
         }
 
+      }
+    }
+  }
+  .save-share {
+    clear: both;
+    padding: 20px;
+    .inner {
+      text-align: right;
+      .save, .share {
+        height: 25px;
+        background-size: contain;
+        background-repeat: no-repeat;
+        padding-left: 28px;
+        color: $dark-blue;
+        display: inline-block;
+        margin-left: 40px;
+        cursor: pointer;
+        padding-top: 5px;
+      }
+      .save {
+        background-image: url(../images/save_button.png);
+      }
+      .share {
+        background-image: url(../images/share_button.png);
       }
     }
   }
