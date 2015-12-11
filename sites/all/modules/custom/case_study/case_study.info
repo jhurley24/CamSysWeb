@@ -1,0 +1,16 @@
+name = Case Study
+core = 7.x
+package = Features
+version = 7.x-1.0
+dependencies[] = features
+dependencies[] = image
+dependencies[] = landing_page
+dependencies[] = text
+features[features_api][] = api:2
+features[field_base][] = field_cs_image
+features[field_base][] = field_cs_subtitle
+features[field_instance][] = node-case_study-body
+features[field_instance][] = node-case_study-field_cs_image
+features[field_instance][] = node-case_study-field_cs_subtitle
+features[node][] = case_study
+project path = sites/all/modules/custom

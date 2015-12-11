@@ -28,6 +28,35 @@ Drupal.behaviors.my_custom_behavior = {
       }
     });
 
+    // landing page image background
+    // find image from group right and add it as background for div
+    var group_right = '.node-type-landing-page .node .group-right';
+    var bk_img = $(group_right+' img').attr('src');
+    $(group_right).css('background-image', 'url('+bk_img+')');
+
+    // remove links from menu items with .nolink class
+    $('.block-menu-block li a.nolink').attr('href', 'javascript:void(0)');
+
+    // add active state to sidebar and top menu on rollover
+    $('.block-menu-block .menu li.is-expanded').click(function() {
+      if ($(this).hasClass('active')) {
+        $(this).removeClass('active');
+      }
+      else {
+        $(this).addClass('active');
+      }
+    });
+
+    // activate ps item list
+    $('.ps-term-list .item-list h3').click(function() {
+      if ($(this).parent().hasClass('active')) {
+        $(this).parent().removeClass('active');
+      }
+      else {
+        $(this).parent().addClass('active');
+      }
+    })
+
   }
 };
 

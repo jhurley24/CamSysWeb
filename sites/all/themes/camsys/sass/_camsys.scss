@@ -3,6 +3,7 @@
 // general styles
 h1, h2, h3 {
   font-family: $univers-cond;
+  font-weight: bold;
 }
 a {
   text-decoration: none;
@@ -98,11 +99,16 @@ a {
             display: block;
             padding: 5px 20px;
           }
-
           .menu {
             display: none;
             li {
               text-transform: none;
+            }
+          }
+          &:hover {
+
+            .menu {
+              display: block;
             }
           }
         }
@@ -126,6 +132,7 @@ a {
             border-bottom: 1px $white solid;
             display: table;
             width: 100%;
+            background-color: $gray;
             a {
               color: $white;
               background-color: $light-green;
@@ -136,7 +143,7 @@ a {
                 background-color: $light-green;
               }
               &.expanded {
-                background-color: darken($light-green, 10%);
+                //background-color: darken($light-green, 10%);
               }
             }
             &.markets {
@@ -238,12 +245,15 @@ a {
             display: block;
             width: auto;
             background: none;
+            position: relative;
+            font-size: 1.25rem;
+
             a {
 
             }
-            &.active, &:hover {
+            &:hover {
               a {
-                color: $orange;
+                color: $white;
               }
             }
             &.expanded {
@@ -253,6 +263,100 @@ a {
             }
             &.contact {
               display: none;
+            }
+            .menu {
+              background-color: $very-dark-blue;
+              position: absolute;
+              padding: 5px 20px;
+              li {
+                float: none;
+                font-size: 14px;
+                line-height: normal;
+                margin-bottom: 5px;
+                font-family: $univers;
+                font-weight: bold;
+                a {
+                  color: $light-gray;
+                  padding: 0;
+                }
+                &:hover, &.active {
+                  > a {
+                    color: $white;
+                  }
+                }
+                .menu {
+                  position: relative;
+                  padding: 0;
+                  li {
+                    text-transform: none;
+                    font-weight: normal;
+                    a {
+                    }
+                    &.is-expanded {
+                      > a {
+                        &:after {
+                          content: "+";
+                          display: inline-block;
+                          margin-left: 5px;
+                        }
+                      }
+                      .menu {
+                        display: none;
+                        li {
+                          font-family: $univers-cond-light;
+                        }
+                      }
+                      &.active {
+                        > a {
+                          &:after {
+                            content: "-";
+                          }
+                        }
+                        .menu {
+                          display: block;
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+            &:hover, &.active-trail {
+              > a {
+                color: $white;
+              }
+              &.about {
+                > a {
+                  background-color: $light-green;
+                }
+              }
+              &.markets {
+                > a {
+                  background-color: $purple;
+                }
+              }
+              &.services-products {
+                > a {
+                  background-color: $dark-green;
+                }
+              }
+              &.publications {
+                > a {
+                  background-color: $dark-blue;
+                }
+              }
+              &.insights {
+                > a {
+                  background-color: $light-blue;
+                }
+              }
+
+            }
+            &:hover {
+              .menu {
+                display: block;
+              }
+
             }
           }
         }
@@ -275,7 +379,7 @@ a {
 
 }
 #main {
-  color: $very-dark-blue;
+  color: $dark-gray;
   line-height: 1.5em;
   h1.page__title {
     line-height: 1em;
@@ -293,9 +397,22 @@ a {
     }
 
   }
+
   .region-sidebar-first {
     .sidebar-menu {
-      border-top: 5px $light-green solid;
+      border-top: 10px $light-green solid;
+      .section-services-products & {
+        border-top-color: $dark-green;
+      }
+      .section-markets & {
+        border-top-color: $purple;
+      }
+      .section-publications & {
+        border-top-color: $dark-blue;
+      }
+      .section-insights & {
+        border-top-color: $light-blue;
+      }
       a {
 
       }
@@ -303,21 +420,64 @@ a {
         font-family: $univers-cond-light;
         font-weight: normal;
         text-transform: uppercase;
+        line-height: normal;
+        padding: 5px 0;
+        font-size: 1.4em;
       }
       .menu {
         font-family: $univers-light;
         li {
           border-top: 1px $gray solid;
+          padding: 5px 0;
+          font-size: 1.125rem;
           a {
             display: block;
-            padding: 5px 0;
+
           }
           &:last-child {
             border-bottom: 1px $gray solid;
           }
+          .menu {
+            font-family: $univers;
+            li {
+              font-size: .9375rem;
+              border: none;
+              line-height: 1.5em;
+              padding: 0;
+              a {
+              }
+              &.is-expanded {
+                > a {
+                  &:after {
+                    content: "+";
+                    display: inline-block;
+                    margin-left: 5px;
+                  }
+                }
+                .menu {
+                  display: none;
+                  li {
+                    font-family: $univers-cond-light;
+                  }
+                }
+                &.active {
+                  > a {
+                    &:after {
+                      content: "-";
+                    }
+                  }
+                  .menu {
+                    display: block;
+                  }
+                }
+              }
+            }
+          }
+
         }
       }
     }
+
   }
   .region-sidebar-second, .sidebar-block-style {
     color: $gray;
@@ -366,6 +526,7 @@ a {
         margin: 0;
       }
     }
+
     @include tablet-min {
       .columns.col-3 {
         li {
@@ -374,6 +535,7 @@ a {
 
       }
     }
+
   }
   .save-share {
     clear: both;
@@ -399,6 +561,7 @@ a {
       }
     }
   }
+
 }
 #footer {
   background-color: $dark-blue;
@@ -600,6 +763,101 @@ a {
   }
 }
 
+// products/services pages
+.node-type-products-services {
+  #main {
+    #content {
+      .node {
+        @include desktop {
+          .group-left {
+            width: 66%;
+            padding: 0;
+          }
+          .group-right {
+            width: 34%;
+            padding: 0 0px 0 32px;
+          }
+          &.group-one-column {
+            .group-left {
+              width: 100%;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+// products/services list
+#main {
+  #content {
+    .ps-term-list {
+      .item-list {
+        h3 {
+          font-family: $univers-light;
+          color: $white;
+          background-color: $dark-blue;
+          padding:10px 20px;
+          position: relative;
+          cursor: pointer;
+          margin-bottom: 2px;
+          .chevron {
+            position: absolute;
+            top: 15px;
+            right: 40px;
+          }
+        }
+        ul {
+          display: none;
+          margin: 0;
+          padding: 0;
+          list-style: none;
+          li {
+            margin: 0 0 20px 20px;
+            padding: 0;
+            p {
+              margin: 0;
+              display: inline;
+            }
+            a {
+              font-weight: 600;
+            }
+            .case-study, .publication a {
+              &:before {
+                content: "|";
+                display: inline-block;
+                padding: 0 10px;
+              }
+            }
+          }
+        }
+        &.active {
+          ul {
+            display: block;
+          }
+          h3 {
+            background-color: $white;
+            color: $dark-blue;
+            .chevron {
+              top: 0;
+              &:before {
+                top: 0;
+                border-top-color: transparent;
+                border-bottom-color: $dark-blue;
+              }
+              &:after {
+                bottom: -3px;
+                border-top-color: transparent;
+                border-bottom-color: $white;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
 // landing page styling
 .node-type-landing-page {
   h1.page__title {
@@ -614,6 +872,14 @@ a {
       background-color: $light-green;
       color: $white;
       margin-bottom: 20px;
+      display: table;
+      .group-left, .group-right {
+        padding: 0;
+        float: none;
+        display: table-cell;
+        vertical-align: top;
+      }
+
       p {
         margin: 0;
         font-size: 1.5em;
@@ -625,57 +891,82 @@ a {
       }
       img {
         display: block;
+        visibility: hidden;
+        width: 100%;
       }
       .group-left {
         .field {
           margin: 0px 20px;
         }
+        .field-name-body {
+          margin-bottom: 20px;
+        }
+      }
+      .group-right {
+        background-size: cover;
+        background-position-x: center;
       }
     }
     .landing-page-subpages {
-      .views-row {
+      .views-row, .fields-row {
         margin-bottom: 20px;
       }
-      .views-field-title {
+      .views-field-title, .field-title {
         font-family: $univers-cond;
         font-size: 1.875em;
         line-height: 1.5em;
       }
-      .views-field-body {
+      .views-field-body, .field-summary {
         font-size: 1.5em;
         line-height: 1.5em;
       }
     }
   }
+  &.section-services-products #main .node {
+    background-color: $dark-green;
+  }
   @include mobile {
     .node {
+      .group-left {
+        width: 66%;
+      }
+      .group-right {
+        width: 34%;
+      }
     }
+    /*
     .group-left, .group-right {
       width: 100%;
+    }
+    */
+  }
+  @include tablet-min {
+    #main {
+      .node {
+
+      }
     }
   }
   @include desktop {
     #main {
       .node {
-        .group-left, .group-right {
-          padding: 0;
-        }
         .group-left {
-          @include zen-grid-item(4, 1);
-
+          //@include zen-grid-item(4, 1);
+          width: 34%;
         }
         .group-right {
-          @include zen-grid-item(8, 5);
+          //@include zen-grid-item(8, 5);
+          width: 66%;
         }
-
       }
       .landing-page-subpages {
         @include zen-grid-item(9, 1);
-        .views-row {
+        .views-row, .fields-row {
           float: left;
           box-sizing: border-box;
-          width: 33%;
-          padding-right: 20px;
+          width: 33.3%;
+          padding-right: 30px;
+
           &:nth-child(4) {
             clear: both;
           }
@@ -691,3 +982,24 @@ a {
   }
 }
 
+// custom chevron down arrow
+.chevron {
+  position: relative;
+  display: block;
+  height: 30px;/*height should be double border*/
+  cursor: pointer;
+  &:before, &:after {
+    position: absolute;
+    display: block;
+    content: "";
+    border: 15px solid transparent;/*adjust size*/
+  }
+  &:before {
+    top: 0;
+    border-top-color: $white;
+  }
+  &:after {
+    top: -3px;
+    border-top-color: $dark-blue;
+  }
+}
