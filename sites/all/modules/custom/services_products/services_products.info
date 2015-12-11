@@ -32,6 +32,7 @@ features[field_instance][] = node-products_services-field_service_reference
 features[field_instance][] = taxonomy_term-services-field_teaser_text
 features[node][] = products_services
 features[taxonomy][] = services
+features[views_view][] = contact
 features[views_view][] = ps_term_list
 features_exclude[dependencies][ctools] = ctools
 features_exclude[dependencies][features] = features

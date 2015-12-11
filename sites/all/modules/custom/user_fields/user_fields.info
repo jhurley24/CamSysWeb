@@ -18,7 +18,5 @@ features[field_instance][] = user-user-field_credential
 features[field_instance][] = user-user-field_first_name
 features[field_instance][] = user-user-field_last_name
 features[field_instance][] = user-user-field_location
-features[field_instance][] = user-user-field_specialty
-features[user_role][] = Office Staff
 features_exclude[field_base][field_specialty] = field_specialty
 project path = sites/all/modules/custom

@@ -10,7 +10,7 @@
 function user_fields_field_default_field_instances() {
   $field_instances = array();
 
-  // Exported field_instance: 'user-user-field_bio'
+  // Exported field_instance: 'user-user-field_bio'.
   $field_instances['user-user-field_bio'] = array(
     'bundle' => 'user',
     'default_value' => NULL,
@@ -26,10 +26,9 @@ function user_fields_field_default_field_instances() {
       ),
       'token' => array(
         'label' => 'hidden',
-        'module' => 'text',
         'settings' => array(),
-        'type' => 'text_default',
-        'weight' => 0,
+        'type' => 'hidden',
+        'weight' => 6,
       ),
     ),
     'entity_type' => 'user',
@@ -51,7 +50,7 @@ function user_fields_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'user-user-field_credential'
+  // Exported field_instance: 'user-user-field_credential'.
   $field_instances['user-user-field_credential'] = array(
     'bundle' => 'user',
     'default_value' => NULL,
@@ -68,7 +67,7 @@ function user_fields_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 6,
+        'weight' => 7,
       ),
     ),
     'entity_type' => 'user',
@@ -86,11 +85,11 @@ function user_fields_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 7,
+      'weight' => 4,
     ),
   );
 
-  // Exported field_instance: 'user-user-field_first_name'
+  // Exported field_instance: 'user-user-field_first_name'.
   $field_instances['user-user-field_first_name'] = array(
     'bundle' => 'user',
     'default_value' => NULL,
@@ -106,9 +105,10 @@ function user_fields_field_default_field_instances() {
       ),
       'token' => array(
         'label' => 'above',
+        'module' => 'text',
         'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 4,
+        'type' => 'text_default',
+        'weight' => 0,
       ),
     ),
     'entity_type' => 'user',
@@ -126,11 +126,11 @@ function user_fields_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 9,
+      'weight' => 2,
     ),
   );
 
-  // Exported field_instance: 'user-user-field_last_name'
+  // Exported field_instance: 'user-user-field_last_name'.
   $field_instances['user-user-field_last_name'] = array(
     'bundle' => 'user',
     'default_value' => NULL,
@@ -146,9 +146,10 @@ function user_fields_field_default_field_instances() {
       ),
       'token' => array(
         'label' => 'above',
+        'module' => 'text',
         'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 5,
+        'type' => 'text_default',
+        'weight' => 1,
       ),
     ),
     'entity_type' => 'user',
@@ -166,11 +167,11 @@ function user_fields_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 10,
+      'weight' => 3,
     ),
   );
 
-  // Exported field_instance: 'user-user-field_location'
+  // Exported field_instance: 'user-user-field_location'.
   $field_instances['user-user-field_location'] = array(
     'bundle' => 'user',
     'default_value' => NULL,
@@ -189,24 +190,16 @@ function user_fields_field_default_field_instances() {
       ),
       'token' => array(
         'label' => 'above',
-        'module' => 'entityreference',
-        'settings' => array(
-          'link' => FALSE,
-        ),
-        'type' => 'entityreference_label',
-        'weight' => 1,
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 5,
       ),
     ),
     'entity_type' => 'user',
     'field_name' => 'field_location',
-    'label' => 'Metro Dentalcare Practice Locations',
+    'label' => 'Location',
     'required' => 0,
     'settings' => array(
-      'behaviors' => array(
-        'prepopulate' => array(
-          'status' => 0,
-        ),
-      ),
       'user_register_form' => 0,
     ),
     'widget' => array(
@@ -214,46 +207,7 @@ function user_fields_field_default_field_instances() {
       'module' => 'options',
       'settings' => array(),
       'type' => 'options_select',
-      'weight' => 11,
-    ),
-  );
-
-  // Exported field_instance: 'user-user-field_specialty'
-  $field_instances['user-user-field_specialty'] = array(
-    'bundle' => 'user',
-    'default_value' => NULL,
-    'deleted' => 0,
-    'description' => '',
-    'display' => array(
-      'default' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 5,
-      ),
-      'token' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 2,
-      ),
-    ),
-    'entity_type' => 'user',
-    'field_name' => 'field_specialty',
-    'label' => 'Specialty',
-    'required' => 0,
-    'settings' => array(
-      'text_processing' => 0,
-      'user_register_form' => 0,
-    ),
-    'widget' => array(
-      'active' => 1,
-      'module' => 'text',
-      'settings' => array(
-        'size' => 60,
-      ),
-      'type' => 'text_textfield',
-      'weight' => 12,
+      'weight' => 6,
     ),
   );
 
@@ -263,8 +217,7 @@ function user_fields_field_default_field_instances() {
   t('Credentials');
   t('First Name');
   t('Last Name');
-  t('Metro Dentalcare Practice Locations');
-  t('Specialty');
+  t('Location');
 
   return $field_instances;
 }
