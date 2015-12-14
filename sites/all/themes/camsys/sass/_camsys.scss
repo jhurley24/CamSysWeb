@@ -980,6 +980,9 @@ a {
   &.section-publications #main .node.node-landing-page {
     background-color: $dark-blue;
   }
+  &.section-markets #main .node.node-landing-page {
+    background-color: $purple;
+  }
   @include mobile {
     .node {
       .group-left {
