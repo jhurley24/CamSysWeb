@@ -26,12 +26,9 @@ function locations_field_default_field_instances() {
       ),
       'teaser' => array(
         'label' => 'hidden',
-        'module' => 'text',
-        'settings' => array(
-          'trim_length' => 600,
-        ),
-        'type' => 'text_summary_or_trimmed',
-        'weight' => 0,
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 5,
       ),
     ),
     'entity_type' => 'node',
@@ -62,17 +59,20 @@ function locations_field_default_field_instances() {
     'description' => '',
     'display' => array(
       'default' => array(
-        'label' => 'above',
+        'label' => 'inline',
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_plain',
-        'weight' => 3,
+        'weight' => 4,
       ),
       'teaser' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
+        'label' => 'inline',
+        'module' => 'telephone',
+        'settings' => array(
+          'title' => '',
+        ),
+        'type' => 'telephone_link',
+        'weight' => 3,
       ),
     ),
     'entity_type' => 'node',
@@ -100,7 +100,7 @@ function locations_field_default_field_instances() {
     'description' => '',
     'display' => array(
       'default' => array(
-        'label' => 'above',
+        'label' => 'hidden',
         'module' => 'leaflet',
         'settings' => array(
           'height' => 400,
@@ -153,13 +153,13 @@ function locations_field_default_field_instances() {
           ),
         ),
         'type' => 'geofield_leaflet',
-        'weight' => 4,
+        'weight' => 6,
       ),
       'teaser' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 0,
+        'weight' => 12,
       ),
     ),
     'entity_type' => 'node',
@@ -214,10 +214,16 @@ function locations_field_default_field_instances() {
         'weight' => 1,
       ),
       'teaser' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
+        'label' => 'hidden',
+        'module' => 'addressfield',
+        'settings' => array(
+          'format_handlers' => array(
+            0 => 'address',
+          ),
+          'use_widget_handlers' => 1,
+        ),
+        'type' => 'addressfield_default',
+        'weight' => 1,
       ),
     ),
     'entity_type' => 'node',
@@ -249,20 +255,18 @@ function locations_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-location-field_location_image'.
-  $field_instances['node-location-field_location_image'] = array(
+  // Exported field_instance: 'node-location-field_location_email'.
+  $field_instances['node-location-field_location_email'] = array(
     'bundle' => 'location',
+    'default_value' => NULL,
     'deleted' => 0,
     'description' => '',
     'display' => array(
       'default' => array(
         'label' => 'above',
-        'module' => 'image',
-        'settings' => array(
-          'image_link' => '',
-          'image_style' => '',
-        ),
-        'type' => 'image',
+        'module' => 'email',
+        'settings' => array(),
+        'type' => 'email_default',
         'weight' => 5,
       ),
       'teaser' => array(
@@ -270,6 +274,48 @@ function locations_field_default_field_instances() {
         'settings' => array(),
         'type' => 'hidden',
         'weight' => 0,
+      ),
+    ),
+    'ds_extras_field_template' => '',
+    'entity_type' => 'node',
+    'field_name' => 'field_location_email',
+    'label' => 'Location Email',
+    'required' => 0,
+    'settings' => array(
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'email',
+      'settings' => array(
+        'size' => 60,
+      ),
+      'type' => 'email_textfield',
+      'weight' => 37,
+    ),
+  );
+
+  // Exported field_instance: 'node-location-field_location_image'.
+  $field_instances['node-location-field_location_image'] = array(
+    'bundle' => 'location',
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'hidden',
+        'module' => 'image',
+        'settings' => array(
+          'image_link' => '',
+          'image_style' => '',
+        ),
+        'type' => 'image',
+        'weight' => 2,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 13,
       ),
     ),
     'entity_type' => 'node',
@@ -320,17 +366,20 @@ function locations_field_default_field_instances() {
     'description' => '',
     'display' => array(
       'default' => array(
-        'label' => 'above',
+        'label' => 'inline',
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_plain',
-        'weight' => 2,
+        'weight' => 3,
       ),
       'teaser' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
+        'label' => 'inline',
+        'module' => 'telephone',
+        'settings' => array(
+          'title' => '',
+        ),
+        'type' => 'telephone_link',
+        'weight' => 2,
       ),
     ),
     'entity_type' => 'node',
@@ -357,6 +406,7 @@ function locations_field_default_field_instances() {
   t('Fax Number');
   t('Geolocation');
   t('Location Address');
+  t('Location Email');
   t('Location Image');
   t('Telephone Number');
 

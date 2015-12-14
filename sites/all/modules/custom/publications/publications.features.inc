@@ -5,12 +5,21 @@
  */
 
 /**
+ * Implements hook_ctools_plugin_api().
+ */
+function publications_ctools_plugin_api($module = NULL, $api = NULL) {
+  if ($module == "ds" && $api == "ds") {
+    return array("version" => "1");
+  }
+}
+
+/**
  * Implements hook_node_info().
  */
 function publications_node_info() {
   $items = array(
     'publication' => array(
-      'name' => t('Publication'),
+      'name' => t('Publications'),
       'base' => 'node_content',
       'description' => '',
       'has_title' => '1',

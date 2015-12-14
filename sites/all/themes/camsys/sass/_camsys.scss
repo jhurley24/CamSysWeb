@@ -858,6 +858,49 @@ a {
   }
 }
 
+// location page styling
+.node-location {
+  @include desktop {
+    .group-left {
+      width: 50%;
+    }
+    .group-right, .group-middle {
+      width: 25%;
+    }
+  }
+}
+
+// publications section
+.section-publications #main #content  {
+  .topic-content-list {
+    .item-list {
+      h3 {
+        font-family: univers;
+        color: $very-dark-blue;
+        font-size: 1.5rem;
+        font-weight: normal;
+      }
+      ul {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+        li {
+          margin: 0;
+          padding: 0;
+          .node {
+            h2 {
+              font-size: 1.125rem;
+              margin: 0;
+              font-weight: bold;
+
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
 // landing page styling
 .node-type-landing-page {
   h1.page__title {
@@ -868,7 +911,7 @@ a {
       display: none;
     }
     padding-top: 20px;
-    .node {
+    .node:not(.node-teaser) {
       background-color: $light-green;
       color: $white;
       margin-bottom: 20px;
@@ -908,13 +951,19 @@ a {
       }
     }
     .landing-page-subpages {
-      .views-row, .fields-row {
+      .views-row, .fields-row, .node {
         margin-bottom: 20px;
       }
-      .views-field-title, .field-title {
+      .views-field-title, .field-title, .field-name-title {
         font-family: $univers-cond;
         font-size: 1.875em;
         line-height: 1.5em;
+        h2, h3 {
+          font-size: 1em;
+          line-height: normal;
+          font-weight: normal;
+          margin: 0;
+        }
       }
       .views-field-body, .field-summary {
         font-size: 1.5em;
@@ -924,6 +973,12 @@ a {
   }
   &.section-services-products #main .node {
     background-color: $dark-green;
+  }
+  &.section-locations #main .node.node-landing-page {
+    background-color: $orange;
+  }
+  &.section-publications #main .node.node-landing-page {
+    background-color: $dark-blue;
   }
   @include mobile {
     .node {
@@ -961,7 +1016,7 @@ a {
       }
       .landing-page-subpages {
         @include zen-grid-item(9, 1);
-        .views-row, .fields-row {
+        .views-row, .fields-row, .node {
           float: left;
           box-sizing: border-box;
           width: 33.3%;

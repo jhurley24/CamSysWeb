@@ -79,24 +79,32 @@ function get_menu_child_entities($children) {
 function get_node_fields($entity_id,$count,$odd_even) {
     $output = '';
     $node_fields = entity_load('node', array($entity_id));
-    //dsm($node_fields);
+    $node_teaser = entity_view('node', $node_fields, 'teaser');
+    /*
+    $teaser_text = field_view_field('node', $node_fields[$entity_id], 'body', array('label' => 'hidden', 'type' => 'text_summary_or_trimmed'));
     //$teaser_image = field_view_field('node', $node_fields[$entity_id], 'field_teaser_image', array('label' => 'hidden'));
     $nodelink = url('node/'.$node_fields[$entity_id]->nid);
     $nodetitle = $node_fields[$entity_id]->title;
-    $teaser_text = field_view_field('node', $node_fields[$entity_id], 'body', array('label' => 'hidden', 'type' => 'text_summary_or_trimmed'));
     $output .= '<div class="fields-row row-'.$count.' '.$odd_even.'"><div class="field-content field-title"><a href="'.$nodelink.'">'.$nodetitle.'</a></div>
         <div class="field-content field-summary">'.render($teaser_text).'</div></div>';
+    */
+    //dsm($node_fields);
+    $output = render($node_teaser);
     return $output;
 }
 
 function get_term_fields($entity_id,$count,$odd_even) {
     $output = '';
     $term_fields = entity_load('taxonomy_term', array($entity_id));
+    $term_teaser = entity_view('taxonomy_term', $term_fields, 'token');
     //dsm($term_fields);
+    /*
     $nodelink = url('taxonomy/term/'.$term_fields[$entity_id]->tid);
     $nodetitle = $term_fields[$entity_id]->name;
     $teaser_text = field_view_field('taxonomy_term', $term_fields[$entity_id], 'field_teaser_text', array('label' => 'hidden'));
     $output .= '<div class="fields-row row-'.$count.' '.$odd_even.'"><div class="field-content field-title"><a href="'.$nodelink.'">'.$nodetitle.'</a></div>
         <div class="field-content field-summary">'.render($teaser_text).'</div></div>';
+    */
+    $output = render($term_teaser);
     return $output;
 }
