@@ -504,7 +504,6 @@ a {
     padding-bottom: 20px;
     @include clearfix;
     h3 {
-      color: $dark-blue;
       margin: 0;
     }
     .node {
@@ -963,6 +962,11 @@ a {
                 content: " >";
               }
             }
+            .group-date-type {
+              font-family: $univers-cond;
+              font-weight: bold;
+              font-style: italic;
+            }
 
           }
         }
@@ -979,10 +983,27 @@ a {
   }
 }
 
+// publication node styling
+.node-publication {
+  .group-date-type {
+    .field {
+      display: inline;
+    }
+    .field-name-field-publication-type {
+      &:before {
+        content: ", ";
+      }
+    }
+  }
+}
+
 // case study, publication section
 .node-type-case-study, .node-type-publication {
-  .field-name-field-cs-subtitle {
-
+  .group-date-type {
+    font-size: 1.5em;
+    font-family: $univers-cond;
+    font-weight: bold;
+    margin-bottom: 1em;
   }
   .field-name-field-cs-image {
     float: right;
@@ -1027,19 +1048,21 @@ a {
       .group-right {
         background-size: cover;
         background-position-x: center;
+        background-position-y: center;
       }
 
       p {
         margin: 0;
-        font-size: 1.5em;
+        font-size: 1.125em;
         line-height: 1.5em;
+        font-family: $univers-light;
       }
       h2 {
         margin-bottom: 0;
         font-size: 1.875rem;
       }
       img {
-        display: block;
+        display: none;
         visibility: hidden;
         width: 100%;
       }
