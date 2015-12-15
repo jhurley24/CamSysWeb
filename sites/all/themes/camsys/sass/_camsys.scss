@@ -439,12 +439,13 @@ a {
             border-bottom: 1px $gray solid;
           }
           .menu {
-            font-family: $univers;
+            font-family: $univers-cond-light;
             li {
-              font-size: .9375rem;
+              font-size: 1.125rem;
               border: none;
               line-height: 1.5em;
               padding: 0;
+              margin-left: 15px;
               a {
               }
               &.is-expanded {
@@ -459,6 +460,7 @@ a {
                   display: none;
                   li {
                     font-family: $univers-cond-light;
+                    font-size: .9375rem;
                   }
                 }
                 &.active {

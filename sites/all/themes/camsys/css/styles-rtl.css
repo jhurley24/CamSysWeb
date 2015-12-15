@@ -251,9 +251,9 @@ ul {
   /* line 251, ../sass/layouts/_responsive.scss */
   .sidebar-first #content {
     float: right;
-    width: 75%;
+    width: 66.66667%;
     margin-right: 25%;
-    margin-left: -100%;
+    margin-left: -91.66667%;
   }
   /* line 257, ../sass/layouts/_responsive.scss */
   .sidebar-first .region-sidebar-first {
@@ -305,9 +305,9 @@ ul {
   /* line 287, ../sass/layouts/_responsive.scss */
   .two-sidebars .region-sidebar-first {
     float: right;
-    width: 16.66667%;
+    width: 25%;
     margin-right: 0%;
-    margin-left: -16.66667%;
+    margin-left: -25%;
   }
   /* line 292, ../sass/layouts/_responsive.scss */
   .two-sidebars .region-sidebar-second {
