@@ -268,6 +268,7 @@ a {
               background-color: $very-dark-blue;
               position: absolute;
               padding: 5px 20px;
+              width: 100%;
               li {
                 float: none;
                 font-size: 14px;
@@ -920,6 +921,7 @@ a {
         color: $very-dark-blue;
         font-size: 1.5rem;
         font-weight: normal;
+        margin-bottom: 20px;
       }
       ul {
         margin: 0;
@@ -933,8 +935,35 @@ a {
               font-size: 1.125rem;
               margin: 0;
               font-weight: bold;
+              line-height: normal;
+            }
+            .field-name-field-publication-image {
+              float: left;
+              margin-right: 20px;
+              margin-top: 5px;
+              img {
+                border: 1px $very-dark-blue solid;
+                width: 75px;
+
+              }
+            }
+            .field-name-field-cs-subtitle, .field-name-field-publication-subtitle {
+              font-family: $univers-cond;
+              font-style: italic;
+              font-weight: bold;
+            }
+            .field-name-body, p, .field-name-node-link {
+              display: inline;
+              margin: 0;
 
             }
+            .field-name-node-link {
+              padding-left: 5px;
+              a:after {
+                content: " >";
+              }
+            }
+
           }
         }
       }
@@ -947,6 +976,21 @@ a {
         }
       }
     }
+  }
+}
+
+// case study, publication section
+.node-type-case-study, .node-type-publication {
+  .field-name-field-cs-subtitle {
+
+  }
+  .field-name-field-cs-image {
+    float: right;
+    margin-left: 20px;
+  }
+  .field-name-field-publication-image {
+    float: left;
+    margin-right: 20px;
   }
 }
 
@@ -970,6 +1014,19 @@ a {
         float: none;
         display: table-cell;
         vertical-align: top;
+        padding: 16px;
+      }
+      .group-left {
+        .field {
+          margin: 0px 20px;
+        }
+        .field-name-body {
+          margin-bottom: 20px;
+        }
+      }
+      .group-right {
+        background-size: cover;
+        background-position-x: center;
       }
 
       p {
@@ -986,22 +1043,7 @@ a {
         visibility: hidden;
         width: 100%;
       }
-      .group-left, .group-right {
-        padding: 16px;
-        width: 50%;
-      }
-      .group-left {
-        .field {
-          margin: 0px 20px;
-        }
-        .field-name-body {
-          margin-bottom: 20px;
-        }
-      }
-      .group-right {
-        background-size: cover;
-        background-position-x: center;
-      }
+
     }
     .landing-page-subpages {
       .views-row, .fields-row, .node, .taxonomy-term {
@@ -1021,6 +1063,10 @@ a {
       .views-field-body, .field-summary {
         font-size: 1.5em;
         line-height: 1.5em;
+
+      }
+      p {
+        margin: 0;
       }
     }
   }

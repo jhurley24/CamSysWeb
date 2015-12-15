@@ -28,10 +28,10 @@ function case_study_field_default_field_instances() {
         'label' => 'hidden',
         'module' => 'text',
         'settings' => array(
-          'trim_length' => 600,
+          'trim_length' => 200,
         ),
         'type' => 'text_summary_or_trimmed',
-        'weight' => 1,
+        'weight' => 2,
       ),
     ),
     'entity_type' => 'node',
@@ -55,6 +55,94 @@ function case_study_field_default_field_instances() {
     ),
   );
 
+  // Exported field_instance: 'node-case_study-field_cs_date'.
+  $field_instances['node-case_study-field_cs_date'] = array(
+    'bundle' => 'case_study',
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 5,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 11,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_cs_date',
+    'label' => 'CS Date',
+    'required' => FALSE,
+    'settings' => array(
+      'default_value' => 'now',
+      'default_value2' => 'same',
+      'default_value_code' => '',
+      'default_value_code2' => '',
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'module' => 'date',
+      'settings' => array(
+        'increment' => 15,
+        'input_format' => 'm/d/Y - H:i:s',
+        'input_format_custom' => '',
+        'label_position' => 'above',
+        'text_parts' => array(),
+        'year_range' => '-3:+3',
+      ),
+      'type' => 'date_text',
+      'weight' => 9,
+    ),
+  );
+
+  // Exported field_instance: 'node-case_study-field_cs_featured'.
+  $field_instances['node-case_study-field_cs_featured'] = array(
+    'bundle' => 'case_study',
+    'default_value' => array(
+      0 => array(
+        'value' => 0,
+      ),
+    ),
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 3,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 10,
+      ),
+    ),
+    'ds_extras_field_template' => '',
+    'entity_type' => 'node',
+    'field_name' => 'field_cs_featured',
+    'label' => 'Featured Case Study',
+    'required' => 0,
+    'settings' => array(
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'options',
+      'settings' => array(
+        'display_label' => 1,
+      ),
+      'type' => 'options_onoff',
+      'weight' => 10,
+    ),
+  );
+
   // Exported field_instance: 'node-case_study-field_cs_image'.
   $field_instances['node-case_study-field_cs_image'] = array(
     'bundle' => 'case_study',
@@ -75,7 +163,7 @@ function case_study_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 8,
+        'weight' => 12,
       ),
     ),
     'entity_type' => 'node',
@@ -142,10 +230,11 @@ function case_study_field_default_field_instances() {
         'weight' => 0,
       ),
       'teaser' => array(
-        'label' => 'above',
+        'label' => 'hidden',
+        'module' => 'text',
         'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 9,
+        'type' => 'text_default',
+        'weight' => 1,
       ),
     ),
     'entity_type' => 'node',
@@ -178,13 +267,13 @@ function case_study_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 3,
+        'weight' => 4,
       ),
       'teaser' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 10,
+        'weight' => 13,
       ),
     ),
     'ds_extras_field_template' => '',
@@ -207,7 +296,9 @@ function case_study_field_default_field_instances() {
   // Translatables
   // Included for use with string extractors like potx.
   t('Body');
+  t('CS Date');
   t('CS Image');
+  t('Featured Case Study');
   t('Subtitle');
   t('Topic');
 
