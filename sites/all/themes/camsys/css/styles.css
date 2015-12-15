@@ -3197,49 +3197,49 @@ a {
   list-style: none;
 }
 /* line 929, ../sass/_camsys.scss */
-.section-publications #main #content .topic-content-list .item-list ul li {
-  margin: 0;
+.section-publications #main #content .topic-content-list .item-list ul li.views-row {
+  margin: 0 0 20px 0;
   padding: 0;
 }
 /* line 933, ../sass/_camsys.scss */
-.section-publications #main #content .topic-content-list .item-list ul li .node h2 {
+.section-publications #main #content .topic-content-list .item-list ul li.views-row .node h2 {
   font-size: 1.125rem;
   margin: 0;
   font-weight: bold;
   line-height: normal;
 }
 /* line 939, ../sass/_camsys.scss */
-.section-publications #main #content .topic-content-list .item-list ul li .node .field-name-field-publication-image {
+.section-publications #main #content .topic-content-list .item-list ul li.views-row .node .field-name-field-publication-image {
   float: left;
   margin-right: 20px;
   margin-top: 5px;
 }
 /* line 943, ../sass/_camsys.scss */
-.section-publications #main #content .topic-content-list .item-list ul li .node .field-name-field-publication-image img {
+.section-publications #main #content .topic-content-list .item-list ul li.views-row .node .field-name-field-publication-image img {
   border: 1px #3F4D55 solid;
   width: 75px;
 }
 /* line 949, ../sass/_camsys.scss */
-.section-publications #main #content .topic-content-list .item-list ul li .node .field-name-field-cs-subtitle, .section-publications #main #content .topic-content-list .item-list ul li .node .field-name-field-publication-subtitle {
+.section-publications #main #content .topic-content-list .item-list ul li.views-row .node .field-name-field-cs-subtitle, .section-publications #main #content .topic-content-list .item-list ul li.views-row .node .field-name-field-publication-subtitle {
   font-family: "univers_cond", Arial, Helvetica;
   font-style: italic;
   font-weight: bold;
 }
 /* line 954, ../sass/_camsys.scss */
-.section-publications #main #content .topic-content-list .item-list ul li .node .field-name-body, .section-publications #main #content .topic-content-list .item-list ul li .node p, .section-publications #main #content .topic-content-list .item-list ul li .node .field-name-node-link {
+.section-publications #main #content .topic-content-list .item-list ul li.views-row .node .field-name-body, .section-publications #main #content .topic-content-list .item-list ul li.views-row .node p, .section-publications #main #content .topic-content-list .item-list ul li.views-row .node .field-name-node-link {
   display: inline;
   margin: 0;
 }
 /* line 959, ../sass/_camsys.scss */
-.section-publications #main #content .topic-content-list .item-list ul li .node .field-name-node-link {
+.section-publications #main #content .topic-content-list .item-list ul li.views-row .node .field-name-node-link {
   padding-left: 5px;
 }
 /* line 961, ../sass/_camsys.scss */
-.section-publications #main #content .topic-content-list .item-list ul li .node .field-name-node-link a:after {
+.section-publications #main #content .topic-content-list .item-list ul li.views-row .node .field-name-node-link a:after {
   content: " >";
 }
 /* line 965, ../sass/_camsys.scss */
-.section-publications #main #content .topic-content-list .item-list ul li .node .group-date-type {
+.section-publications #main #content .topic-content-list .item-list ul li.views-row .node .group-date-type {
   font-family: "univers_cond", Arial, Helvetica;
   font-weight: bold;
   font-style: italic;

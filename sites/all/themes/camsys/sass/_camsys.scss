@@ -926,8 +926,8 @@ a {
         margin: 0;
         padding: 0;
         list-style: none;
-        li {
-          margin: 0;
+        li.views-row {
+          margin: 0 0 20px 0;
           padding: 0;
           .node {
             h2 {
