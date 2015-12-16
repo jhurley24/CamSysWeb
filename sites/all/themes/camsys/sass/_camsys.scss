@@ -291,6 +291,7 @@ a {
                   li {
                     text-transform: none;
                     font-weight: normal;
+                    font-family: $univers-cond;
                     a {
                     }
                     &.is-expanded {
@@ -319,6 +320,15 @@ a {
                       }
                     }
                   }
+                }
+
+              }
+
+            }
+            &.services-products {
+              .menu .menu {
+                li {
+                  font-family: $univers;
                 }
               }
             }
@@ -1014,6 +1024,22 @@ a {
   .field-name-field-publication-image {
     float: left;
     margin-right: 20px;
+  }
+}
+
+// insights
+.section-insights, .node-article {
+  h2 {
+    margin-bottom: 0px;
+  }
+  .field-name-content-author {
+    .block {
+      margin: 0;
+      font-weight: bold;
+    }
+  }
+  .field-name-post-date {
+    font-style: italic;
   }
 }
 
