@@ -33,6 +33,7 @@ features[field_instance][] = node-case_study-field_cs_date
 features[field_instance][] = node-case_study-field_cs_featured
 features[field_instance][] = node-case_study-field_cs_image
 features[field_instance][] = node-case_study-field_cs_subtitle
+features[field_instance][] = node-case_study-field_tags
 features[field_instance][] = node-case_study-field_topic
 features[node][] = case_study
 features[taxonomy][] = topics

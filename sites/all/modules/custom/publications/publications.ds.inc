@@ -19,16 +19,12 @@ function publications_ds_field_settings_info() {
   $ds_fieldsetting->settings = array(
     'field_publication_date' => array(
       'formatter_settings' => array(
-        'ft' => array(
-          'func' => 'theme_ds_field_minimal',
-        ),
+        'ft' => array(),
       ),
     ),
     'field_publication_type' => array(
       'formatter_settings' => array(
-        'ft' => array(
-          'func' => 'theme_ds_field_minimal',
-        ),
+        'ft' => array(),
       ),
     ),
   );
@@ -119,19 +115,21 @@ function publications_ds_layout_settings_info() {
       'ds_content' => array(
         0 => 'group_date_type',
         1 => 'field_publication_image',
-        2 => 'field_publication_date',
-        3 => 'body',
-        4 => 'field_publication_file',
-        5 => 'field_publication_type',
+        2 => 'body',
+        3 => 'field_publication_date',
+        4 => 'field_publication_type',
+        5 => 'field_publication_file',
+        6 => 'field_tags',
       ),
     ),
     'fields' => array(
       'group_date_type' => 'ds_content',
       'field_publication_image' => 'ds_content',
-      'field_publication_date' => 'ds_content',
       'body' => 'ds_content',
-      'field_publication_file' => 'ds_content',
+      'field_publication_date' => 'ds_content',
       'field_publication_type' => 'ds_content',
+      'field_publication_file' => 'ds_content',
+      'field_tags' => 'ds_content',
     ),
     'classes' => array(),
     'wrappers' => array(

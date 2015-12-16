@@ -130,12 +130,14 @@ function case_study_ds_layout_settings_info() {
         0 => 'field_cs_subtitle',
         1 => 'field_cs_image',
         2 => 'body',
+        3 => 'field_tags',
       ),
     ),
     'fields' => array(
       'field_cs_subtitle' => 'ds_content',
       'field_cs_image' => 'ds_content',
       'body' => 'ds_content',
+      'field_tags' => 'ds_content',
     ),
     'classes' => array(),
     'wrappers' => array(
