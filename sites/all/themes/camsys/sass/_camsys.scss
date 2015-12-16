@@ -1029,16 +1029,20 @@ a {
 
 // insights
 .section-insights, .node-article {
-  h2 {
+  h2, .views-field-title {
     margin-bottom: 0px;
+    font-size: 1.5rem;
+    font-family: $univers-cond;
+    font-weight: bold;
+    line-height: 2em;
   }
-  .field-name-content-author {
-    .block {
+  .field-name-content-author, .views-field-field-last-name {
+    .block, .field-content {
       margin: 0;
       font-weight: bold;
     }
   }
-  .field-name-post-date {
+  .field-name-post-date, .views-field-created {
     font-style: italic;
   }
 }
