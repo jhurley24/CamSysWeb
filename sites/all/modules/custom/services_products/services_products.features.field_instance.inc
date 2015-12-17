@@ -258,6 +258,13 @@ function services_products_field_default_field_instances() {
         'type' => 'hidden',
         'weight' => 1,
       ),
+      'token' => array(
+        'label' => 'hidden',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 1,
+      ),
     ),
     'entity_type' => 'taxonomy_term',
     'field_name' => 'field_teaser_text',

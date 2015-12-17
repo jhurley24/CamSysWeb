@@ -25,6 +25,32 @@ function services_products_ds_field_settings_info() {
   );
   $export['node|products_services|default'] = $ds_fieldsetting;
 
+  $ds_fieldsetting = new stdClass();
+  $ds_fieldsetting->api_version = 1;
+  $ds_fieldsetting->id = 'taxonomy_term|services|token';
+  $ds_fieldsetting->entity_type = 'taxonomy_term';
+  $ds_fieldsetting->bundle = 'services';
+  $ds_fieldsetting->view_mode = 'token';
+  $ds_fieldsetting->settings = array(
+    'title' => array(
+      'weight' => '0',
+      'label' => 'hidden',
+      'format' => 'default',
+      'formatter_settings' => array(
+        'link' => '1',
+        'wrapper' => 'h2',
+        'class' => '',
+        'ft' => array(),
+      ),
+    ),
+    'more_link' => array(
+      'weight' => '2',
+      'label' => 'hidden',
+      'format' => 'default',
+    ),
+  );
+  $export['taxonomy_term|services|token'] = $ds_fieldsetting;
+
   return $export;
 }
 
@@ -98,6 +124,38 @@ function services_products_ds_layout_settings_info() {
     'layout_disable_css' => 0,
   );
   $export['node|products_services|default'] = $ds_layout;
+
+  $ds_layout = new stdClass();
+  $ds_layout->api_version = 1;
+  $ds_layout->id = 'taxonomy_term|services|token';
+  $ds_layout->entity_type = 'taxonomy_term';
+  $ds_layout->bundle = 'services';
+  $ds_layout->view_mode = 'token';
+  $ds_layout->layout = 'ds_1col';
+  $ds_layout->settings = array(
+    'regions' => array(
+      'ds_content' => array(
+        0 => 'title',
+        1 => 'field_teaser_text',
+        2 => 'more_link',
+      ),
+    ),
+    'fields' => array(
+      'title' => 'ds_content',
+      'field_teaser_text' => 'ds_content',
+      'more_link' => 'ds_content',
+    ),
+    'classes' => array(),
+    'wrappers' => array(
+      'ds_content' => 'div',
+    ),
+    'layout_wrapper' => 'div',
+    'layout_attributes' => '',
+    'layout_attributes_merge' => 1,
+    'layout_link_attribute' => '',
+    'layout_link_custom' => '',
+  );
+  $export['taxonomy_term|services|token'] = $ds_layout;
 
   return $export;
 }
