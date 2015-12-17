@@ -1033,7 +1033,7 @@ a {
   }
 }
 
-// insights
+// insights, news
 .recent-posts-landing, .node-article {
   h2, .views-field-title {
     margin-bottom: 0px;
@@ -1064,8 +1064,8 @@ a {
     margin: 0px;
   }
 }
-.recent-posts {
-  .view-row {
+.recent-posts, .news-list {
+  .views-row {
     margin-bottom: 5px;
   }
 }

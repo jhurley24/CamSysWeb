@@ -3328,7 +3328,7 @@ a {
 }
 
 /* line 1068, ../sass/_camsys.scss */
-.recent-posts .view-row {
+.recent-posts .views-row, .news-list .views-row {
   margin-bottom: 5px;
 }
 
