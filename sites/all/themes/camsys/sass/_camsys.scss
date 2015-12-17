@@ -1031,10 +1031,13 @@ a {
     float: left;
     margin-right: 20px;
   }
+  .label-above {
+    font-weight: bold;
+  }
 }
 
 // insights, news
-.recent-posts-landing, .node-article {
+.recent-posts-landing, .node-article, .node-news {
   h2, .views-field-title {
     margin-bottom: 0px;
     font-size: 1.5rem;
@@ -1051,9 +1054,12 @@ a {
   .field-name-post-date, .views-field-created {
     font-style: italic;
   }
-  .field-name-field-image {
+  .field-name-field-image, .field-name-field-news-image {
     float: right;
     margin-left: 20px;
+  }
+  .label-above {
+    font-weight: bold;
   }
 }
 .recent-posts-landing {
@@ -1066,9 +1072,10 @@ a {
 }
 .recent-posts, .news-list {
   .views-row {
-    margin-bottom: 5px;
+    margin-bottom: 10px;
   }
 }
+
 
 // careers
 .section-careers {
