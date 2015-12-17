@@ -1052,6 +1052,60 @@ a {
   }
 }
 
+// careers
+.section-careers {
+  #main {
+    #content {
+      .landing-page-subpages {
+        @include zen-grid-item(12, 1);
+        .node {
+          padding: 10px;
+          box-sizing: border-box;
+          background-color: $dark-blue;
+          min-height: 281px;
+          width: calc(25% - 20px);
+          margin-right: 20px;
+          background-size: cover;
+          .field-name-title {
+            h2 {
+              font-size: 2rem;
+              line-height: normal;
+              a {
+                color: $white;
+              }
+            }
+          }
+          .field-name-body, .field-name-node-link {
+            display: none;
+          }
+          &:nth-child(4) {
+            clear: none;
+            .field-name-title {
+              a:after {
+                content: "\3009";
+                font-size: 100px;
+                color: $white;
+                float: right;
+                display: block;
+                margin-top: 40px;
+              }
+            }
+          }
+          &:first-child {
+            background-image: url('/sites/all/themes/camsys/images/culture-community.jpg');
+          }
+          &:nth-child(2) {
+            background-image: url('/sites/all/themes/camsys/images/opportunity-advancement.jpg');
+          }
+          &:nth-child(3) {
+            background-image: url('/sites/all/themes/camsys/images/rewards-benefits.jpg');
+          }
+        }
+      }
+    }
+  }
+}
+
 // landing page styling
 .node-type-landing-page {
   h1.page__title {
@@ -1061,6 +1115,12 @@ a {
     .breadcrumb {
       display: none;
     }
+    .group-left {
+      width: 66%;
+    }
+    .group-right {
+      width: 34%;
+    }
     padding-top: 20px;
     .node:not(.node-teaser) {
       background-color: $light-green;
@@ -1068,7 +1128,6 @@ a {
       margin-bottom: 20px;
       display: table;
       .group-left, .group-right {
-        padding: 0;
         float: none;
         display: table-cell;
         vertical-align: top;
@@ -1142,14 +1201,36 @@ a {
   &.section-markets #main .node.node-landing-page {
     background-color: $purple;
   }
+  &.section-insights #main .node.node-landing-page {
+    background-color: $light-blue;
+  }
+  &.section-careers #main .node.node-landing-page {
+    background-color: $very-dark-blue;
+  }
+  &.section-careers {
+    #main {
+      .node {
+        .group-right {
+          .caption {
+            font-size: 3em;
+            float: right;
+            margin-top: 20px;
+            margin-right: 20px;
+            font-family: $univers_cond;
+          }
+        }
+      }
+      .landing-page-subpages {
+        @include desktop {
+
+        }
+      }
+    }
+  }
   @include mobile {
     .node {
-      .group-left {
-        width: 66%;
-      }
-      .group-right {
-        width: 34%;
-      }
+
+
     }
     /*
     .group-left, .group-right {
@@ -1166,10 +1247,23 @@ a {
   }
   @include desktop {
     #main {
-      .node {
+      max-width: 100%;
+      #content {
+        padding: 0;
+      }
+      .region-content-bottom {
+        max-width: $desktop-width;
+        margin: 0 auto;
+      }
+      .node:not(.node-teaser) {
+        padding: 0 calc((100% - 1200px) / 2);
         .group-left {
           //@include zen-grid-item(4, 1);
           width: 34%;
+          padding-left: 0;
+          .field-name-body, .field-name-title {
+            margin-left: 0;
+          }
         }
         .group-right {
           //@include zen-grid-item(8, 5);
