@@ -22,6 +22,13 @@ function landing_page_ds_field_settings_info() {
       'label' => 'hidden',
       'format' => 'default',
     ),
+    'field_landing_page_image' => array(
+      'formatter_settings' => array(
+        'ft' => array(
+          'func' => 'theme_field',
+        ),
+      ),
+    ),
   );
   $export['node|landing_page|default'] = $ds_fieldsetting;
 
@@ -42,6 +49,20 @@ function landing_page_ds_layout_settings_info() {
   $ds_layout->view_mode = 'default';
   $ds_layout->layout = 'ds_2col';
   $ds_layout->settings = array(
+    'regions' => array(
+      'left' => array(
+        0 => 'title',
+        1 => 'body',
+      ),
+      'right' => array(
+        2 => 'field_landing_page_image',
+      ),
+    ),
+    'fields' => array(
+      'title' => 'left',
+      'body' => 'left',
+      'field_landing_page_image' => 'right',
+    ),
     'classes' => array(),
     'wrappers' => array(
       'left' => 'div',
@@ -53,20 +74,6 @@ function landing_page_ds_layout_settings_info() {
     'layout_link_attribute' => '',
     'layout_link_custom' => '',
     'layout_disable_css' => 1,
-    'regions' => array(
-      'left' => array(
-        0 => 'title',
-        1 => 'body',
-      ),
-      'right' => array(
-        0 => 'field_landing_page_image',
-      ),
-    ),
-    'fields' => array(
-      'title' => 'left',
-      'body' => 'left',
-      'field_landing_page_image' => 'right',
-    ),
   );
   $export['node|landing_page|default'] = $ds_layout;
 
