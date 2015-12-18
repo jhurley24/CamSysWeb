@@ -1180,7 +1180,7 @@ a {
           .field-name-body, .field-name-node-link {
             display: none;
           }
-          &:nth-child(4) {
+          &:nth-child(4n+4) {
             clear: none;
             .field-name-title {
               a:after {

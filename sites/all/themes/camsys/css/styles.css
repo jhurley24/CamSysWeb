@@ -3464,11 +3464,11 @@ a {
   display: none;
 }
 /* line 1183, ../sass/_camsys.scss */
-.section-careers #main #content .landing-page-subpages .node:nth-child(4) {
+.section-careers #main #content .landing-page-subpages .node:nth-child(4n+4) {
   clear: none;
 }
 /* line 1186, ../sass/_camsys.scss */
-.section-careers #main #content .landing-page-subpages .node:nth-child(4) .field-name-title a:after {
+.section-careers #main #content .landing-page-subpages .node:nth-child(4n+4) .field-name-title a:after {
   content: "\3009";
   font-size: 100px;
   color: #ffffff;
