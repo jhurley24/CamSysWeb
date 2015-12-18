@@ -30,13 +30,19 @@ function contact_section_context_default_contexts() {
           'module' => 'block',
           'delta' => '8',
           'region' => 'content',
-          'weight' => '-32',
+          'weight' => '-10',
+        ),
+        'entityform_block-contact_form' => array(
+          'module' => 'entityform_block',
+          'delta' => 'contact_form',
+          'region' => 'content',
+          'weight' => '-9',
         ),
         'block-9' => array(
           'module' => 'block',
           'delta' => '9',
           'region' => 'content',
-          'weight' => '1',
+          'weight' => '-8',
         ),
         'block-6' => array(
           'module' => 'block',

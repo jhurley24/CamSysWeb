@@ -8,6 +8,7 @@ dependencies[] = ctools
 dependencies[] = email
 dependencies[] = entity
 dependencies[] = entityform
+dependencies[] = entityform_block
 dependencies[] = features
 dependencies[] = list
 dependencies[] = options

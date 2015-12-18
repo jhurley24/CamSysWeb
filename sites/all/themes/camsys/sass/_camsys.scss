@@ -115,7 +115,7 @@ a {
 
       }
     }
-    @include desktop-max {
+    @include smalldesktop-max {
       .block-search, .secondary-menu {
         margin-right: 100px;
       }
@@ -233,7 +233,7 @@ a {
 
     }
 
-    @include desktop {
+    @include smalldesktop {
       .main-menu {
         clear: both;
         .block-title {
@@ -269,6 +269,7 @@ a {
               position: absolute;
               padding: 5px 20px;
               width: 100%;
+              min-width: 200px;
               li {
                 float: none;
                 font-size: 14px;
@@ -630,6 +631,7 @@ a {
 .front {
   #main {
     padding-top: 20px;
+    max-width: 100%;
     p {
       margin: 0;
     }
@@ -639,6 +641,7 @@ a {
       }
     }
     #content {
+      padding: 0;
       .help-form, .case-study, .region-content-top {
         color: $white;
         background-size: cover;
@@ -677,7 +680,7 @@ a {
         }
         .form-item {
           margin: 0;
-          display: block;
+          display: inline;
           input[type=text] {
             height: 25px;
           }
@@ -690,6 +693,7 @@ a {
         text-align: center;
         padding: 20px 0;
         margin: 0;
+        background-size: cover;
         .inner, .view {
           max-width: 800px;
           margin: 0 auto;
@@ -715,6 +719,10 @@ a {
         padding: 30px 75px;
         margin-bottom: 20px;
         @include clearfix;
+        .view {
+          max-width: 1200px;
+          margin: 0 auto;
+        }
         .section, .views-row {
           padding: 35px;
           box-sizing: border-box;
@@ -775,13 +783,18 @@ a {
         }
       }
       .news-events, .insights-block {
+        max-width: 782px;
+        margin: 0 auto;
         @include desktop {
           width: 66%;
           margin: 0 auto;
           @include clearfix;
         }
-        .item {
+        .item, .views-row {
           margin-bottom: 10px;
+          .views-field-title, .views-field-view-node {
+            font-weight: bold;
+          }
         }
       }
     }

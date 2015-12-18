@@ -65,6 +65,18 @@
   }
 }
 
+@mixin smalldesktop {
+  @media (min-width: #{$smalldesktop-width}) {
+    @content;
+  }
+}
+
+@mixin smalldesktop-max {
+  @media (max-width: #{$smalldesktop-width - 1px}) {
+    @content;
+  }
+}
+
 @mixin desktop-max {
   @media (max-width: #{$desktop-width - 1px}) {
     @content;
