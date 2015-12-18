@@ -405,6 +405,7 @@ a {
 #main {
   color: $dark-gray;
   line-height: 1.5em;
+  margin-bottom: 40px;
   h1.page__title {
     line-height: normal;
     margin-bottom: .5em;
@@ -662,7 +663,7 @@ a {
         box-sizing: border-box;
         line-height: normal;
         .inner {
-          max-width: 800px;
+          max-width: 900px;
           margin: 0 auto;
         }
 
@@ -932,7 +933,6 @@ a {
 
 // location page styling
 .node-location {
-
   @include desktop {
     .group-left {
       width: 50%;
@@ -940,6 +940,14 @@ a {
     }
     .group-right, .group-middle {
       width: 25%;
+    }
+
+  }
+}
+.node-type-location {
+  #content {
+    @include desktop {
+      @include zen-grid-item(9, 4);
     }
   }
 }
