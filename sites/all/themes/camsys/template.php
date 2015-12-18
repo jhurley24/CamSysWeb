@@ -69,10 +69,10 @@ function camsys_preprocess_page(&$variables, $hook) {
  * @param $hook
  *   The name of the template being rendered ("node" in this case.)
  */
-/* -- Delete this line if you want to use this function
 function camsys_preprocess_node(&$variables, $hook) {
-  $variables['sample_variable'] = t('Lorem ipsum.');
-
+    // get path url after last "/" and add it to node class
+    $path_array = explode('/', drupal_get_path_alias('node/'.$variables['nid']));
+    $variables['classes_array'][] = 'node-' . array_pop($path_array);
   // Optionally, run node-type-specific preprocess functions, like
   // camsys_preprocess_node_page() or camsys_preprocess_node_story().
   $function = __FUNCTION__ . '_' . $variables['node']->type;

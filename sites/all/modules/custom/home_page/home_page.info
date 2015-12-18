@@ -1,0 +1,16 @@
+name = Home Page
+core = 7.x
+package = Features
+version = 7.x-1.0
+dependencies[] = context
+dependencies[] = ds
+dependencies[] = search
+dependencies[] = views
+features[context][] = home_blocks
+features[ctools][] = context:context:3
+features[ctools][] = views:views_default:3.0
+features[features_api][] = api:2
+features[views_view][] = cs_sections
+features[views_view][] = featured_case_studies
+features_exclude[dependencies][ctools] = ctools
+project path = sites/all/modules/custom

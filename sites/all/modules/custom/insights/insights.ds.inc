@@ -18,12 +18,12 @@ function insights_ds_field_settings_info() {
   $ds_fieldsetting->view_mode = 'default';
   $ds_fieldsetting->settings = array(
     'content_author' => array(
-      'weight' => '0',
+      'weight' => '1',
       'label' => 'hidden',
       'format' => 'default',
     ),
     'post_date' => array(
-      'weight' => '1',
+      'weight' => '2',
       'label' => 'hidden',
       'format' => 'ds_post_date_short',
     ),
@@ -38,13 +38,11 @@ function insights_ds_field_settings_info() {
   $ds_fieldsetting->view_mode = 'teaser';
   $ds_fieldsetting->settings = array(
     'content_author' => array(
-      'weight' => '1',
+      'weight' => '2',
       'label' => 'hidden',
       'format' => 'default',
       'formatter_settings' => array(
-        'ft' => array(
-          'func' => 'theme_ds_field_minimal',
-        ),
+        'ft' => array(),
       ),
     ),
     'title' => array(
@@ -55,26 +53,20 @@ function insights_ds_field_settings_info() {
         'link' => '1',
         'wrapper' => 'h2',
         'class' => '',
-        'ft' => array(
-          'func' => 'theme_ds_field_minimal',
-        ),
+        'ft' => array(),
       ),
+    ),
+    'author' => array(
+      'weight' => '1',
+      'label' => 'hidden',
+      'format' => 'author',
     ),
     'post_date' => array(
-      'weight' => '2',
+      'weight' => '3',
       'label' => 'hidden',
-      'format' => 'ds_post_date_long',
+      'format' => 'ds_post_date_short',
       'formatter_settings' => array(
-        'ft' => array(
-          'func' => 'theme_ds_field_minimal',
-        ),
-      ),
-    ),
-    'body' => array(
-      'formatter_settings' => array(
-        'ft' => array(
-          'func' => 'theme_ds_field_minimal',
-        ),
+        'ft' => array(),
       ),
     ),
   );
@@ -123,14 +115,16 @@ function insights_ds_layout_settings_info() {
   $ds_layout->settings = array(
     'regions' => array(
       'ds_content' => array(
-        0 => 'content_author',
-        1 => 'post_date',
-        2 => 'field_image',
-        3 => 'body',
-        4 => 'field_tags',
+        0 => 'sharethis',
+        1 => 'content_author',
+        2 => 'post_date',
+        3 => 'field_image',
+        4 => 'body',
+        5 => 'field_tags',
       ),
     ),
     'fields' => array(
+      'sharethis' => 'ds_content',
       'content_author' => 'ds_content',
       'post_date' => 'ds_content',
       'field_image' => 'ds_content',
@@ -160,13 +154,15 @@ function insights_ds_layout_settings_info() {
     'regions' => array(
       'ds_content' => array(
         0 => 'title',
-        1 => 'content_author',
-        2 => 'post_date',
-        3 => 'body',
+        1 => 'author',
+        2 => 'content_author',
+        3 => 'post_date',
+        4 => 'body',
       ),
     ),
     'fields' => array(
       'title' => 'ds_content',
+      'author' => 'ds_content',
       'content_author' => 'ds_content',
       'post_date' => 'ds_content',
       'body' => 'ds_content',

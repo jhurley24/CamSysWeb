@@ -539,12 +539,17 @@ a {
       }
     }
     // read more link styles
-    .field-name-node-link, .views-field-view-node, .field-name-more-link {
+    .field-name-node-link, .views-field-view-node, .field-name-more-link, .readmore {
       a:after {
         content: " \00BB";
       }
     }
-
+    .label-above, .label-inline {
+      font-weight: bold;
+    }
+    .label-inline {
+      display: inline;
+    }
     @include tablet-min {
       .columns.col-3 {
         li {
@@ -634,7 +639,7 @@ a {
       }
     }
     #content {
-      .help-form, .case-study {
+      .help-form, .case-study, .region-content-top {
         color: $white;
         background-size: cover;
         text-align: center;
@@ -647,11 +652,13 @@ a {
         }
 
       }
-      .help-form {
+      .help-form, .region-content-top {
         background-image: url(../images/home_top_image.jpg);
         font-family: $univers-cond_light;
         font-size: 1.875em;
         padding: 40px;
+        min-height: 315px;
+        color: $white;
         p.feature {
           font-family: $univers-light;
           font-size: 3rem;
@@ -676,22 +683,31 @@ a {
           }
         }
       }
-      .case-study {
+      .case-study, .featured-case-study {
         background-image: url(../images/home_case_study_image.jpg);
         font-size: 1.5em;
         line-height: 1.5em;
-        .inner {
-          max-width: 590px;
+        text-align: center;
+        padding: 20px 0;
+        margin: 0;
+        .inner, .view {
+          max-width: 800px;
+          margin: 0 auto;
         }
-        h3 {
+        color: $white;
+        a {
+          color: $white;
+        }
+        h3, h2 {
           font-family: univers_cond_light;
           color: $white;
           text-transform: uppercase;
           margin-bottom: 10px;
           font-size: 1.875rem;
         }
-        .title {
+        .title, .views-field-title {
           font-weight: bold;
+
         }
       }
       .cs-sections {
@@ -699,7 +715,7 @@ a {
         padding: 30px 75px;
         margin-bottom: 20px;
         @include clearfix;
-        .section {
+        .section, .views-row {
           padding: 35px;
           box-sizing: border-box;
           font-size: 1.5em;
@@ -713,39 +729,52 @@ a {
           &:last-child {
             margin-right: 0;
           }
-          .title {
+
+          .title, .field-name-title h2 {
             font-family: univers_cond_light;
             color: $white;
             text-transform: uppercase;
             font-size: 1.875rem;
             line-height: normal;
+            margin: 0;
           }
           .description {
 
           }
-          .readmore {
-            a {
-              color: $white;
-            }
+          a {
+            color: $white;
           }
-          &.markets {
+
+          .node-about {
+            background-color: $light-green;
+          }
+          &.markets, .node-markets {
             background-color: $purple;
           }
-          &.services-products {
+          &.services-products, .node-services-products {
             background-color: $dark-green;
           }
-          &.publications {
+          &.publications, .node-publications {
             background-color: $dark-blue;
           }
-          &.insights {
+          &.insights, .node-insights {
             background-color: $light-blue;
           }
-          &.contact {
+          &.contact, .node-contact {
             background-color: $orange;
           }
         }
+        .views-row {
+          padding: 0;
+          background: none;
+          .node {
+            min-height: 350px;
+            padding: 35px;
+            box-sizing: border-box;
+          }
+        }
       }
-      .news-events {
+      .news-events, .insights-block {
         @include desktop {
           width: 66%;
           margin: 0 auto;
@@ -878,6 +907,7 @@ a {
 
 // location page styling
 .node-location {
+
   @include desktop {
     .group-left {
       width: 50%;
@@ -1061,6 +1091,9 @@ a {
   .label-above {
     font-weight: bold;
   }
+  .sharethis-buttons {
+    float: right;
+  }
 }
 .recent-posts-landing {
   .views-row {
@@ -1069,12 +1102,43 @@ a {
   p {
     margin: 0px;
   }
+  @include tablet-min {
+    float: left;
+    width: 75%;
+  }
+
 }
 .recent-posts, .news-list {
   .views-row {
     margin-bottom: 10px;
   }
 }
+.block.insights-search {
+
+  .views-exposed-widget {
+    padding: 0;
+    float: none;
+    margin-bottom: 10px;
+  }
+  label {
+    color: $dark-gray;
+  }
+  .form-item {
+    input[type=text] {
+      width: 100%;
+    }
+  }
+  input[type=submit] {
+    margin-top: 10px;
+  }
+  .region-content-bottom & {
+    @include tablet-min {
+      float: right;
+      width: 16.666%;
+    }
+  }
+}
+
 
 
 // careers
@@ -1146,6 +1210,21 @@ a {
 .node-news {
   .field-name-post-date {
     font-style: italic;
+  }
+}
+
+// contact
+.section-contact {
+  h1.title {
+    display: none;
+  }
+  .view-location-list {
+    p {
+      margin: 0px;
+    }
+  }
+  .entityform {
+    margin-bottom: 20px;
   }
 }
 
@@ -1332,6 +1411,23 @@ a {
           color: $gray;
         }
       }
+    }
+  }
+}
+
+// form styling
+form {
+  input[type=submit] {
+    background-color: $dark-blue;
+    border: none;
+    color: $white;
+    padding: 5px 20px;
+  }
+  &.entityform {
+    input[type=text], textarea {
+      background-color: #eaeaea;
+      border: none;
+      padding: 5px;
     }
   }
 }
