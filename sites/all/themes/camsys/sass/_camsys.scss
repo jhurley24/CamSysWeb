@@ -941,6 +941,13 @@ a {
     .group-right, .group-middle {
       width: 25%;
     }
+    .field-name-field-location-image {
+      margin-top: 20px;
+      img {
+        width: 200%;
+        max-width: 200%;
+      }
+    }
 
   }
 }
