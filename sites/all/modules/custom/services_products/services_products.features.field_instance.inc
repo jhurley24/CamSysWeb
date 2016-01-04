@@ -245,6 +245,45 @@ function services_products_field_default_field_instances() {
     ),
   );
 
+  // Exported field_instance: 'node-products_services-field_tags'.
+  $field_instances['node-products_services-field_tags'] = array(
+    'bundle' => 'products_services',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'taxonomy',
+        'settings' => array(),
+        'type' => 'taxonomy_term_reference_link',
+        'weight' => 16,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_tags',
+    'label' => 'Tags',
+    'required' => FALSE,
+    'settings' => array(
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'module' => 'taxonomy',
+      'settings' => array(
+        'autocomplete_path' => 'taxonomy/autocomplete',
+        'size' => 60,
+      ),
+      'type' => 'taxonomy_autocomplete',
+      'weight' => 39,
+    ),
+  );
+
   // Exported field_instance: 'taxonomy_term-services-field_teaser_text'.
   $field_instances['taxonomy_term-services-field_teaser_text'] = array(
     'bundle' => 'services',
@@ -293,6 +332,7 @@ function services_products_field_default_field_instances() {
   t('Learn More');
   t('Publication Reference');
   t('Service Reference');
+  t('Tags');
   t('Teaser Text');
 
   return $field_instances;

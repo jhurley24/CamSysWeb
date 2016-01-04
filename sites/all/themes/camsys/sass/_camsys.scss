@@ -259,7 +259,6 @@ a {
             background: none;
             position: relative;
             font-size: 1.25rem;
-
             a {
 
             }
@@ -301,6 +300,7 @@ a {
                 .menu {
                   position: relative;
                   padding: 0;
+                  display: none;
                   li {
                     text-transform: none;
                     font-weight: normal;
@@ -334,12 +334,17 @@ a {
                     }
                   }
                 }
-
+                &.active-trail {
+                  .menu {
+                    display: block;
+                  }
+                }
               }
 
             }
             &.services-products {
               .menu .menu {
+                display: block;
                 li {
                   font-family: $univers;
                 }
@@ -668,13 +673,16 @@ a {
         }
 
       }
-      .help-form, .region-content-top {
+      .region-content-top {
         background-image: url(../images/home_top_image.jpg);
         font-family: $univers-cond_light;
         font-size: 1.875em;
         padding: 40px;
         min-height: 315px;
         color: $white;
+        form {
+          font-size: 1rem;
+        }
         p.feature {
           font-family: $univers-light;
           font-size: 3rem;
@@ -696,6 +704,8 @@ a {
           display: inline;
           input[type=text] {
             height: 25px;
+            font-size: 1rem;
+            width: 250px;
           }
         }
       }
@@ -1073,6 +1083,15 @@ a {
 
 // publication node styling
 .node-publication {
+  .group-left {
+    float: left;
+    width: 140px;
+    margin-right: -140px;
+  }
+  .group-right {
+    float: left;
+    margin-left: 140px;
+  }
   .group-date-type {
     .field {
       display: inline;

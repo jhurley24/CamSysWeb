@@ -26,11 +26,11 @@ function home_page_context_default_contexts() {
   $context->reactions = array(
     'block' => array(
       'blocks' => array(
-        'search-form' => array(
-          'module' => 'search',
-          'delta' => 'form',
+        'global_filter-global_filter_1' => array(
+          'module' => 'global_filter',
+          'delta' => 'global_filter_1',
           'region' => 'content',
-          'weight' => '-10',
+          'weight' => '-9',
         ),
         'views-featured_case_studies-block_1' => array(
           'module' => 'views',
@@ -59,6 +59,56 @@ function home_page_context_default_contexts() {
   // Included for use with string extractors like potx.
   t('home');
   $export['home_blocks'] = $context;
+
+  $context = new stdClass();
+  $context->disabled = FALSE; /* Edit this to true to make a default context disabled initially */
+  $context->api_version = 3;
+  $context->name = 'search_results';
+  $context->description = '';
+  $context->tag = 'Search';
+  $context->conditions = array(
+    'views' => array(
+      'values' => array(
+        'search_results:page' => 'search_results:page',
+      ),
+    ),
+  );
+  $context->reactions = array(
+    'block' => array(
+      'blocks' => array(
+        'global_filter-global_filter_1' => array(
+          'module' => 'global_filter',
+          'delta' => 'global_filter_1',
+          'region' => 'content',
+          'weight' => '-37',
+        ),
+        'views-search_results-block_3' => array(
+          'module' => 'views',
+          'delta' => 'search_results-block_3',
+          'region' => 'sidebar_first',
+          'weight' => '-10',
+        ),
+        'views-search_results-block_1' => array(
+          'module' => 'views',
+          'delta' => 'search_results-block_1',
+          'region' => 'sidebar_second',
+          'weight' => '-10',
+        ),
+        'views-search_results-block_2' => array(
+          'module' => 'views',
+          'delta' => 'search_results-block_2',
+          'region' => 'sidebar_second',
+          'weight' => '-9',
+        ),
+      ),
+    ),
+  );
+  $context->condition_mode = 0;
+
+  // Translatables
+  // Included for use with string extractors like potx.
+  t('Search');
+  $export['search_results'] = $context;
 
   return $export;
 }

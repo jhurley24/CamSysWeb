@@ -202,7 +202,6 @@ function camsys_breadcrumb($variables) {
 // alter search block form
 function camsys_form_alter (&$form, &$form_state, $form_id) {
   if ($form_id == 'search_block_form') {
-
     $form['actions']['submit'] = array(
         '#type' => 'submit',
         '#value' => '',
@@ -211,5 +210,23 @@ function camsys_form_alter (&$form, &$form_state, $form_id) {
         '#suffix' => '</i></button>',
     );
   }
+    if ($form_id == 'global_filter_1') {
+        $form['submit']['#value'] = 'Search';
+        $form['submit']['#attributes']['style'] = array( 'display: none' );
+        $form['submit']['#suffix'] = '<button type="submit" class="btn btn-primary"><i class="fa fa-search"></i></button>';
+        $form['#action'] = '/search-results';
+        /*
+        $form['submit'] = array(
+            '#type' => 'submit',
+            '#value' => 'Search',
+            '#attributes' => array( 'style' => array( 'display: none' )), // hide the input field
+            '#prefix' => '<button type="submit" class="btn btn-primary"><i class="fa fa-search">',
+            '#suffix' => '</i></button>',
+            '#weight' => 2
+        );
+        */
+    }
+    //dsm($form);
 
 }
+
