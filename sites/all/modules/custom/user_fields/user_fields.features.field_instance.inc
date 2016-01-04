@@ -133,6 +133,82 @@ function user_fields_field_default_field_instances() {
     ),
   );
 
+  // Exported field_instance: 'user-user-field_interests'.
+  $field_instances['user-user-field_interests'] = array(
+    'bundle' => 'user',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'taxonomy',
+        'settings' => array(),
+        'type' => 'taxonomy_term_reference_link',
+        'weight' => 11,
+      ),
+      'token' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'ds_extras_field_template' => '',
+    'entity_type' => 'user',
+    'field_name' => 'field_interests',
+    'label' => 'Interests',
+    'required' => 0,
+    'settings' => array(
+      'user_register_form' => 0,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'options',
+      'settings' => array(),
+      'type' => 'options_select',
+      'weight' => 13,
+    ),
+  );
+
+  // Exported field_instance: 'user-user-field_keep_informed'.
+  $field_instances['user-user-field_keep_informed'] = array(
+    'bundle' => 'user',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'taxonomy',
+        'settings' => array(),
+        'type' => 'taxonomy_term_reference_link',
+        'weight' => 12,
+      ),
+      'token' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'ds_extras_field_template' => '',
+    'entity_type' => 'user',
+    'field_name' => 'field_keep_informed',
+    'label' => 'Keep Informed',
+    'required' => 0,
+    'settings' => array(
+      'user_register_form' => 0,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'options',
+      'settings' => array(),
+      'type' => 'options_select',
+      'weight' => 14,
+    ),
+  );
+
   // Exported field_instance: 'user-user-field_last_name'.
   $field_instances['user-user-field_last_name'] = array(
     'bundle' => 'user',
@@ -290,6 +366,46 @@ function user_fields_field_default_field_instances() {
     ),
   );
 
+  // Exported field_instance: 'user-user-field_specialty'.
+  $field_instances['user-user-field_specialty'] = array(
+    'bundle' => 'user',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'entityreference',
+        'settings' => array(
+          'link' => FALSE,
+        ),
+        'type' => 'entityreference_label',
+        'weight' => 10,
+      ),
+      'token' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'ds_extras_field_template' => '',
+    'entity_type' => 'user',
+    'field_name' => 'field_specialty',
+    'label' => 'Specialty',
+    'required' => 0,
+    'settings' => array(
+      'user_register_form' => 0,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'options',
+      'settings' => array(),
+      'type' => 'options_select',
+      'weight' => 12,
+    ),
+  );
+
   // Exported field_instance: 'user-user-field_user_photo'.
   $field_instances['user-user-field_user_photo'] = array(
     'bundle' => 'user',
@@ -372,10 +488,13 @@ function user_fields_field_default_field_instances() {
   t('Bio');
   t('Credentials');
   t('First Name');
+  t('Interests');
+  t('Keep Informed');
   t('Last Name');
   t('Location');
   t('Phone');
   t('Position');
+  t('Specialty');
   t('User Photo');
 
   return $field_instances;
