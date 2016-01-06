@@ -27,12 +27,17 @@ function user_fields_field_group_info() {
       1 => 'field_first_name',
       2 => 'field_last_name',
     ),
-    'format_type' => 'fieldset',
+    'format_type' => 'div',
     'format_settings' => array(
       'label' => '',
       'instance_settings' => array(
         'classes' => 'group-name-credentials field-group-fieldset',
         'description' => '',
+        'show_label' => 1,
+        'label_element' => 'h3',
+        'effect' => 'none',
+        'speed' => 'fast',
+        'id' => '',
       ),
       'formatter' => 'open',
     ),

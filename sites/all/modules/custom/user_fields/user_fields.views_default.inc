@@ -256,10 +256,11 @@ function user_fields_views_default_views() {
 
   /* Display: Master */
   $handler = $view->new_display('default', 'Master', 'default');
-  $handler->display->display_options['title'] = 'User Dashboard';
+  $handler->display->display_options['title'] = 'My CS Page';
+  $handler->display->display_options['css_class'] = 'user-page-results';
   $handler->display->display_options['use_more_always'] = FALSE;
   $handler->display->display_options['access']['type'] = 'perm';
-  $handler->display->display_options['access']['perm'] = 'access user profiles';
+  $handler->display->display_options['access']['perm'] = 'change own username';
   $handler->display->display_options['cache']['type'] = 'none';
   $handler->display->display_options['query']['type'] = 'views_query';
   $handler->display->display_options['query']['options']['distinct'] = TRUE;
@@ -367,12 +368,15 @@ function user_fields_views_default_views() {
 
   /* Display: Page */
   $handler = $view->new_display('page', 'Page', 'page');
-  $handler->display->display_options['path'] = 'user-dashboard';
+  $handler->display->display_options['defaults']['header'] = FALSE;
+  $handler->display->display_options['path'] = 'cs-my-page';
 
   /* Display: User Case Studies */
   $handler = $view->new_display('block', 'User Case Studies', 'block_1');
   $handler->display->display_options['defaults']['title'] = FALSE;
   $handler->display->display_options['title'] = 'Case Studies';
+  $handler->display->display_options['defaults']['css_class'] = FALSE;
+  $handler->display->display_options['css_class'] = 'user-case-studies';
   $handler->display->display_options['defaults']['fields'] = FALSE;
   /* Field: Content: Title */
   $handler->display->display_options['fields']['title_1']['id'] = 'title_1';
@@ -414,6 +418,8 @@ function user_fields_views_default_views() {
   /* Display: User Pub and CS */
   $handler = $view->new_display('block', 'User Pub and CS', 'block_2');
   $handler->display->display_options['defaults']['title'] = FALSE;
+  $handler->display->display_options['defaults']['css_class'] = FALSE;
+  $handler->display->display_options['css_class'] = 'user-pub-cs';
   $handler->display->display_options['defaults']['relationships'] = FALSE;
   /* Relationship: User: Interests (field_interests) */
   $handler->display->display_options['relationships']['field_interests_tid']['id'] = 'field_interests_tid';
@@ -487,7 +493,22 @@ function user_fields_views_default_views() {
   /* Display: User Contact Info */
   $handler = $view->new_display('block', 'User Contact Info', 'block_3');
   $handler->display->display_options['defaults']['title'] = FALSE;
+  $handler->display->display_options['title'] = 'Contacts';
+  $handler->display->display_options['defaults']['css_class'] = FALSE;
+  $handler->display->display_options['css_class'] = 'user-contact-info';
   $handler->display->display_options['defaults']['fields'] = FALSE;
+  /* Field: User: User Photo */
+  $handler->display->display_options['fields']['field_user_photo']['id'] = 'field_user_photo';
+  $handler->display->display_options['fields']['field_user_photo']['table'] = 'field_data_field_user_photo';
+  $handler->display->display_options['fields']['field_user_photo']['field'] = 'field_user_photo';
+  $handler->display->display_options['fields']['field_user_photo']['relationship'] = 'field_contact_reference_target_id';
+  $handler->display->display_options['fields']['field_user_photo']['label'] = '';
+  $handler->display->display_options['fields']['field_user_photo']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_user_photo']['click_sort_column'] = 'fid';
+  $handler->display->display_options['fields']['field_user_photo']['settings'] = array(
+    'image_style' => 'thumbnail',
+    'image_link' => '',
+  );
   /* Field: User: First Name */
   $handler->display->display_options['fields']['field_first_name']['id'] = 'field_first_name';
   $handler->display->display_options['fields']['field_first_name']['table'] = 'field_data_field_first_name';
@@ -539,6 +560,52 @@ function user_fields_views_default_views() {
     'products_services' => 'products_services',
   );
   $handler->display->display_options['block_description'] = 'User Contact Info';
+
+  /* Display: User Info */
+  $handler = $view->new_display('block', 'User Info', 'block_4');
+  $handler->display->display_options['defaults']['title'] = FALSE;
+  $handler->display->display_options['defaults']['css_class'] = FALSE;
+  $handler->display->display_options['css_class'] = 'user-info';
+  $handler->display->display_options['defaults']['header'] = FALSE;
+  /* Header: Global: Text area */
+  $handler->display->display_options['header']['area']['id'] = 'area';
+  $handler->display->display_options['header']['area']['table'] = 'views';
+  $handler->display->display_options['header']['area']['field'] = 'area';
+  $handler->display->display_options['header']['area']['content'] = '<p>This page has been created based on the pages you bookmarked and the specialty, interest and keep informed settings you configured on your user profile page. Click below to edit these settings in your profile.</p>
+<p><span class="button">[edit_node]</span></p>';
+  $handler->display->display_options['header']['area']['format'] = 'full_html';
+  $handler->display->display_options['header']['area']['tokenize'] = TRUE;
+  $handler->display->display_options['defaults']['fields'] = FALSE;
+  /* Field: User: Interests */
+  $handler->display->display_options['fields']['field_interests']['id'] = 'field_interests';
+  $handler->display->display_options['fields']['field_interests']['table'] = 'field_data_field_interests';
+  $handler->display->display_options['fields']['field_interests']['field'] = 'field_interests';
+  $handler->display->display_options['fields']['field_interests']['type'] = 'taxonomy_term_reference_plain';
+  $handler->display->display_options['fields']['field_interests']['delta_offset'] = '0';
+  /* Field: User: Keep Informed */
+  $handler->display->display_options['fields']['field_keep_informed']['id'] = 'field_keep_informed';
+  $handler->display->display_options['fields']['field_keep_informed']['table'] = 'field_data_field_keep_informed';
+  $handler->display->display_options['fields']['field_keep_informed']['field'] = 'field_keep_informed';
+  $handler->display->display_options['fields']['field_keep_informed']['type'] = 'taxonomy_term_reference_plain';
+  $handler->display->display_options['fields']['field_keep_informed']['delta_offset'] = '0';
+  /* Field: User: Specialty */
+  $handler->display->display_options['fields']['field_specialty']['id'] = 'field_specialty';
+  $handler->display->display_options['fields']['field_specialty']['table'] = 'field_data_field_specialty';
+  $handler->display->display_options['fields']['field_specialty']['field'] = 'field_specialty';
+  $handler->display->display_options['fields']['field_specialty']['settings'] = array(
+    'link' => 0,
+  );
+  $handler->display->display_options['fields']['field_specialty']['delta_offset'] = '0';
+  /* Field: User: Edit link */
+  $handler->display->display_options['fields']['edit_node']['id'] = 'edit_node';
+  $handler->display->display_options['fields']['edit_node']['table'] = 'users';
+  $handler->display->display_options['fields']['edit_node']['field'] = 'edit_node';
+  $handler->display->display_options['fields']['edit_node']['label'] = '';
+  $handler->display->display_options['fields']['edit_node']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['edit_node']['element_class'] = 'button';
+  $handler->display->display_options['fields']['edit_node']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['edit_node']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['edit_node']['text'] = 'Edit User Profile';
   $export['user_dashboard'] = $view;
 
   return $export;

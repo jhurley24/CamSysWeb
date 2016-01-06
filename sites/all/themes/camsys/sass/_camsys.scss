@@ -513,16 +513,14 @@ a {
   }
   .region-sidebar-second, .sidebar-block-style {
     color: $gray;
-    .block-title {
+    .block-title, h3 {
       font-size: 18px;
       text-transform: uppercase;
       margin: 0;
+      font-weight: normal;
     }
     h3 {
-      font-size: 18px;
-      margin-top: 0;
-      color: $gray;
-      font-weight: normal;
+      margin-top: 20px;
     }
     p {
       margin: 0;
@@ -600,6 +598,13 @@ a {
       }
       .share {
         background-image: url(../images/share_button.png);
+      }
+      .sharethis-wrapper {
+        display: none;
+        margin-bottom: 10px;
+        &.active {
+          display: block;
+        }
       }
     }
   }
@@ -699,6 +704,9 @@ a {
             display: none;
           }
         }
+        .field-type-taxonomy-term-reference {
+          display: inline;
+        }
         .form-item {
           margin: 0;
           display: inline;
@@ -706,6 +714,9 @@ a {
             height: 25px;
             font-size: 1rem;
             width: 250px;
+          }
+          label {
+            display: none;
           }
         }
       }
@@ -1287,6 +1298,76 @@ a {
   }
 }
 
+// custom search and user dashboard styling
+.custom-search-contacts {
+  .views-row {
+    margin-bottom: 20px;
+  }
+}
+.section-search-results {
+  #main {
+    padding-top: 130px;
+    #content {
+      .breadcrumb {
+        margin-top: -90px;
+        height: 90px;
+      }
+    }
+  }
+  #navigation {
+    padding: 0;
+    top: 70px;
+    color: $white;
+    .region-navigation {
+      background-color: $light-blue;
+      form {
+        padding: 10px 20px;
+        .field-name-field-tags {
+          display: inline-block;
+        }
+        .form-item {
+          margin: 0;
+          label, input {
+            display: inline;
+          }
+        }
+      }
+    }
+  }
+
+}
+
+.page-cs-my-page {
+  .user-info {
+    .views-label {
+      display: inline;
+      font-weight: bold;
+    }
+    .field-content {
+      display: inline;
+    }
+  }
+  .user-page-results {
+    .view-content {
+      h3 {
+        font-size: 1.5em;
+      }
+    }
+  }
+  #content {
+    .views-row {
+      margin-bottom: 20px;
+      p {
+        margin: 0;
+      }
+      .views-field-title, .views-field-title-1 {
+        font-weight: bold;
+      }
+    }
+  }
+
+}
+
 // landing page styling
 .node-type-landing-page {
   h1.page__title {
@@ -1489,6 +1570,14 @@ form {
       padding: 5px;
     }
   }
+}
+
+// button styling
+a.button, .button > a {
+  background-color: $dark-blue;
+  border: none;
+  color: $white;
+  padding: 5px 20px;
 }
 
 // custom chevron down arrow

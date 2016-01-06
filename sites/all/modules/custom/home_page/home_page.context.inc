@@ -79,8 +79,8 @@ function home_page_context_default_contexts() {
         'global_filter-global_filter_1' => array(
           'module' => 'global_filter',
           'delta' => 'global_filter_1',
-          'region' => 'content',
-          'weight' => '-37',
+          'region' => 'navigation',
+          'weight' => '-10',
         ),
         'views-search_results-block_3' => array(
           'module' => 'views',

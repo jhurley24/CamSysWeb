@@ -314,11 +314,17 @@ function home_page_views_default_views() {
   $handler = $view->new_display('block', 'Search Results Contacts', 'block_3');
   $handler->display->display_options['defaults']['title'] = FALSE;
   $handler->display->display_options['title'] = 'Contacts';
+  $handler->display->display_options['defaults']['css_class'] = FALSE;
+  $handler->display->display_options['css_class'] = 'custom-search-contacts';
   $handler->display->display_options['defaults']['style_plugin'] = FALSE;
   $handler->display->display_options['style_plugin'] = 'default';
   $handler->display->display_options['defaults']['style_options'] = FALSE;
   $handler->display->display_options['defaults']['row_plugin'] = FALSE;
   $handler->display->display_options['row_plugin'] = 'fields';
+  $handler->display->display_options['row_options']['inline'] = array(
+    'field_first_name' => 'field_first_name',
+    'field_last_name' => 'field_last_name',
+  );
   $handler->display->display_options['defaults']['row_options'] = FALSE;
   $handler->display->display_options['defaults']['relationships'] = FALSE;
   /* Relationship: Entity Reference: Referenced Entity */
@@ -326,12 +332,18 @@ function home_page_views_default_views() {
   $handler->display->display_options['relationships']['field_contact_reference_target_id']['table'] = 'field_data_field_contact_reference';
   $handler->display->display_options['relationships']['field_contact_reference_target_id']['field'] = 'field_contact_reference_target_id';
   $handler->display->display_options['defaults']['fields'] = FALSE;
-  /* Field: User: E-mail */
-  $handler->display->display_options['fields']['mail']['id'] = 'mail';
-  $handler->display->display_options['fields']['mail']['table'] = 'users';
-  $handler->display->display_options['fields']['mail']['field'] = 'mail';
-  $handler->display->display_options['fields']['mail']['relationship'] = 'field_contact_reference_target_id';
-  $handler->display->display_options['fields']['mail']['hide_empty'] = TRUE;
+  /* Field: User: User Photo */
+  $handler->display->display_options['fields']['field_user_photo']['id'] = 'field_user_photo';
+  $handler->display->display_options['fields']['field_user_photo']['table'] = 'field_data_field_user_photo';
+  $handler->display->display_options['fields']['field_user_photo']['field'] = 'field_user_photo';
+  $handler->display->display_options['fields']['field_user_photo']['relationship'] = 'field_contact_reference_target_id';
+  $handler->display->display_options['fields']['field_user_photo']['label'] = '';
+  $handler->display->display_options['fields']['field_user_photo']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_user_photo']['click_sort_column'] = 'fid';
+  $handler->display->display_options['fields']['field_user_photo']['settings'] = array(
+    'image_style' => 'thumbnail',
+    'image_link' => '',
+  );
   /* Field: User: First Name */
   $handler->display->display_options['fields']['field_first_name']['id'] = 'field_first_name';
   $handler->display->display_options['fields']['field_first_name']['table'] = 'field_data_field_first_name';
@@ -344,11 +356,23 @@ function home_page_views_default_views() {
   $handler->display->display_options['fields']['field_last_name']['table'] = 'field_data_field_last_name';
   $handler->display->display_options['fields']['field_last_name']['field'] = 'field_last_name';
   $handler->display->display_options['fields']['field_last_name']['relationship'] = 'field_contact_reference_target_id';
+  $handler->display->display_options['fields']['field_last_name']['label'] = '';
+  $handler->display->display_options['fields']['field_last_name']['element_label_colon'] = FALSE;
+  /* Field: User: E-mail */
+  $handler->display->display_options['fields']['mail']['id'] = 'mail';
+  $handler->display->display_options['fields']['mail']['table'] = 'users';
+  $handler->display->display_options['fields']['mail']['field'] = 'mail';
+  $handler->display->display_options['fields']['mail']['relationship'] = 'field_contact_reference_target_id';
+  $handler->display->display_options['fields']['mail']['label'] = '';
+  $handler->display->display_options['fields']['mail']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['mail']['hide_empty'] = TRUE;
   /* Field: User: Phone */
   $handler->display->display_options['fields']['field_phone']['id'] = 'field_phone';
   $handler->display->display_options['fields']['field_phone']['table'] = 'field_data_field_phone';
   $handler->display->display_options['fields']['field_phone']['field'] = 'field_phone';
   $handler->display->display_options['fields']['field_phone']['relationship'] = 'field_contact_reference_target_id';
+  $handler->display->display_options['fields']['field_phone']['label'] = '';
+  $handler->display->display_options['fields']['field_phone']['element_label_colon'] = FALSE;
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
   /* Filter criterion: Content: Published */

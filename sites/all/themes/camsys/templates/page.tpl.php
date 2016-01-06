@@ -6,6 +6,13 @@
  * Complete documentation for this file is available online.
  * @see https://drupal.org/node/1728148
  */
+$pagepath = drupal_get_path_alias($_GET['q']);
+$user_name = '';
+if ($pagepath == 'cs-my-page' || $pagepath == 'user-dashboard') {
+  $user_fields = user_load($user->uid);
+
+  $user_name = $user_fields->field_first_name['und'][0]['value'] . ' ' . $user_fields->field_last_name['und'][0]['value'];
+}
 ?>
 
 <div id="page">
@@ -58,7 +65,7 @@
       <a id="main-content"></a>
       <?php print render($title_prefix); ?>
       <?php if ($title): ?>
-        <h1 class="page__title title" id="page-title"><?php print $title; ?></h1>
+        <h1 class="page__title title" id="page-title"><?php print $user_name ? $user_name . ': ' : ''; ?><?php print $title; ?></h1>
       <?php endif; ?>
       <?php print render($title_suffix); ?>
       <?php print $messages; ?>
@@ -70,6 +77,7 @@
       <?php print render($page['content']); ?>
       <?php print render($page['content_bottom']); ?>
       <?php // print $feed_icons; ?>
+
     </div>
 
     <div id="navigation">
@@ -114,8 +122,17 @@
 
     <div class="save-share">
       <div class="inner">
+
+        <?php
+        $shareblock = module_invoke('sharethis','block_view','sharethis_block');
+        print render($shareblock['content']);
+        if (isset($node)) {
+          ?>
+          <span class="save"><?php print flag_create_link('bookmarks', $node->nid); ?></span>
+          <?php
+        }
+        ?>
         <span class="share">Share</span>
-        <span class="save">Save</span>
       </div>
     </div>
 

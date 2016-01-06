@@ -58,6 +58,8 @@ function camsys_preprocess_page(&$variables, $hook) {
     if(isset($variables['page']['content']['system_main']['no_content'])) {
         unset($variables['page']['content']['system_main']['no_content']);
     }
+
+
 }
 // */
 
@@ -79,6 +81,8 @@ function camsys_preprocess_node(&$variables, $hook) {
   if (function_exists($function)) {
     $function($variables, $hook);
   }
+
+
 }
 // */
 
@@ -226,7 +230,14 @@ function camsys_form_alter (&$form, &$form_state, $form_id) {
         );
         */
     }
+    //dsm($_POST);
     //dsm($form);
 
 }
 
+function camsys_global_filter_value_alter($name, &$value) {
+    // Global Filter for city using Smart IP.
+    if ($name == 'field_tags' && isset($value[0]['name'])) {
+        $value = $value[0]['name'];
+    }
+}

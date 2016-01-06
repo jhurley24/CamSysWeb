@@ -56,7 +56,18 @@ Drupal.behaviors.my_custom_behavior = {
       else {
         $(this).parent().addClass('active');
       }
-    })
+    });
+
+    // add global views search term to page title
+    var search_term = $('form.global-filter input[type=text]').attr('value');
+    if (search_term) {
+      $('h1.title').append(': <span>'+search_term+'</span>');
+    }
+
+    // toggle share block
+    $('.share').click(function() {
+      $('.sharethis-wrapper').addClass('active');
+    });
 
   }
 };

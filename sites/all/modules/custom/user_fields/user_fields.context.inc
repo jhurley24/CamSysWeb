@@ -26,6 +26,18 @@ function user_fields_context_default_contexts() {
   $context->reactions = array(
     'block' => array(
       'blocks' => array(
+        'views-user_dashboard-block_4' => array(
+          'module' => 'views',
+          'delta' => 'user_dashboard-block_4',
+          'region' => 'content',
+          'weight' => '-39',
+        ),
+        'views-flag_bookmarks-block_1' => array(
+          'module' => 'views',
+          'delta' => 'flag_bookmarks-block_1',
+          'region' => 'content',
+          'weight' => '-38',
+        ),
         'views-user_dashboard-block_3' => array(
           'module' => 'views',
           'delta' => 'user_dashboard-block_3',

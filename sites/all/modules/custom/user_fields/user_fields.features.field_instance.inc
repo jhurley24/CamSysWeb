@@ -22,7 +22,7 @@ function user_fields_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
-        'weight' => 6,
+        'weight' => 3,
       ),
       'token' => array(
         'label' => 'hidden',
@@ -114,13 +114,14 @@ function user_fields_field_default_field_instances() {
         'weight' => 2,
       ),
     ),
+    'ds_extras_field_template' => '',
     'entity_type' => 'user',
     'field_name' => 'field_first_name',
     'label' => 'First Name',
-    'required' => 0,
+    'required' => 1,
     'settings' => array(
       'text_processing' => 0,
-      'user_register_form' => 0,
+      'user_register_form' => 1,
     ),
     'widget' => array(
       'active' => 1,
@@ -145,7 +146,7 @@ function user_fields_field_default_field_instances() {
         'module' => 'taxonomy',
         'settings' => array(),
         'type' => 'taxonomy_term_reference_link',
-        'weight' => 11,
+        'weight' => 6,
       ),
       'token' => array(
         'label' => 'above',
@@ -183,7 +184,7 @@ function user_fields_field_default_field_instances() {
         'module' => 'taxonomy',
         'settings' => array(),
         'type' => 'taxonomy_term_reference_link',
-        'weight' => 12,
+        'weight' => 7,
       ),
       'token' => array(
         'label' => 'above',
@@ -231,13 +232,14 @@ function user_fields_field_default_field_instances() {
         'weight' => 3,
       ),
     ),
+    'ds_extras_field_template' => '',
     'entity_type' => 'user',
     'field_name' => 'field_last_name',
     'label' => 'Last Name',
-    'required' => 0,
+    'required' => 1,
     'settings' => array(
       'text_processing' => 0,
-      'user_register_form' => 0,
+      'user_register_form' => 1,
     ),
     'widget' => array(
       'active' => 1,
@@ -262,7 +264,7 @@ function user_fields_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 9,
+        'weight' => 12,
       ),
       'token' => array(
         'label' => 'above',
@@ -299,7 +301,7 @@ function user_fields_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_plain',
-        'weight' => 5,
+        'weight' => 2,
       ),
       'token' => array(
         'label' => 'hidden',
@@ -338,7 +340,7 @@ function user_fields_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
-        'weight' => 4,
+        'weight' => 1,
       ),
       'token' => array(
         'label' => 'hidden',
@@ -380,7 +382,7 @@ function user_fields_field_default_field_instances() {
           'link' => FALSE,
         ),
         'type' => 'entityreference_label',
-        'weight' => 10,
+        'weight' => 5,
       ),
       'token' => array(
         'label' => 'above',
@@ -420,7 +422,7 @@ function user_fields_field_default_field_instances() {
           'image_style' => '',
         ),
         'type' => 'image',
-        'weight' => 7,
+        'weight' => 4,
       ),
       'token' => array(
         'label' => 'hidden',

@@ -61,6 +61,7 @@ class global_filter_plugin_argument_default_global_filter_field extends views_pl
     }
     if ($filter_key) {
       $arg = global_filter_get_session_value($field_name);
+      //dsm($arg);
       if (isset($arg) && $arg != '' && $arg != array('')) {
         // Don't reduce array(0) to empty.
         if (is_array($arg) && $arg != array(0)) {
@@ -74,6 +75,7 @@ class global_filter_plugin_argument_default_global_filter_field extends views_pl
           if (empty($arg)) {
             return $exception_value;
           }
+
         }
         if (is_string($arg)) {
           if ($field = field_info_field($field_name)) {
@@ -110,7 +112,13 @@ class global_filter_plugin_argument_default_global_filter_field extends views_pl
       // Be careful with spaces: have seen "very cheap" interpreted as "cheap"
       $is_and = !empty($this->argument->options['break_phrase']) &&
         !empty($this->options['break_phrase_and']);
+      /* cqb
+      if (isset($arg['tid'])) {
+        $arg = $arg['tid'];
+      }
+      */
       return is_array($arg) ? implode($is_and ? ',' : '+', $arg) : $arg;
+
     }
 
     // No filter key, field or node property not found.
