@@ -55,5 +55,6 @@ features[flag][] = bookmarks
 features[user_role][] = Leadership
 features[user_role][] = Staff
 features[views_view][] = leadership_team
+features[views_view][] = saved_pages
 features[views_view][] = user_dashboard
 project path = sites/all/modules/custom

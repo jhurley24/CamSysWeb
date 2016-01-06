@@ -32,9 +32,9 @@ function user_fields_context_default_contexts() {
           'region' => 'content',
           'weight' => '-39',
         ),
-        'views-flag_bookmarks-block_1' => array(
+        'views-saved_pages-block' => array(
           'module' => 'views',
-          'delta' => 'flag_bookmarks-block_1',
+          'delta' => 'saved_pages-block',
           'region' => 'content',
           'weight' => '-38',
         ),
