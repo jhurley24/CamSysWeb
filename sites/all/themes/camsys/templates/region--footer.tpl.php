@@ -17,7 +17,7 @@
         <a href="#"><i class="fa fa-linkedin"></i></a>
       </div>
       <div class="copyright">
-        &copy; Copyright 2015 Cambridge Systematics. All rights reserved
+        &copy; Copyright 2016 Cambridge Systematics. All rights reserved
       </div>
     </div>
 
