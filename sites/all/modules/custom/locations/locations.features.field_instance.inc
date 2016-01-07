@@ -130,8 +130,8 @@ function locations_field_default_field_instances() {
           ),
           'leaflet_map' => 'google-roadmap',
           'popup' => array(
-            'show' => 0,
-            'text' => '',
+            'show' => 1,
+            'text' => '[node:field_location_address]',
           ),
           'vector_display' => array(
             'clickable' => 0,
