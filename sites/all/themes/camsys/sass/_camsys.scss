@@ -1452,6 +1452,9 @@ a {
       .taxonomy-term-description, p {
         margin: 0;
       }
+      .flag-bookmarks {
+        display: none;
+      }
     }
   }
   &.section-services-products #main .node {
