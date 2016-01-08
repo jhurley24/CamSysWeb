@@ -56,12 +56,7 @@ a {
     .block-search {
       float: right;
       clear: right;
-      .btn {
-        background-color: $light-green;
-        border: none;
-        height: 25px;
-        color: $white;
-      }
+
       .form-item {
         display: block;
         float: left;
@@ -694,11 +689,8 @@ a {
           padding: 10px 0;
         }
         .btn {
-          background-color: $light-green;
-          border: none;
           height: 25px;
           width: 25px;
-          color: $white;
           vertical-align: top;
           .fa {
             display: none;
@@ -710,6 +702,14 @@ a {
         .form-item {
           margin: 0;
           display: inline;
+          text-align: left;
+          #autocomplete {
+            li {
+              padding-left: 1em;
+              text-indent: -1em;
+            }
+
+          }
           input[type=text] {
             height: 25px;
             font-size: 1rem;
@@ -874,6 +874,21 @@ a {
           &.group-one-column {
             .group-left {
               width: 100%;
+            }
+          }
+        }
+        .field-name-ps-contact {
+          margin-top: 20px;
+        }
+        .group-right {
+          .field {
+            margin-bottom: 20px;
+            .label-above {
+              font-family: $univers-cond;
+              font-size: 18px;
+              text-transform: uppercase;
+              font-weight: normal;
+              color: $light-gray;
             }
           }
         }
@@ -1069,7 +1084,7 @@ a {
 
             }
             .field-name-node-link {
-              padding-left: 5px;
+              padding-left: 0px;
               a:after {
                 content: " >";
               }
@@ -1078,6 +1093,9 @@ a {
               font-family: $univers-cond;
               font-weight: bold;
               font-style: italic;
+            }
+            .flag-wrapper {
+              display: none;
             }
 
           }
@@ -1302,18 +1320,56 @@ a {
 }
 
 // custom search and user dashboard styling
-.custom-search-contacts {
-  .views-row {
-    margin-bottom: 20px;
+.section-search-results, .page-cs-my-page {
+  h1.title {
+      text-transform: capitalize;
   }
-}
-.section-search-results {
   #main {
     padding-top: 130px;
+    .custom-search-contacts {
+      .views-row {
+        margin-bottom: 20px;
+      }
+    }
+    .user-info {
+      .views-label {
+        display: inline;
+        font-weight: bold;
+      }
+      .field-content {
+        display: inline;
+      }
+    }
+    .user-page-results {
+
+    }
     #content {
-      .breadcrumb {
-        margin-top: -90px;
-        height: 90px;
+      .view-content {
+        h3 {
+          font-size: 1.5em;
+        }
+      }
+      .views-row {
+        margin-bottom: 20px;
+        p {
+          margin: 0;
+        }
+        .views-field-title, .views-field-title-1 {
+          font-weight: bold;
+        }
+      }
+    }
+    .region-sidebar-second {
+      .item-list {
+        ul {
+          list-style: none;
+          margin: 0;
+          padding: 0;
+          li {
+            margin: 0 0 5px 0;
+            padding: 0;
+          }
+        }
       }
     }
   }
@@ -1337,38 +1393,15 @@ a {
       }
     }
   }
-
 }
 
-.page-cs-my-page {
-  .user-info {
-    .views-label {
-      display: inline;
-      font-weight: bold;
-    }
-    .field-content {
-      display: inline;
-    }
-  }
-  .user-page-results {
-    .view-content {
-      h3 {
-        font-size: 1.5em;
-      }
-    }
-  }
+.section-search-results {
   #content {
-    .views-row {
-      margin-bottom: 20px;
-      p {
-        margin: 0;
-      }
-      .views-field-title, .views-field-title-1 {
-        font-weight: bold;
-      }
+    .breadcrumb {
+      margin-top: -90px;
+      height: 90px;
     }
   }
-
 }
 
 // landing page styling
@@ -1585,6 +1618,13 @@ a.button, .button > a {
   color: $white;
   padding: 5px 20px;
 }
+// search button
+.btn {
+  background-color: $light-green;
+  border: none;
+  height: 25px;
+  color: $white;
+}
 
 // custom chevron down arrow
 .chevron {
@@ -1606,4 +1646,29 @@ a.button, .button > a {
     top: -3px;
     border-top-color: $dark-blue;
   }
+}
+
+// custom print styling
+@media print {
+  .main-menu {
+    .block-title {
+      display: none;
+    }
+  }
+  // products/services list
+  #main {
+    #content {
+      .ps-term-list {
+        .item-list {
+          ul {
+            display: block;
+          }
+        }
+      }
+    }
+    .save-share {
+      display: none;
+    }
+  }
+
 }

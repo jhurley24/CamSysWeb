@@ -61,7 +61,7 @@ Drupal.behaviors.my_custom_behavior = {
     // add global views search term to page title
     var search_term = $('form.global-filter input[type=text]').attr('value');
     if (search_term) {
-      $('h1.title').append(': <span>'+search_term+'</span>');
+      $('h1.title').text(search_term);
     }
 
     // toggle share block

@@ -53,7 +53,7 @@ function case_study_ds_field_settings_info() {
       'label' => 'hidden',
       'format' => 'default',
       'formatter_settings' => array(
-        'link' => '0',
+        'link' => '1',
         'wrapper' => 'h2',
         'class' => '',
         'ft' => array(),
@@ -64,26 +64,22 @@ function case_study_ds_field_settings_info() {
       'label' => 'hidden',
       'format' => 'default',
       'formatter_settings' => array(
-        'link text' => 'Read',
+        'link text' => 'Read more',
         'wrapper' => '',
         'class' => '',
-        'ft' => array(
-          'func' => 'theme_ds_field_minimal',
-        ),
+        'ft' => array(),
       ),
     ),
     'body' => array(
       'formatter_settings' => array(
         'ft' => array(
-          'func' => 'theme_ds_field_minimal',
+          'func' => 'theme_field',
         ),
       ),
     ),
     'field_cs_subtitle' => array(
       'formatter_settings' => array(
-        'ft' => array(
-          'func' => 'theme_ds_field_minimal',
-        ),
+        'ft' => array(),
       ),
     ),
   );

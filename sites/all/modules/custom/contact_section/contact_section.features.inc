@@ -46,11 +46,11 @@ function contact_section_default_entityform_type() {
       "submissions_view" : "default",
       "user_submissions_view" : "default",
       "form_status" : "ENTITYFORM_OPEN",
-      "roles" : { "1" : "1", "2" : 0, "3" : 0, "4" : 0, "5" : 0, "6" : 0 },
+      "roles" : { "1" : "1", "2" : 0, "3" : 0, "4" : 0, "5" : 0, "6" : 0, "7" : 0 },
       "resubmit_action" : "new",
       "redirect_path" : "",
       "instruction_pre" : {
-        "value" : "\\u003Cp\\u003ETo send us a message complete the form below. We will direct\\u0026nbsp;your inquiry to the appropriate staff member and provide you\\u0026nbsp;with a timely response.\\u003C\\/p\\u003E\\r\\n\\r\\n\\u003Cp\\u003E\\u003Cem\\u003EFields market with a \\u003Cspan class=\\u0022form-required\\u0022\\u003E*\\u003C\\/span\\u003E are required.\\u003C\\/em\\u003E\\u003C\\/p\\u003E\\r\\n",
+        "value" : "\\u003Cp\\u003ETo send us a message complete the form below. We will direct\\u0026nbsp;your inquiry to the appropriate staff member and provide you\\u0026nbsp;with a timely response.\\u003C\\/p\\u003E\\r\\n\\r\\n\\u003Cp\\u003E\\u003Cem\\u003EFields marked\\u0026nbsp;with a \\u003Cspan class=\\u0022form-required\\u0022\\u003E*\\u003C\\/span\\u003E are required.\\u003C\\/em\\u003E\\u003C\\/p\\u003E\\r\\n",
         "format" : "full_html"
       },
       "current_type" : "contact_form",

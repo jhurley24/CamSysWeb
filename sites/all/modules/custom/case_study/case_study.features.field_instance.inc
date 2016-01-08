@@ -128,8 +128,16 @@ function case_study_field_default_field_instances() {
     'display' => array(
       'default' => array(
         'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
+        'module' => 'date',
+        'settings' => array(
+          'format_type' => 'long',
+          'fromto' => 'both',
+          'multiple_from' => '',
+          'multiple_number' => '',
+          'multiple_to' => '',
+          'show_remaining_days' => FALSE,
+        ),
+        'type' => 'date_default',
         'weight' => 18,
       ),
       'teaser' => array(
@@ -178,8 +186,9 @@ function case_study_field_default_field_instances() {
     'display' => array(
       'default' => array(
         'label' => 'above',
+        'module' => 'list',
         'settings' => array(),
-        'type' => 'hidden',
+        'type' => 'list_default',
         'weight' => 16,
       ),
       'teaser' => array(
@@ -374,8 +383,9 @@ function case_study_field_default_field_instances() {
     'display' => array(
       'default' => array(
         'label' => 'above',
+        'module' => 'taxonomy',
         'settings' => array(),
-        'type' => 'hidden',
+        'type' => 'taxonomy_term_reference_link',
         'weight' => 17,
       ),
       'teaser' => array(

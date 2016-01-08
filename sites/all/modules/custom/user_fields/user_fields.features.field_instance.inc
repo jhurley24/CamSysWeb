@@ -137,7 +137,7 @@ function user_fields_field_default_field_instances() {
   // Exported field_instance: 'user-user-field_interests'.
   $field_instances['user-user-field_interests'] = array(
     'bundle' => 'user',
-    'default_value' => NULL,
+    'default_value' => array(),
     'deleted' => 0,
     'description' => '',
     'display' => array(
@@ -167,7 +167,7 @@ function user_fields_field_default_field_instances() {
       'active' => 1,
       'module' => 'options',
       'settings' => array(),
-      'type' => 'options_select',
+      'type' => 'options_buttons',
       'weight' => 13,
     ),
   );
@@ -202,10 +202,13 @@ function user_fields_field_default_field_instances() {
       'user_register_form' => 0,
     ),
     'widget' => array(
-      'active' => 1,
-      'module' => 'options',
-      'settings' => array(),
-      'type' => 'options_select',
+      'active' => 0,
+      'module' => 'taxonomy',
+      'settings' => array(
+        'autocomplete_path' => 'taxonomy/autocomplete',
+        'size' => 60,
+      ),
+      'type' => 'taxonomy_autocomplete',
       'weight' => 14,
     ),
   );
@@ -371,7 +374,7 @@ function user_fields_field_default_field_instances() {
   // Exported field_instance: 'user-user-field_specialty'.
   $field_instances['user-user-field_specialty'] = array(
     'bundle' => 'user',
-    'default_value' => NULL,
+    'default_value' => array(),
     'deleted' => 0,
     'description' => '',
     'display' => array(
@@ -403,7 +406,7 @@ function user_fields_field_default_field_instances() {
       'active' => 1,
       'module' => 'options',
       'settings' => array(),
-      'type' => 'options_select',
+      'type' => 'options_buttons',
       'weight' => 12,
     ),
   );

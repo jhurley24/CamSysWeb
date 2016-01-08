@@ -126,9 +126,14 @@ if ($pagepath == 'cs-my-page' || $pagepath == 'user-dashboard') {
         <?php
         $shareblock = module_invoke('sharethis','block_view','sharethis_block');
         print render($shareblock['content']);
-        if (isset($node)) {
+        if (isset($node) && user_is_logged_in()) {
           ?>
-          <span class="save"><?php print flag_create_link('bookmarks', $node->nid); ?></span>
+          <span class="save"><?php print flag_create_link('bookmarks', $node->nid) ; ?></span>
+          <?php
+        }
+        else {
+          ?>
+          <span class="save"><a href="/user/login">Save</a></span>
           <?php
         }
         ?>

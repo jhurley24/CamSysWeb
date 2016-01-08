@@ -30,13 +30,13 @@ function user_fields_context_default_contexts() {
           'module' => 'views',
           'delta' => 'user_dashboard-block_4',
           'region' => 'content',
-          'weight' => '-39',
+          'weight' => '-41',
         ),
         'views-saved_pages-block' => array(
           'module' => 'views',
           'delta' => 'saved_pages-block',
           'region' => 'content',
-          'weight' => '-38',
+          'weight' => '-40',
         ),
         'views-user_dashboard-block_3' => array(
           'module' => 'views',

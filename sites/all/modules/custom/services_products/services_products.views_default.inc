@@ -33,10 +33,25 @@ function services_products_views_default_views() {
   $handler->display->display_options['pager']['options']['items_per_page'] = '5';
   $handler->display->display_options['style_plugin'] = 'default';
   $handler->display->display_options['row_plugin'] = 'fields';
+  $handler->display->display_options['row_options']['inline'] = array(
+    'field_first_name' => 'field_first_name',
+    'field_last_name' => 'field_last_name',
+  );
   /* Relationship: Entity Reference: Referencing entity */
   $handler->display->display_options['relationships']['reverse_field_contact_reference_node']['id'] = 'reverse_field_contact_reference_node';
   $handler->display->display_options['relationships']['reverse_field_contact_reference_node']['table'] = 'users';
   $handler->display->display_options['relationships']['reverse_field_contact_reference_node']['field'] = 'reverse_field_contact_reference_node';
+  /* Field: User: User Photo */
+  $handler->display->display_options['fields']['field_user_photo']['id'] = 'field_user_photo';
+  $handler->display->display_options['fields']['field_user_photo']['table'] = 'field_data_field_user_photo';
+  $handler->display->display_options['fields']['field_user_photo']['field'] = 'field_user_photo';
+  $handler->display->display_options['fields']['field_user_photo']['label'] = '';
+  $handler->display->display_options['fields']['field_user_photo']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_user_photo']['click_sort_column'] = 'fid';
+  $handler->display->display_options['fields']['field_user_photo']['settings'] = array(
+    'image_style' => 'thumbnail',
+    'image_link' => '',
+  );
   /* Field: User: First Name */
   $handler->display->display_options['fields']['field_first_name']['id'] = 'field_first_name';
   $handler->display->display_options['fields']['field_first_name']['table'] = 'field_data_field_first_name';

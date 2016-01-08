@@ -248,15 +248,14 @@ function services_products_field_default_field_instances() {
   // Exported field_instance: 'node-products_services-field_tags'.
   $field_instances['node-products_services-field_tags'] = array(
     'bundle' => 'products_services',
-    'default_value' => NULL,
+    'default_value' => array(),
     'deleted' => 0,
     'description' => '',
     'display' => array(
       'default' => array(
         'label' => 'above',
-        'module' => 'taxonomy',
         'settings' => array(),
-        'type' => 'taxonomy_term_reference_link',
+        'type' => 'hidden',
         'weight' => 16,
       ),
       'teaser' => array(
@@ -274,12 +273,13 @@ function services_products_field_default_field_instances() {
       'user_register_form' => FALSE,
     ),
     'widget' => array(
-      'module' => 'taxonomy',
+      'module' => 'options',
       'settings' => array(
+        'autocomplete_deluxe_path' => 'autocomplete_deluxe/taxonomy',
         'autocomplete_path' => 'taxonomy/autocomplete',
         'size' => 60,
       ),
-      'type' => 'taxonomy_autocomplete',
+      'type' => 'options_select',
       'weight' => 39,
     ),
   );

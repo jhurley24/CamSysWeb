@@ -1,7 +1,7 @@
 name = Publications
 core = 7.x
 package = Features
-version = 7.x-1.0
+version = 7.x-1.1
 dependencies[] = case_study
 dependencies[] = ctools
 dependencies[] = date

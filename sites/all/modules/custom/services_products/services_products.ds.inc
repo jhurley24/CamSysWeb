@@ -22,6 +22,20 @@ function services_products_ds_field_settings_info() {
       'label' => 'hidden',
       'format' => 'default',
     ),
+    'field_case_study_reference' => array(
+      'formatter_settings' => array(
+        'ft' => array(
+          'lb' => 'Case Studies',
+        ),
+      ),
+    ),
+    'field_publication_reference' => array(
+      'formatter_settings' => array(
+        'ft' => array(
+          'lb' => 'Publications',
+        ),
+      ),
+    ),
   );
   $export['node|products_services|default'] = $ds_fieldsetting;
 
