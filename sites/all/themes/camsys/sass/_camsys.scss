@@ -25,7 +25,7 @@ a {
 .header {
   padding-top:40px;
   position: relative;
-  z-index: 2;
+  z-index: 3;
   #logo {
     box-sizing: border-box;
     padding-right: 20px;
@@ -1493,7 +1493,10 @@ a {
       .views-field-body, .field-summary {
         font-size: 1.5em;
         line-height: 1.5em;
-
+      }
+      .field-name-body {
+        max-height: 7.5em;
+        overflow: hidden;
       }
       .taxonomy-term-description, p {
         margin: 0;

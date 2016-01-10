@@ -1,12 +1,15 @@
 name = Landing Page
 core = 7.x
 package = Features
-version = 7.x-1.0
+version = 7.x-1.1
+dependencies[] = context
 dependencies[] = ds
 dependencies[] = features
 dependencies[] = image
 dependencies[] = text
 dependencies[] = views
+features[context][] = landing_pages
+features[ctools][] = context:context:3
 features[ctools][] = ds:ds:1
 features[ctools][] = views:views_default:3.0
 features[ds_field_settings][] = node|landing_page|default

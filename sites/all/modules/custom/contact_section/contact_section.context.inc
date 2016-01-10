@@ -38,12 +38,6 @@ function contact_section_context_default_contexts() {
           'region' => 'content',
           'weight' => '-9',
         ),
-        'block-9' => array(
-          'module' => 'block',
-          'delta' => '9',
-          'region' => 'content',
-          'weight' => '-8',
-        ),
         'block-6' => array(
           'module' => 'block',
           'delta' => '6',
