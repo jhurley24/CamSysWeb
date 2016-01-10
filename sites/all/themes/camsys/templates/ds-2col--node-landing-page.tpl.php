@@ -4,7 +4,7 @@
  * @file
  * Display Suite 2 column template.
  */
-dsm($node);
+//dsm($node);
 ?>
 <<?php print $layout_wrapper; print $layout_attributes; ?> class="ds-2col <?php print $classes;?> clearfix">
 
