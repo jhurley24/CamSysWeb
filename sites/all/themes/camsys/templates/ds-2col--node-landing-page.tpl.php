@@ -4,7 +4,7 @@
  * @file
  * Display Suite 2 column template.
  */
-//dsm($node);
+dsm($node);
 ?>
 <<?php print $layout_wrapper; print $layout_attributes; ?> class="ds-2col <?php print $classes;?> clearfix">
 
@@ -18,7 +18,7 @@
 
   <<?php print $right_wrapper ?> class="group-right<?php print $right_classes; ?>">
     <?php
-    if ($node->nid == 45) {
+    if ($node->title == 'Careers') {
       $slideshow = module_invoke('views','block_view','careers_slideshow-block');
       print render($slideshow['content']);
     }
