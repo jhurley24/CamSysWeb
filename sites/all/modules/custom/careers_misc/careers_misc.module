@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the Careers & Misc feature.
+ */
+
+include_once 'careers_misc.features.inc';

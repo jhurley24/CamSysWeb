@@ -30,9 +30,11 @@ Drupal.behaviors.my_custom_behavior = {
 
     // landing page image background
     // find image from group right and add it as background for div
+
     var group_right = '.node-type-landing-page .node .group-right';
     var bk_img = $(group_right+' img').attr('src');
     $(group_right).css('background-image', 'url('+bk_img+')');
+    
 
     // remove links from menu items with .nolink class
     $('.block-menu-block li a.nolink').attr('href', 'javascript:void(0)');

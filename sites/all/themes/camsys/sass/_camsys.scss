@@ -32,6 +32,19 @@ a {
     img {
       max-width: 260px;
     }
+    @include tablet-min {
+      height: 130px;
+    }
+  }
+
+  .cs-tagline {
+    position: absolute;
+    left: 16px;
+    bottom: 0;
+    max-width: 260px;
+    img {
+      display: block;
+    }
   }
   .region-header {
     div {
@@ -1512,6 +1525,40 @@ a {
     #main {
       .node {
         .group-right {
+          padding: 0;
+          img {
+            display: block;
+            visibility: visible;
+          }
+          .flexslider {
+            display: none;
+            position: relative;
+            margin: 0;
+            padding: 0;
+            border: 0;
+            box-shadow: none;
+            .flex-control-nav {
+              position: absolute;
+              bottom: 0;
+              z-index: 10;
+            }
+            .slides {
+              .flex-caption {
+                position: absolute;
+                top: 0;
+                right: 0;
+                font-size: 3em;
+                float: right;
+                margin-top: 20px;
+                margin-right: 20px;
+                font-family: $univers_cond;
+
+              }
+            }
+            @include desktop {
+              display: block;
+            }
+          }
           .caption {
             font-size: 3em;
             float: right;
