@@ -167,6 +167,11 @@ function services_products_views_default_views() {
     ),
   );
   $handler->display->display_options['row_plugin'] = 'fields';
+  $handler->display->display_options['row_options']['inline'] = array(
+    'view_node_1' => 'view_node_1',
+    'view_node' => 'view_node',
+    'field_publication_file' => 'field_publication_file',
+  );
   /* Relationship: Taxonomy term: Content using Service Reference */
   $handler->display->display_options['relationships']['reverse_field_service_reference_node']['id'] = 'reverse_field_service_reference_node';
   $handler->display->display_options['relationships']['reverse_field_service_reference_node']['table'] = 'taxonomy_term_data';
@@ -199,22 +204,32 @@ function services_products_views_default_views() {
   $handler->display->display_options['fields']['title']['relationship'] = 'reverse_field_service_reference_node';
   $handler->display->display_options['fields']['title']['label'] = '';
   $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
+  /* Field: Content: Body */
+  $handler->display->display_options['fields']['body']['id'] = 'body';
+  $handler->display->display_options['fields']['body']['table'] = 'field_data_body';
+  $handler->display->display_options['fields']['body']['field'] = 'body';
+  $handler->display->display_options['fields']['body']['relationship'] = 'reverse_field_service_reference_node';
+  $handler->display->display_options['fields']['body']['label'] = '';
+  $handler->display->display_options['fields']['body']['alter']['text'] = '[body] [view_node_1] [view_node] [field_publication_file]';
+  $handler->display->display_options['fields']['body']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['body']['type'] = 'text_summary_or_trimmed';
+  $handler->display->display_options['fields']['body']['settings'] = array(
+    'trim_length' => '200',
+  );
   /* Field: Content: Link */
   $handler->display->display_options['fields']['view_node_1']['id'] = 'view_node_1';
   $handler->display->display_options['fields']['view_node_1']['table'] = 'views_entity_node';
   $handler->display->display_options['fields']['view_node_1']['field'] = 'view_node';
   $handler->display->display_options['fields']['view_node_1']['relationship'] = 'reverse_field_service_reference_node';
   $handler->display->display_options['fields']['view_node_1']['label'] = '';
-  $handler->display->display_options['fields']['view_node_1']['exclude'] = TRUE;
   $handler->display->display_options['fields']['view_node_1']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['view_node_1']['text'] = 'More';
+  $handler->display->display_options['fields']['view_node_1']['text'] = 'Read more';
   /* Field: Content: Link */
   $handler->display->display_options['fields']['view_node']['id'] = 'view_node';
   $handler->display->display_options['fields']['view_node']['table'] = 'views_entity_node';
   $handler->display->display_options['fields']['view_node']['field'] = 'view_node';
   $handler->display->display_options['fields']['view_node']['relationship'] = 'field_case_study_reference_target_id';
   $handler->display->display_options['fields']['view_node']['label'] = '';
-  $handler->display->display_options['fields']['view_node']['exclude'] = TRUE;
   $handler->display->display_options['fields']['view_node']['alter']['alter_text'] = TRUE;
   $handler->display->display_options['fields']['view_node']['alter']['text'] = '<span class="case-study">[view_node]</span>';
   $handler->display->display_options['fields']['view_node']['element_label_colon'] = FALSE;
@@ -226,25 +241,20 @@ function services_products_views_default_views() {
   $handler->display->display_options['fields']['field_publication_file']['field'] = 'field_publication_file';
   $handler->display->display_options['fields']['field_publication_file']['relationship'] = 'field_publication_reference_target_id';
   $handler->display->display_options['fields']['field_publication_file']['label'] = '';
-  $handler->display->display_options['fields']['field_publication_file']['exclude'] = TRUE;
   $handler->display->display_options['fields']['field_publication_file']['alter']['alter_text'] = TRUE;
   $handler->display->display_options['fields']['field_publication_file']['alter']['text'] = '<span class="publication"><a href="[field_publication_file]">Publication</a></span>';
   $handler->display->display_options['fields']['field_publication_file']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_publication_file']['click_sort_column'] = 'fid';
   $handler->display->display_options['fields']['field_publication_file']['type'] = 'file_url_plain';
-  /* Field: Content: Body */
-  $handler->display->display_options['fields']['body']['id'] = 'body';
-  $handler->display->display_options['fields']['body']['table'] = 'field_data_body';
-  $handler->display->display_options['fields']['body']['field'] = 'body';
-  $handler->display->display_options['fields']['body']['relationship'] = 'reverse_field_service_reference_node';
-  $handler->display->display_options['fields']['body']['label'] = '';
-  $handler->display->display_options['fields']['body']['alter']['alter_text'] = TRUE;
-  $handler->display->display_options['fields']['body']['alter']['text'] = '[body] [view_node_1] [view_node] [field_publication_file]';
-  $handler->display->display_options['fields']['body']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['body']['type'] = 'text_summary_or_trimmed';
-  $handler->display->display_options['fields']['body']['settings'] = array(
-    'trim_length' => '250',
-  );
+  /* Sort criterion: Taxonomy term: Weight */
+  $handler->display->display_options['sorts']['weight_1']['id'] = 'weight_1';
+  $handler->display->display_options['sorts']['weight_1']['table'] = 'taxonomy_term_data';
+  $handler->display->display_options['sorts']['weight_1']['field'] = 'weight';
+  /* Sort criterion: Menu: Weight */
+  $handler->display->display_options['sorts']['weight']['id'] = 'weight';
+  $handler->display->display_options['sorts']['weight']['table'] = 'menu_links';
+  $handler->display->display_options['sorts']['weight']['field'] = 'weight';
+  $handler->display->display_options['sorts']['weight']['relationship'] = 'reverse_field_service_reference_node';
   /* Contextual filter: Taxonomy term: Parent term */
   $handler->display->display_options['arguments']['parent']['id'] = 'parent';
   $handler->display->display_options['arguments']['parent']['table'] = 'taxonomy_term_hierarchy';
