@@ -29,6 +29,8 @@ a {
   #logo {
     box-sizing: border-box;
     padding-right: 20px;
+    position: relative;
+    z-index: 2;
     img {
       max-width: 260px;
     }
@@ -94,6 +96,7 @@ a {
         float: right;
         cursor: pointer;
         text-align: center;
+        height: 93px;
         &:before {
           font-family: FontAwesome;
           content: '\f0c9';
@@ -822,6 +825,9 @@ a {
         background-color: #f3f3f3;
         padding: 30px 75px;
         margin-bottom: 20px;
+        .flag-bookmarks {
+          display: none;
+        }
         @include clearfix;
         .view {
           max-width: 1200px;
@@ -835,7 +841,7 @@ a {
           background-color: $light-green;
           float: left;
           min-height: 350px;
-          width: calc(33% - 30px);
+
           margin: 0 15px 30px 15px;
           line-height: 1.5em;
           &:last-child {
@@ -907,7 +913,7 @@ a {
     #main {
       #content {
         .cs-sections {
-          .section {
+          .section, .views-row {
             width: 100%;
           }
         }
@@ -918,8 +924,19 @@ a {
     #main {
       #content {
         .cs-sections {
-          .section {
+          .section, .views-row {
             width: calc(50% - 30px);
+          }
+        }
+      }
+    }
+  }
+  @include desktop {
+    #main {
+      #content {
+        .cs-sections {
+          .section, .views-row {
+            width: calc(33% - 30px);
           }
         }
       }
@@ -1071,6 +1088,13 @@ a {
 // leadership section
 .leadership-team {
   .views-row {
+    .group-left {
+      float: left;
+      margin-right: 20px;
+    }
+    .group-right {
+      float: none;
+    }
     .group-name-credentials {
       font-weight: bold;
       .field {
@@ -1094,8 +1118,10 @@ a {
     }
     .group-left {
       width: 25%;
+      margin-right: 0;
     }
     .group-right {
+      float: left;
       width: 75%;
       padding-left: 20px;
     }
@@ -1307,15 +1333,16 @@ a {
   #main {
     #content {
       .landing-page-subpages {
-        @include zen-grid-item(12, 1);
+        padding: 0 75px;
         .node {
           padding: 10px;
           box-sizing: border-box;
           background-color: $dark-blue;
           min-height: 281px;
-          width: calc(25% - 20px);
           margin-right: 20px;
           background-size: cover;
+          float: left;
+          width: 100%;
           .field-name-title {
             h2 {
               font-size: 2rem;
@@ -1349,6 +1376,19 @@ a {
           }
           &:nth-child(3) {
             background-image: url('/sites/all/themes/camsys/images/rewards-benefits.jpg');
+          }
+        }
+        @include tablet {
+          .node {
+            width: calc(50% - 20px);
+          }
+
+        }
+        @include desktop {
+          @include zen-grid-item(12, 1);
+          padding: 0;
+          .node {
+            width: calc(25% - 20px);
           }
         }
       }
@@ -1395,7 +1435,7 @@ a {
       text-transform: capitalize;
   }
   #main {
-    padding-top: 130px;
+    padding-top: 150px;
     .custom-search-contacts {
       .views-row {
         margin-bottom: 20px;
@@ -1444,6 +1484,7 @@ a {
     }
   }
   #navigation {
+    position: absolute;
     padding: 0;
     top: 70px;
     color: $white;
@@ -1452,12 +1493,23 @@ a {
       form {
         padding: 10px 20px;
         .field-name-field-tags {
-          display: inline-block;
+          display: inline;
         }
         .form-item {
           margin: 0;
+          display: inline;
           label, input {
             display: inline;
+          }
+          .form-autocomplete {
+            max-width: calc(100% - 60px);
+          }
+        }
+        @include mobile {
+          .form-item {
+            .form-autocomplete {
+              width: calc(100% - 60px);
+            }
           }
         }
       }
@@ -1468,8 +1520,8 @@ a {
 .section-search-results {
   #content {
     .breadcrumb {
-      margin-top: -90px;
-      height: 90px;
+      margin-top: -110px;
+      height: 110px;
     }
   }
 }
@@ -1530,38 +1582,45 @@ a {
         visibility: hidden;
         width: 100%;
       }
-
     }
-    .landing-page-subpages {
-      .views-row, .fields-row, .node, .taxonomy-term {
-        margin-bottom: 20px;
-      }
-      .views-field-title, .field-title, .field-name-title {
-        font-family: $univers-cond;
-        font-size: 1.875em;
-        line-height: 1.5em;
-        h2, h3 {
-          font-size: 1em;
-          line-height: normal;
-          font-weight: normal;
+    .region-content-bottom {
+      .landing-page-subpages {
+        .views-row, .fields-row, .node, .taxonomy-term {
+          margin-bottom: 20px;
+        }
+        .views-field-title, .field-title, .field-name-title {
+          font-family: $univers-cond;
+          font-size: 1.875em;
+          line-height: 1.5em;
+          h2, h3 {
+            font-size: 1em;
+            line-height: normal;
+            font-weight: normal;
+            margin: 0;
+          }
+        }
+        .views-field-body, .field-summary {
+          font-size: 1.5em;
+          line-height: 1.5em;
+        }
+        .field-name-body, .field-name-field-teaser-text {
+          max-height: 7.5em;
+          overflow: hidden;
+        }
+        .taxonomy-term-description, p {
           margin: 0;
         }
+        .flag-bookmarks {
+          display: none;
+        }
       }
-      .views-field-body, .field-summary {
-        font-size: 1.5em;
-        line-height: 1.5em;
-      }
-      .field-name-body, .field-name-field-teaser-text {
-        max-height: 7.5em;
-        overflow: hidden;
-      }
-      .taxonomy-term-description, p {
-        margin: 0;
-      }
-      .flag-bookmarks {
-        display: none;
+      .sidebar-block-style {
+        h3 {
+          color: $gray;
+        }
       }
     }
+
   }
   &.section-services-products #main .node {
     background-color: $dark-green;
@@ -1638,8 +1697,34 @@ a {
 
   @include tablet-min {
     #main {
-      .node {
-
+      .region-content-bottom {
+        .landing-page-subpages {
+          .views-row, .fields-row, .node, .taxonomy-term {
+            float: left;
+            box-sizing: border-box;
+            padding-right: 30px;
+          }
+        }
+        .sidebar-block-style {
+        }
+      }
+    }
+  }
+  @include tablet {
+    #main {
+      .region-content-bottom {
+        .landing-page-subpages {
+          @include zen-grid-item(8, 1);
+          .views-row, .fields-row, .node, .taxonomy-term {
+            width: 50%;
+            &:nth-child(2n+3) {
+              clear: both;
+            }
+          }
+        }
+        .sidebar-block-style {
+          @include zen-grid-item(3, 10);
+        }
       }
     }
   }
@@ -1652,6 +1737,25 @@ a {
       .region-content-bottom {
         max-width: $desktop-width;
         margin: 0 auto;
+        .landing-page-subpages {
+          @include zen-grid-item(9, 1);
+          .views-row, .fields-row, .node, .taxonomy-term {
+            float: left;
+            box-sizing: border-box;
+            width: 33.3%;
+            padding-right: 30px;
+
+            &:nth-child(3n+4) {
+              clear: both;
+            }
+          }
+        }
+        .sidebar-block-style {
+          @include zen-grid-item(2, 11);
+          h3 {
+            color: $gray;
+          }
+        }
       }
       .node:not(.node-teaser) {
         padding: 0 calc((100% - 1200px) / 2);
@@ -1668,25 +1772,7 @@ a {
           width: 66%;
         }
       }
-      .landing-page-subpages {
-        @include zen-grid-item(9, 1);
-        .views-row, .fields-row, .node, .taxonomy-term {
-          float: left;
-          box-sizing: border-box;
-          width: 33.3%;
-          padding-right: 30px;
 
-          &:nth-child(3n+4) {
-            clear: both;
-          }
-        }
-      }
-      .insights-block {
-        @include zen-grid-item(2, 11);
-        h3 {
-          color: $gray;
-        }
-      }
     }
   }
 }
