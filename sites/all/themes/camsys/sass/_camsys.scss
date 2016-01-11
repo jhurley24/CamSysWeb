@@ -840,7 +840,8 @@ a {
           color: $white;
           background-color: $light-green;
           float: left;
-          min-height: 350px;
+          height: 350px;
+          overflow: hidden;
 
           margin: 0 15px 30px 15px;
           line-height: 1.5em;
@@ -912,9 +913,21 @@ a {
   @include mobile {
     #main {
       #content {
+        .region-content-top {
+          .form-item {
+            input[type=text] {
+              width: calc(100% - 60px);
+            }
+          }
+        }
+        .featured-case-study, .insights-block {
+          padding: 20px;
+        }
         .cs-sections {
+          padding: 30px;
           .section, .views-row {
             width: 100%;
+            margin: 0 0 30px 0;
           }
         }
       }
@@ -1056,13 +1069,20 @@ a {
 
 // location page styling
 .node-location {
-  @include desktop {
+  .group-left, .group-right, .group-middle {
+    width: 100%;
+  }
+  .group-right {
+    margin-bottom: 20px;
+  }
+
+  @include smalldesktop {
     .group-left {
-      width: 50%;
+      width: 70%;
       padding-right: 20px;
     }
     .group-right, .group-middle {
-      width: 25%;
+      width: 30%;
     }
     .group-right {
       padding-left: 20px;
@@ -1357,6 +1377,8 @@ a {
           }
           &:nth-child(3n+4) {
             clear: none;
+            background-image: url('/sites/all/themes/camsys/images/careers_search.png');
+            /*
             .field-name-title {
               a:after {
                 content: "\3009";
@@ -1367,15 +1389,16 @@ a {
                 margin-top: 40px;
               }
             }
+            */
           }
           &:first-child {
-            background-image: url('/sites/all/themes/camsys/images/culture-community.jpg');
+            background-image: url('/sites/all/themes/camsys/images/careers_culture_community.jpg');
           }
           &:nth-child(2) {
-            background-image: url('/sites/all/themes/camsys/images/opportunity-advancement.jpg');
+            background-image: url('/sites/all/themes/camsys/images/careers_opportunity_advancement.jpg');
           }
           &:nth-child(3) {
-            background-image: url('/sites/all/themes/camsys/images/rewards-benefits.jpg');
+            background-image: url('/sites/all/themes/camsys/images/careers_rewards_benefits.jpg');
           }
         }
         @include tablet {
@@ -1687,9 +1710,12 @@ a {
           }
         }
       }
-      .landing-page-subpages {
-        @include desktop {
-
+      .region-content-bottom {
+        .landing-page-subpages {
+          @include tablet {
+            width: 100%;
+            box-sizing: border-box;
+          }
         }
       }
     }
