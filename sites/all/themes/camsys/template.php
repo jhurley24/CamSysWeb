@@ -210,8 +210,7 @@ function camsys_form_alter (&$form, &$form_state, $form_id) {
         '#type' => 'submit',
         '#value' => '',
         '#attributes' => array( 'style' => array( 'display: none' )), // hide the input field
-        '#prefix' => '<button type="submit" class="btn btn-primary"><i class="fa fa-search">',
-        '#suffix' => '</i></button>',
+        '#suffix' => '<button type="submit" class="btn btn-primary"><i class="fa fa-search"></i></button>',
     );
   }
     if ($form_id == 'global_filter_1') {
