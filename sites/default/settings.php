@@ -1,5 +1,21 @@
 <?php
 
+/* 
+ * PANTHEON SETTINGS
+ */
+
+// Require HTTPS, www.
+if (isset($_SERVER['PANTHEON_ENVIRONMENT']) &&
+  $_SERVER['PANTHEON_ENVIRONMENT'] === 'live') {
+  if ($_SERVER['HTTP_HOST'] != 'www.camsys.com' ||
+      !isset($_SERVER['HTTP_X_SSL']) ||
+      $_SERVER['HTTP_X_SSL'] != 'ON' ) {
+    header('HTTP/1.0 301 Moved Permanently');
+    header('Location: https://www.camsys.com'. $_SERVER['REQUEST_URI']);
+    exit();
+  }
+}
+
 /**
  * @file
  * Drupal site-specific configuration file.
@@ -212,21 +228,22 @@
  *   );
  * @endcode
  */
-$databases = array (
-  'default' => 
-  array (
-    'default' => 
-    array (
-      'database' => 'cs',
-      'username' => 'root',
-      'password' => 'syproot',
-      'host' => 'localhost',
-      'port' => '3306',
-      'driver' => 'mysql',
-      'prefix' => '',
-    ),
-  ),
-);
+
+
+// Local development configuration.
+if (!defined('PANTHEON_ENVIRONMENT')) {
+    // Database.
+    $databases['default']['default'] = array(
+        'database' => 'cs',
+        'username' => 'root',
+        'password' => 'syproot',
+        'host' => 'localhost',
+        'driver' => 'mysql',
+        'port' => 3306,
+        'prefix' => '',
+    );
+}
+
 
 /**
  * Access control for update.php script.
