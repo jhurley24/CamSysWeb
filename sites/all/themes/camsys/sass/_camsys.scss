@@ -439,6 +439,8 @@ a {
     }
   }
   @include mobile {
+    padding-top: 15px;
+    margin-bottom: 20px;
     #logo {
       img {
         max-width: 200px;
@@ -446,6 +448,7 @@ a {
     }
     .region-header {
       .main-menu {
+        top: 25px;
         width: calc(100% - 36px);
       }
     }
@@ -843,7 +846,7 @@ a {
           height: 350px;
           overflow: hidden;
 
-          margin: 0 15px 30px 15px;
+          margin: 0 1.5% 3% 1.5%;
           line-height: 1.5em;
           &:last-child {
             margin-right: 0;
@@ -950,7 +953,8 @@ a {
       #content {
         .cs-sections {
           .section, .views-row {
-            width: calc(50% - 30px);
+            //width: calc(50% - 30px);
+            width: 45%;
           }
         }
       }
@@ -961,7 +965,8 @@ a {
       #content {
         .cs-sections {
           .section, .views-row {
-            width: calc(33% - 30px);
+            //width: calc(33% - 30px);
+            width: 30%;
           }
         }
       }
@@ -1571,6 +1576,9 @@ a {
     display: none;
   }
   #main {
+    #content {
+
+    }
     .breadcrumb {
       display: none;
     }
@@ -1581,7 +1589,7 @@ a {
       width: 34%;
     }
     padding-top: 20px;
-    .node:not(.node-teaser) {
+    #content > .node {
       background-color: $light-green;
       color: $white;
       margin-bottom: 20px;
@@ -1664,8 +1672,10 @@ a {
   &.section-services-products #main .node {
     background-color: $dark-green;
   }
-  &.section-locations #main .node.node-landing-page {
-    background-color: $orange;
+  &.section-locations #main {
+    .node.node-landing-page {
+      background-color: $orange;
+    }
   }
   &.section-publications #main .node.node-landing-page {
     background-color: $dark-blue;
@@ -1799,7 +1809,7 @@ a {
           }
         }
       }
-      .node:not(.node-teaser) {
+      #content > .node {
         padding: 0 calc((100% - 1200px) / 2);
         .group-left {
           //@include zen-grid-item(4, 1);
@@ -1873,6 +1883,8 @@ a.button, .button > a {
   }
 }
 
+
+
 // custom print styling
 @media print {
   .main-menu {
@@ -1895,5 +1907,4 @@ a.button, .button > a {
       display: none;
     }
   }
-
 }
