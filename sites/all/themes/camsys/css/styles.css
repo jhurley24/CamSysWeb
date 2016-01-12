@@ -3954,40 +3954,40 @@ a {
   color: #8f8f8f;
 }
 /* line 1659, ../sass/_camsys.scss */
-.node-type-landing-page.section-services-products #main .node {
+.node-type-landing-page.section-services-products #main #content > .node {
   background-color: #28B67C;
 }
 /* line 1663, ../sass/_camsys.scss */
-.node-type-landing-page.section-locations #main .node.node-landing-page {
+.node-type-landing-page.section-locations #main #content > .node.node-landing-page {
   background-color: #f89a21;
 }
 /* line 1667, ../sass/_camsys.scss */
-.node-type-landing-page.section-publications #main .node.node-landing-page {
+.node-type-landing-page.section-publications #main #content > .node.node-landing-page {
   background-color: #148BCC;
 }
 /* line 1670, ../sass/_camsys.scss */
-.node-type-landing-page.section-markets #main .node.node-landing-page {
+.node-type-landing-page.section-markets #main #content > .node.node-landing-page {
   background-color: #6478BA;
 }
 /* line 1673, ../sass/_camsys.scss */
-.node-type-landing-page.section-insights #main .node.node-landing-page {
+.node-type-landing-page.section-insights #main #content > .node.node-landing-page {
   background-color: #19BEF0;
 }
 /* line 1676, ../sass/_camsys.scss */
-.node-type-landing-page.section-careers #main .node.node-landing-page {
+.node-type-landing-page.section-careers #main #content > .node.node-landing-page {
   background-color: #3F4D55;
 }
 /* line 1682, ../sass/_camsys.scss */
-.node-type-landing-page.section-careers #main .node .group-right {
+.node-type-landing-page.section-careers #main #content > .node .group-right {
   padding: 0;
 }
 /* line 1684, ../sass/_camsys.scss */
-.node-type-landing-page.section-careers #main .node .group-right img {
+.node-type-landing-page.section-careers #main #content > .node .group-right img {
   display: block;
   visibility: visible;
 }
 /* line 1688, ../sass/_camsys.scss */
-.node-type-landing-page.section-careers #main .node .group-right .flexslider {
+.node-type-landing-page.section-careers #main #content > .node .group-right .flexslider {
   display: none;
   position: relative;
   margin: 0;
@@ -3996,13 +3996,13 @@ a {
   box-shadow: none;
 }
 /* line 1695, ../sass/_camsys.scss */
-.node-type-landing-page.section-careers #main .node .group-right .flexslider .flex-control-nav {
+.node-type-landing-page.section-careers #main #content > .node .group-right .flexslider .flex-control-nav {
   position: absolute;
   bottom: 0;
   z-index: 10;
 }
 /* line 1701, ../sass/_camsys.scss */
-.node-type-landing-page.section-careers #main .node .group-right .flexslider .slides .flex-caption {
+.node-type-landing-page.section-careers #main #content > .node .group-right .flexslider .slides .flex-caption {
   position: absolute;
   top: 0;
   right: 0;
@@ -4014,12 +4014,12 @@ a {
 }
 @media (min-width: 1200px) {
   /* line 1688, ../sass/_camsys.scss */
-  .node-type-landing-page.section-careers #main .node .group-right .flexslider {
+  .node-type-landing-page.section-careers #main #content > .node .group-right .flexslider {
     display: block;
   }
 }
 /* line 1717, ../sass/_camsys.scss */
-.node-type-landing-page.section-careers #main .node .group-right .caption {
+.node-type-landing-page.section-careers #main #content > .node .group-right .caption {
   font-size: 3em;
   float: right;
   margin-top: 20px;

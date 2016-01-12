@@ -1656,29 +1656,29 @@ a {
     }
 
   }
-  &.section-services-products #main .node {
+  &.section-services-products #main #content > .node {
     background-color: $dark-green;
   }
   &.section-locations #main {
-    .node.node-landing-page {
+    #content > .node.node-landing-page {
       background-color: $orange;
     }
   }
-  &.section-publications #main .node.node-landing-page {
+  &.section-publications #main #content > .node.node-landing-page {
     background-color: $dark-blue;
   }
-  &.section-markets #main .node.node-landing-page {
+  &.section-markets #main #content > .node.node-landing-page {
     background-color: $purple;
   }
-  &.section-insights #main .node.node-landing-page {
+  &.section-insights #main #content > .node.node-landing-page {
     background-color: $light-blue;
   }
-  &.section-careers #main .node.node-landing-page {
+  &.section-careers #main #content > .node.node-landing-page {
     background-color: $very-dark-blue;
   }
   &.section-careers {
     #main {
-      .node {
+      #content > .node {
         .group-right {
           padding: 0;
           img {
