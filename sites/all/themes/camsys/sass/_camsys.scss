@@ -1582,33 +1582,20 @@ a {
     .breadcrumb {
       display: none;
     }
-    .group-left {
-      width: 66%;
-    }
-    .group-right {
-      width: 34%;
-    }
+
     padding-top: 20px;
     #content > .node {
       background-color: $light-green;
       color: $white;
       margin-bottom: 20px;
-      display: table;
       .group-left, .group-right {
-        float: none;
-        display: table-cell;
-        vertical-align: top;
         padding: 16px;
       }
       .group-left {
-        .field {
-          margin: 0px 20px;
-        }
-        .field-name-body {
-          margin-bottom: 20px;
-        }
+
       }
       .group-right {
+        min-height: 200px;
         background-size: cover;
         background-position-x: center;
         background-position-y: center;
@@ -1746,9 +1733,40 @@ a {
       }
     }
   }
+  @include mobile {
+    #main {
+      #content > .node {
+        .group-left {
+          h2 {
+            margin: 0;
+          }
+        }
+      }
+    }
+  }
 
   @include tablet-min {
     #main {
+      #content > .node {
+        display: table;
+        .group-left, .group-right {
+          float: none;
+          display: table-cell;
+          vertical-align: top;
+        }
+        .group-left {
+          width: 66%;
+          .field {
+            margin: 0px 20px;
+          }
+          .field-name-body {
+            margin-bottom: 20px;
+          }
+        }
+        .group-right {
+          width: 34%;
+        }
+      }
       .region-content-bottom {
         .landing-page-subpages {
           .views-row, .fields-row, .node, .taxonomy-term {
