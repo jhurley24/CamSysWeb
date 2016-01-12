@@ -3,7 +3,7 @@
 /* 
  * PANTHEON SETTINGS
  */
-/*
+
 // Require HTTPS, www.
 if (isset($_SERVER['PANTHEON_ENVIRONMENT']) &&
   $_SERVER['PANTHEON_ENVIRONMENT'] === 'live') {
@@ -15,7 +15,7 @@ if (isset($_SERVER['PANTHEON_ENVIRONMENT']) &&
     exit();
   }
 }
-*/
+
 /**
  * @file
  * Drupal site-specific configuration file.
