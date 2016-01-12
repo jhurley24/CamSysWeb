@@ -5,7 +5,6 @@
  */
 
 // Require HTTPS, www.
-/*
 if (isset($_SERVER['PANTHEON_ENVIRONMENT']) &&
   $_SERVER['PANTHEON_ENVIRONMENT'] === 'live') {
   if ($_SERVER['HTTP_HOST'] != 'www.camsys.com' ||
@@ -16,7 +15,6 @@ if (isset($_SERVER['PANTHEON_ENVIRONMENT']) &&
     exit();
   }
 }
-*/
 /**
  * @file
  * Drupal site-specific configuration file.
