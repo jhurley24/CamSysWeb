@@ -17,6 +17,9 @@ function user_fields_field_default_field_bases() {
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_bio',
+    'field_permissions' => array(
+      'type' => 2,
+    ),
     'indexes' => array(
       'format' => array(
         0 => 'format',
@@ -36,6 +39,9 @@ function user_fields_field_default_field_bases() {
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_credential',
+    'field_permissions' => array(
+      'type' => 2,
+    ),
     'indexes' => array(
       'format' => array(
         0 => 'format',
@@ -151,6 +157,9 @@ function user_fields_field_default_field_bases() {
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_location',
+    'field_permissions' => array(
+      'type' => 2,
+    ),
     'indexes' => array(
       'target_id' => array(
         0 => 'target_id',
@@ -203,6 +212,9 @@ function user_fields_field_default_field_bases() {
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_position',
+    'field_permissions' => array(
+      'type' => 2,
+    ),
     'indexes' => array(
       'format' => array(
         0 => 'format',
@@ -259,6 +271,9 @@ function user_fields_field_default_field_bases() {
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_user_photo',
+    'field_permissions' => array(
+      'type' => 2,
+    ),
     'indexes' => array(
       'fid' => array(
         0 => 'fid',

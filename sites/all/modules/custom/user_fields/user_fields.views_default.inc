@@ -128,6 +128,18 @@ function user_fields_views_default_views() {
   $handler->display->display_options['header']['area']['field'] = 'area';
   $handler->display->display_options['header']['area']['content'] = 'The members of Cambridge Systematics’ board of directors apply their extraordinary capacity in leadership, innovation and dedication to help guide the firm toward our goal of improving the quality of transportation services today and for future generations.';
   $handler->display->display_options['header']['area']['format'] = 'full_html';
+  $handler->display->display_options['defaults']['sorts'] = FALSE;
+  /* Sort criterion: Draggableviews: Weight */
+  $handler->display->display_options['sorts']['weight']['id'] = 'weight';
+  $handler->display->display_options['sorts']['weight']['table'] = 'draggableviews_structure';
+  $handler->display->display_options['sorts']['weight']['field'] = 'weight';
+  $handler->display->display_options['sorts']['weight']['draggableviews_setting_view'] = 'leadership_team:block_3';
+  $handler->display->display_options['sorts']['weight']['draggableviews_setting_new_items_bottom_list'] = 1;
+  /* Sort criterion: User: Created date */
+  $handler->display->display_options['sorts']['created']['id'] = 'created';
+  $handler->display->display_options['sorts']['created']['table'] = 'users';
+  $handler->display->display_options['sorts']['created']['field'] = 'created';
+  $handler->display->display_options['sorts']['created']['order'] = 'DESC';
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
   /* Filter criterion: User: Active */
@@ -211,6 +223,7 @@ function user_fields_views_default_views() {
   $handler->display->display_options['defaults']['style_options'] = FALSE;
   $handler->display->display_options['defaults']['row_plugin'] = FALSE;
   $handler->display->display_options['defaults']['row_options'] = FALSE;
+  $handler->display->display_options['defaults']['header'] = FALSE;
   $handler->display->display_options['defaults']['fields'] = FALSE;
   /* Field: User: Last Name */
   $handler->display->display_options['fields']['field_last_name']['id'] = 'field_last_name';
@@ -242,6 +255,123 @@ function user_fields_views_default_views() {
   $handler->display->display_options['fields']['weight']['id'] = 'weight';
   $handler->display->display_options['fields']['weight']['table'] = 'draggableviews_structure';
   $handler->display->display_options['fields']['weight']['field'] = 'weight';
+
+  /* Display: Board admin */
+  $handler = $view->new_display('block', 'Board admin', 'block_3');
+  $handler->display->display_options['defaults']['title'] = FALSE;
+  $handler->display->display_options['title'] = 'Board of Directors';
+  $handler->display->display_options['defaults']['style_plugin'] = FALSE;
+  $handler->display->display_options['style_plugin'] = 'table';
+  $handler->display->display_options['style_options']['columns'] = array(
+    'field_first_name' => 'field_first_name',
+    'field_last_name' => 'field_last_name',
+    'field_credential' => 'field_credential',
+    'field_position' => 'field_position',
+    'field_bio' => 'field_bio',
+    'draggableviews' => 'draggableviews',
+    'weight' => 'weight',
+  );
+  $handler->display->display_options['style_options']['default'] = 'weight';
+  $handler->display->display_options['style_options']['info'] = array(
+    'field_first_name' => array(
+      'sortable' => 0,
+      'default_sort_order' => 'asc',
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+    'field_last_name' => array(
+      'sortable' => 0,
+      'default_sort_order' => 'asc',
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+    'field_credential' => array(
+      'sortable' => 0,
+      'default_sort_order' => 'asc',
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+    'field_position' => array(
+      'sortable' => 0,
+      'default_sort_order' => 'asc',
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+    'field_bio' => array(
+      'sortable' => 0,
+      'default_sort_order' => 'asc',
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+    'draggableviews' => array(
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+    'weight' => array(
+      'sortable' => 0,
+      'default_sort_order' => 'asc',
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+  );
+  $handler->display->display_options['defaults']['style_options'] = FALSE;
+  $handler->display->display_options['defaults']['row_plugin'] = FALSE;
+  $handler->display->display_options['defaults']['row_options'] = FALSE;
+  $handler->display->display_options['defaults']['header'] = FALSE;
+  $handler->display->display_options['defaults']['fields'] = FALSE;
+  /* Field: User: Last Name */
+  $handler->display->display_options['fields']['field_last_name']['id'] = 'field_last_name';
+  $handler->display->display_options['fields']['field_last_name']['table'] = 'field_data_field_last_name';
+  $handler->display->display_options['fields']['field_last_name']['field'] = 'field_last_name';
+  $handler->display->display_options['fields']['field_last_name']['label'] = '';
+  $handler->display->display_options['fields']['field_last_name']['element_label_colon'] = FALSE;
+  /* Field: User: First Name */
+  $handler->display->display_options['fields']['field_first_name']['id'] = 'field_first_name';
+  $handler->display->display_options['fields']['field_first_name']['table'] = 'field_data_field_first_name';
+  $handler->display->display_options['fields']['field_first_name']['field'] = 'field_first_name';
+  $handler->display->display_options['fields']['field_first_name']['label'] = '';
+  $handler->display->display_options['fields']['field_first_name']['element_label_colon'] = FALSE;
+  /* Field: User: Position */
+  $handler->display->display_options['fields']['field_position']['id'] = 'field_position';
+  $handler->display->display_options['fields']['field_position']['table'] = 'field_data_field_position';
+  $handler->display->display_options['fields']['field_position']['field'] = 'field_position';
+  $handler->display->display_options['fields']['field_position']['label'] = '';
+  $handler->display->display_options['fields']['field_position']['element_label_colon'] = FALSE;
+  /* Field: Draggableviews: User */
+  $handler->display->display_options['fields']['draggableviews']['id'] = 'draggableviews';
+  $handler->display->display_options['fields']['draggableviews']['table'] = 'users';
+  $handler->display->display_options['fields']['draggableviews']['field'] = 'draggableviews';
+  $handler->display->display_options['fields']['draggableviews']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['draggableviews']['hide_alter_empty'] = FALSE;
+  $handler->display->display_options['fields']['draggableviews']['draggableviews']['hierarchy_handler'] = 'draggableviews_hierarchy_handler_native';
+  $handler->display->display_options['fields']['draggableviews']['draggableviews']['ajax'] = 1;
+  /* Field: Draggableviews: Weight */
+  $handler->display->display_options['fields']['weight']['id'] = 'weight';
+  $handler->display->display_options['fields']['weight']['table'] = 'draggableviews_structure';
+  $handler->display->display_options['fields']['weight']['field'] = 'weight';
+  $handler->display->display_options['defaults']['filter_groups'] = FALSE;
+  $handler->display->display_options['defaults']['filters'] = FALSE;
+  /* Filter criterion: User: Active */
+  $handler->display->display_options['filters']['status']['id'] = 'status';
+  $handler->display->display_options['filters']['status']['table'] = 'users';
+  $handler->display->display_options['filters']['status']['field'] = 'status';
+  $handler->display->display_options['filters']['status']['value'] = '1';
+  $handler->display->display_options['filters']['status']['group'] = 1;
+  $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
+  /* Filter criterion: User: Roles */
+  $handler->display->display_options['filters']['rid']['id'] = 'rid';
+  $handler->display->display_options['filters']['rid']['table'] = 'users_roles';
+  $handler->display->display_options['filters']['rid']['field'] = 'rid';
+  $handler->display->display_options['filters']['rid']['value'] = array(
+    6 => '6',
+  );
   $export['leadership_team'] = $view;
 
   $view = new view();
@@ -354,7 +484,7 @@ function user_fields_views_default_views() {
     'field_first_name' => 'field_first_name',
     'field_last_name' => 'field_last_name',
   );
-  /* Relationship: User: Interests (field_interests) */
+  /* Relationship: User: Choose your interests (field_interests) */
   $handler->display->display_options['relationships']['field_interests_tid']['id'] = 'field_interests_tid';
   $handler->display->display_options['relationships']['field_interests_tid']['table'] = 'field_data_field_interests';
   $handler->display->display_options['relationships']['field_interests_tid']['field'] = 'field_interests_tid';
@@ -363,7 +493,7 @@ function user_fields_views_default_views() {
   $handler->display->display_options['relationships']['reverse_field_topic_node']['table'] = 'taxonomy_term_data';
   $handler->display->display_options['relationships']['reverse_field_topic_node']['field'] = 'reverse_field_topic_node';
   $handler->display->display_options['relationships']['reverse_field_topic_node']['relationship'] = 'field_interests_tid';
-  /* Relationship: User: Keep Informed (field_keep_informed) */
+  /* Relationship: User: Keep me informed on these topics (field_keep_informed) */
   $handler->display->display_options['relationships']['field_keep_informed_tid']['id'] = 'field_keep_informed_tid';
   $handler->display->display_options['relationships']['field_keep_informed_tid']['table'] = 'field_data_field_keep_informed';
   $handler->display->display_options['relationships']['field_keep_informed_tid']['field'] = 'field_keep_informed_tid';
@@ -525,7 +655,7 @@ function user_fields_views_default_views() {
   $handler->display->display_options['row_plugin'] = 'fields';
   $handler->display->display_options['defaults']['row_options'] = FALSE;
   $handler->display->display_options['defaults']['relationships'] = FALSE;
-  /* Relationship: User: Interests (field_interests) */
+  /* Relationship: User: Choose your interests (field_interests) */
   $handler->display->display_options['relationships']['field_interests_tid']['id'] = 'field_interests_tid';
   $handler->display->display_options['relationships']['field_interests_tid']['table'] = 'field_data_field_interests';
   $handler->display->display_options['relationships']['field_interests_tid']['field'] = 'field_interests_tid';
@@ -536,7 +666,7 @@ function user_fields_views_default_views() {
   $handler->display->display_options['relationships']['reverse_field_topic_node']['field'] = 'reverse_field_topic_node';
   $handler->display->display_options['relationships']['reverse_field_topic_node']['relationship'] = 'field_interests_tid';
   $handler->display->display_options['relationships']['reverse_field_topic_node']['required'] = TRUE;
-  /* Relationship: User: Keep Informed (field_keep_informed) */
+  /* Relationship: User: Keep me informed on these topics (field_keep_informed) */
   $handler->display->display_options['relationships']['field_keep_informed_tid']['id'] = 'field_keep_informed_tid';
   $handler->display->display_options['relationships']['field_keep_informed_tid']['table'] = 'field_data_field_keep_informed';
   $handler->display->display_options['relationships']['field_keep_informed_tid']['field'] = 'field_keep_informed_tid';
@@ -676,26 +806,29 @@ function user_fields_views_default_views() {
   $handler->display->display_options['header']['area']['table'] = 'views';
   $handler->display->display_options['header']['area']['field'] = 'area';
   $handler->display->display_options['header']['area']['content'] = '<p>This page has been created based on the pages you bookmarked and the specialty, interest and keep informed settings you configured on your user profile page. Click below to edit these settings in your profile.</p>
-<p><span class="button">[edit_node]</span></p>';
+<p><span class="button"><a href="/user">View/Edit Profile</span></p>';
   $handler->display->display_options['header']['area']['format'] = 'full_html';
   $handler->display->display_options['header']['area']['tokenize'] = TRUE;
   $handler->display->display_options['defaults']['fields'] = FALSE;
-  /* Field: User: Interests */
+  /* Field: User: Choose your interests */
   $handler->display->display_options['fields']['field_interests']['id'] = 'field_interests';
   $handler->display->display_options['fields']['field_interests']['table'] = 'field_data_field_interests';
   $handler->display->display_options['fields']['field_interests']['field'] = 'field_interests';
+  $handler->display->display_options['fields']['field_interests']['label'] = 'Interests';
   $handler->display->display_options['fields']['field_interests']['type'] = 'taxonomy_term_reference_plain';
   $handler->display->display_options['fields']['field_interests']['delta_offset'] = '0';
-  /* Field: User: Keep Informed */
+  /* Field: User: Keep me informed on these topics */
   $handler->display->display_options['fields']['field_keep_informed']['id'] = 'field_keep_informed';
   $handler->display->display_options['fields']['field_keep_informed']['table'] = 'field_data_field_keep_informed';
   $handler->display->display_options['fields']['field_keep_informed']['field'] = 'field_keep_informed';
+  $handler->display->display_options['fields']['field_keep_informed']['label'] = 'Keep Informed';
   $handler->display->display_options['fields']['field_keep_informed']['type'] = 'taxonomy_term_reference_plain';
   $handler->display->display_options['fields']['field_keep_informed']['delta_offset'] = '0';
-  /* Field: User: Specialty */
+  /* Field: User: Select a specialty */
   $handler->display->display_options['fields']['field_specialty']['id'] = 'field_specialty';
   $handler->display->display_options['fields']['field_specialty']['table'] = 'field_data_field_specialty';
   $handler->display->display_options['fields']['field_specialty']['field'] = 'field_specialty';
+  $handler->display->display_options['fields']['field_specialty']['label'] = 'Specialty';
   $handler->display->display_options['fields']['field_specialty']['settings'] = array(
     'link' => 0,
   );

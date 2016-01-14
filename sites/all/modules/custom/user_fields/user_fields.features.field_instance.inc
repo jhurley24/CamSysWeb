@@ -32,6 +32,7 @@ function user_fields_field_default_field_instances() {
         'weight' => 7,
       ),
     ),
+    'ds_extras_field_template' => '',
     'entity_type' => 'user',
     'field_name' => 'field_bio',
     'label' => 'Bio',
@@ -73,6 +74,7 @@ function user_fields_field_default_field_instances() {
         'weight' => 4,
       ),
     ),
+    'ds_extras_field_template' => '',
     'entity_type' => 'user',
     'field_name' => 'field_credential',
     'label' => 'Credentials',
@@ -137,7 +139,7 @@ function user_fields_field_default_field_instances() {
   // Exported field_instance: 'user-user-field_interests'.
   $field_instances['user-user-field_interests'] = array(
     'bundle' => 'user',
-    'default_value' => array(),
+    'default_value' => NULL,
     'deleted' => 0,
     'description' => '',
     'display' => array(
@@ -158,10 +160,10 @@ function user_fields_field_default_field_instances() {
     'ds_extras_field_template' => '',
     'entity_type' => 'user',
     'field_name' => 'field_interests',
-    'label' => 'Interests',
+    'label' => 'Choose your interests',
     'required' => 0,
     'settings' => array(
-      'user_register_form' => 0,
+      'user_register_form' => 1,
     ),
     'widget' => array(
       'active' => 1,
@@ -196,19 +198,16 @@ function user_fields_field_default_field_instances() {
     'ds_extras_field_template' => '',
     'entity_type' => 'user',
     'field_name' => 'field_keep_informed',
-    'label' => 'Keep Informed',
+    'label' => 'Keep me informed on these topics',
     'required' => 0,
     'settings' => array(
-      'user_register_form' => 0,
+      'user_register_form' => 1,
     ),
     'widget' => array(
-      'active' => 0,
-      'module' => 'taxonomy',
-      'settings' => array(
-        'autocomplete_path' => 'taxonomy/autocomplete',
-        'size' => 60,
-      ),
-      'type' => 'taxonomy_autocomplete',
+      'active' => 1,
+      'module' => 'options',
+      'settings' => array(),
+      'type' => 'options_select',
       'weight' => 14,
     ),
   );
@@ -276,6 +275,7 @@ function user_fields_field_default_field_instances() {
         'weight' => 11,
       ),
     ),
+    'ds_extras_field_template' => '',
     'entity_type' => 'user',
     'field_name' => 'field_location',
     'label' => 'Location',
@@ -353,15 +353,17 @@ function user_fields_field_default_field_instances() {
         'weight' => 5,
       ),
     ),
+    'ds_extras_field_template' => '',
     'entity_type' => 'user',
     'field_name' => 'field_position',
     'label' => 'Position',
-    'required' => FALSE,
+    'required' => 0,
     'settings' => array(
       'text_processing' => 0,
-      'user_register_form' => FALSE,
+      'user_register_form' => 0,
     ),
     'widget' => array(
+      'active' => 1,
       'module' => 'text',
       'settings' => array(
         'size' => 60,
@@ -374,7 +376,7 @@ function user_fields_field_default_field_instances() {
   // Exported field_instance: 'user-user-field_specialty'.
   $field_instances['user-user-field_specialty'] = array(
     'bundle' => 'user',
-    'default_value' => array(),
+    'default_value' => NULL,
     'deleted' => 0,
     'description' => '',
     'display' => array(
@@ -382,7 +384,7 @@ function user_fields_field_default_field_instances() {
         'label' => 'above',
         'module' => 'entityreference',
         'settings' => array(
-          'link' => FALSE,
+          'link' => 1,
         ),
         'type' => 'entityreference_label',
         'weight' => 5,
@@ -397,10 +399,10 @@ function user_fields_field_default_field_instances() {
     'ds_extras_field_template' => '',
     'entity_type' => 'user',
     'field_name' => 'field_specialty',
-    'label' => 'Specialty',
+    'label' => 'Select a specialty',
     'required' => 0,
     'settings' => array(
-      'user_register_form' => 0,
+      'user_register_form' => 1,
     ),
     'widget' => array(
       'active' => 1,
@@ -491,15 +493,15 @@ function user_fields_field_default_field_instances() {
   // Translatables
   // Included for use with string extractors like potx.
   t('Bio');
+  t('Choose your interests');
   t('Credentials');
   t('First Name');
-  t('Interests');
-  t('Keep Informed');
+  t('Keep me informed on these topics');
   t('Last Name');
   t('Location');
   t('Phone');
   t('Position');
-  t('Specialty');
+  t('Select a specialty');
   t('User Photo');
 
   return $field_instances;
