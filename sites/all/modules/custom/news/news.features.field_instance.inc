@@ -80,7 +80,7 @@ function news_field_default_field_instances() {
     'label' => 'News File',
     'required' => 0,
     'settings' => array(
-      'description_field' => 0,
+      'description_field' => 1,
       'file_directory' => 'news',
       'file_extensions' => 'txt pdf doc docx',
       'max_filesize' => '',
@@ -105,7 +105,7 @@ function news_field_default_field_instances() {
             'path' => 'file_attach',
           ),
           'source_imce' => array(
-            'imce_mode' => 0,
+            'imce_mode' => 1,
           ),
           'source_reference' => array(
             'autocomplete' => 0,

@@ -26,11 +26,23 @@ function insights_context_default_contexts() {
   $context->reactions = array(
     'block' => array(
       'blocks' => array(
+        'views-recent_posts-block_1' => array(
+          'module' => 'views',
+          'delta' => 'recent_posts-block_1',
+          'region' => 'content_bottom',
+          'weight' => '-10',
+        ),
         'views--exp-search_posts-page' => array(
           'module' => 'views',
           'delta' => '-exp-search_posts-page',
           'region' => 'content_bottom',
-          'weight' => '-10',
+          'weight' => '-9',
+        ),
+        'views-publications-block' => array(
+          'module' => 'views',
+          'delta' => 'publications-block',
+          'region' => 'content_bottom',
+          'weight' => '-8',
         ),
       ),
     ),

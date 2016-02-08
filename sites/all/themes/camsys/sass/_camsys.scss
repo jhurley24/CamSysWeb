@@ -1265,7 +1265,8 @@ a {
     }
     .field-name-field-publication-type {
       &:before {
-        content: ", ";
+        content: ",";
+        padding-right: 5px;
       }
     }
   }
@@ -1328,10 +1329,7 @@ a {
   p {
     margin: 0px;
   }
-  @include tablet-min {
-    float: left;
-    width: 75%;
-  }
+
 
 }
 .recent-posts, .news-list {
@@ -1340,7 +1338,6 @@ a {
   }
 }
 .block.insights-search {
-
   .views-exposed-widget {
     padding: 0;
     float: none;
@@ -1357,12 +1354,7 @@ a {
   input[type=submit] {
     margin-top: 10px;
   }
-  .region-content-bottom & {
-    @include tablet-min {
-      float: right;
-      width: 16.666%;
-    }
-  }
+
 }
 
 
@@ -1789,7 +1781,11 @@ a {
             padding-right: 30px;
           }
         }
-        .sidebar-block-style {
+        .sidebar-block-style, .insights-search {
+          width: 25%;
+          float: right;
+          margin-right: 0;
+          clear: right;
         }
       }
     }
@@ -1797,17 +1793,16 @@ a {
   @include tablet {
     #main {
       .region-content-bottom {
+        .landing-page-subpages, .recent-posts-landing {
+          @include zen-grid-item(9, 1);
+        }
         .landing-page-subpages {
-          @include zen-grid-item(8, 1);
           .views-row, .fields-row, .node, .taxonomy-term {
             width: 50%;
             &:nth-child(2n+3) {
               clear: both;
             }
           }
-        }
-        .sidebar-block-style {
-          @include zen-grid-item(3, 10);
         }
       }
     }
@@ -1821,21 +1816,22 @@ a {
       .region-content-bottom {
         max-width: $desktop-width;
         margin: 0 auto;
-        .landing-page-subpages {
+        .landing-page-subpages, .recent-posts-landing {
           @include zen-grid-item(9, 1);
+        }
+        .landing-page-subpages {
           .views-row, .fields-row, .node, .taxonomy-term {
             float: left;
             box-sizing: border-box;
             width: 33.3%;
             padding-right: 30px;
-
             &:nth-child(3n+4) {
               clear: both;
             }
           }
         }
-        .sidebar-block-style {
-          @include zen-grid-item(2, 11);
+        .sidebar-block-style, .insights-search {
+          width: 16.666%;
           h3 {
             color: $gray;
           }

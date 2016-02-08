@@ -1,0 +1,21 @@
+<?php
+/**
+ * Created by PhpStorm.
+ * User: user
+ * Date: 2/8/16
+ * Time: 11:54 AM
+ */
+
+function camsys_views_views_query_alter(&$view, &$query) {
+    if ($view->name == 'featured_case_studies' && $view->current_display == 'block_1') {
+        $query->add_where_expression('AND', "node.created >= (SELECT node.created AS created
+          FROM
+          node node
+          INNER JOIN field_data_field_cs_featured field_data_field_cs_featured ON node.nid = field_data_field_cs_featured.entity_id AND (field_data_field_cs_featured.entity_type = 'node' AND field_data_field_cs_featured.deleted = '0')
+          WHERE  (type = 'case_study') AND (node.status = '1') AND (field_data_field_cs_featured.field_cs_featured_value = '1')
+          ORDER BY created DESC
+          LIMIT 1 offset 2)");
+        //dsm($view);
+    }
+
+}

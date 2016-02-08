@@ -1,0 +1,6 @@
+name = CamSys Views Alter functions
+description = custom Views alter functions for CamSys site
+core = 7.x
+package = Views
+version = 7.x-1.0
+dependencies[] = views

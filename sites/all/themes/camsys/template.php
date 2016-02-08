@@ -218,16 +218,6 @@ function camsys_form_alter (&$form, &$form_state, $form_id) {
         $form['submit']['#attributes']['style'] = array( 'display: none' );
         $form['submit']['#suffix'] = '<button type="submit" class="btn btn-primary"><i class="fa fa-search"></i></button>';
         $form['#action'] = '/search-results';
-        /*
-        $form['submit'] = array(
-            '#type' => 'submit',
-            '#value' => 'Search',
-            '#attributes' => array( 'style' => array( 'display: none' )), // hide the input field
-            '#prefix' => '<button type="submit" class="btn btn-primary"><i class="fa fa-search">',
-            '#suffix' => '</i></button>',
-            '#weight' => 2
-        );
-        */
     }
     //dsm($_POST);
     //dsm($form);
@@ -240,3 +230,4 @@ function camsys_global_filter_value_alter($name, &$value) {
         $value = $value[0]['name'];
     }
 }
+
