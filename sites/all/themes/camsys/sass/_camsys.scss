@@ -1270,6 +1270,12 @@ a {
       }
     }
   }
+  &.group-one-column {
+    .group-right {
+      float: none;
+      margin-left: 0;
+    }
+  }
 }
 
 // case study, publication section
