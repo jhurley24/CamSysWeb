@@ -24,7 +24,6 @@ function publications_field_group_info() {
     'weight' => '0',
     'children' => array(
       0 => 'field_publication_date',
-      1 => 'field_publication_type',
     ),
     'format_type' => 'div',
     'format_settings' => array(
@@ -57,7 +56,6 @@ function publications_field_group_info() {
     'weight' => '2',
     'children' => array(
       0 => 'field_publication_date',
-      1 => 'field_publication_type',
     ),
     'format_type' => 'div',
     'format_settings' => array(

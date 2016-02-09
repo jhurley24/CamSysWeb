@@ -35,7 +35,7 @@
             case 13: // Enter.
             case 27: // Esc.
                 this.hidePopup(e.keyCode);
-                if (13 == e.keyCode && $(input).hasClass('form-autocomplete')) {
+                if (13 == e.keyCode && $(input).hasClass('auto_search_filter')) {
                     input.form.submit();
                 }
                 return true;
@@ -50,5 +50,18 @@
                 return true;
         }
     };
+
+    Drupal.jsAC.prototype.select = function (node) {
+        this.input.value = $(node).data('autocompleteValue');
+        $(this.input).trigger('autocompleteSelect', [node]);
+        if ($(this.input).hasClass('auto_search_filter')) {
+            this.input.form.submit();
+        }
+    };
+
+
+
+
+
 
 })(jQuery, Drupal, this, this.document);
