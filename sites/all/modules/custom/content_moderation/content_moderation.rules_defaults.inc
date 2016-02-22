@@ -24,8 +24,7 @@ function content_moderation_default_rules_configuration() {
             "subject" : "New content created",
             "message" : "New content has been created. Click below to view:\\r\\n\\r\\n\\u003Ca href=\\u0022[node:url]\\u0022\\u003E[node:url]\\u003C\\/a\\u003E"
           }
-        },
-        { "drupal_message" : { "message" : "Content has been created" } }
+        }
       ]
     }
   }');
@@ -36,16 +35,15 @@ function content_moderation_default_rules_configuration() {
       "REQUIRES" : [ "workbench_moderation", "rules" ],
       "ON" : { "node_update" : [] },
       "IF" : [
-        { "contents_current_state" : { "node" : [ "node" ], "moderation_state" : "draft" } }
+        { "NOT contents_current_state" : { "node" : [ "node" ], "moderation_state" : "published" } }
       ],
       "DO" : [
         { "mail_to_users_of_role" : {
             "roles" : { "value" : { "8" : "8" } },
             "subject" : "Content Updated",
-            "message" : "Content has been updated. Click below to view:\\r\\n\\r\\n\\u003Ca href=\\u0022[node:url]\\u0022\\u003E[node:url]\\u003C\\/a\\u003E"
+            "message" : "Content has been updated by [node:author]. Content can be viewed at:\\r\\n\\r\\n[node:url]"
           }
-        },
-        { "drupal_message" : { "message" : "Content updated" } }
+        }
       ]
     }
   }');
