@@ -160,7 +160,7 @@ function user_fields_field_default_field_instances() {
     'ds_extras_field_template' => '',
     'entity_type' => 'user',
     'field_name' => 'field_interests',
-    'label' => 'Choose your interests',
+    'label' => 'Choose your Interests',
     'required' => 0,
     'settings' => array(
       'user_register_form' => 1,
@@ -266,7 +266,7 @@ function user_fields_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 12,
+        'weight' => 10,
       ),
       'token' => array(
         'label' => 'above',
@@ -300,7 +300,7 @@ function user_fields_field_default_field_instances() {
     'description' => '',
     'display' => array(
       'default' => array(
-        'label' => 'above',
+        'label' => 'hidden',
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_plain',
@@ -339,7 +339,7 @@ function user_fields_field_default_field_instances() {
     'description' => '',
     'display' => array(
       'default' => array(
-        'label' => 'above',
+        'label' => 'hidden',
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
@@ -353,17 +353,15 @@ function user_fields_field_default_field_instances() {
         'weight' => 5,
       ),
     ),
-    'ds_extras_field_template' => '',
     'entity_type' => 'user',
     'field_name' => 'field_position',
     'label' => 'Position',
-    'required' => 0,
+    'required' => FALSE,
     'settings' => array(
       'text_processing' => 0,
-      'user_register_form' => 0,
+      'user_register_form' => FALSE,
     ),
     'widget' => array(
-      'active' => 1,
       'module' => 'text',
       'settings' => array(
         'size' => 60,
@@ -434,7 +432,7 @@ function user_fields_field_default_field_instances() {
         'module' => 'image',
         'settings' => array(
           'image_link' => '',
-          'image_style' => '',
+          'image_style' => 'medium',
         ),
         'type' => 'image',
         'weight' => 0,
@@ -493,7 +491,7 @@ function user_fields_field_default_field_instances() {
   // Translatables
   // Included for use with string extractors like potx.
   t('Bio');
-  t('Choose your interests');
+  t('Choose your Interests');
   t('Credentials');
   t('First Name');
   t('Keep me informed on these topics');

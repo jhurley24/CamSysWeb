@@ -13,7 +13,7 @@ function services_products_taxonomy_default_vocabularies() {
       'name' => 'Services',
       'machine_name' => 'services',
       'description' => '',
-      'hierarchy' => 1,
+      'hierarchy' => 0,
       'module' => 'taxonomy',
       'weight' => 0,
       'rdf_mapping' => array(

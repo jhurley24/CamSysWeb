@@ -18,7 +18,7 @@ function user_fields_default_rules_configuration() {
       "DO" : [
         { "user_add_role" : { "account" : [ "account" ], "roles" : { "value" : { "9" : "9" } } } },
         { "mail" : {
-            "to" : "csweb@camsys.com",
+            "to" : "[site:mail]",
             "subject" : "New user registration",
             "message" : "A new user has registered on the site. View new user\\u0027s account information at: [account:url] (You must be logged in to view this page)",
             "language" : [ "" ]

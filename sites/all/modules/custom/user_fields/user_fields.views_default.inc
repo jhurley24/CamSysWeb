@@ -224,6 +224,11 @@ function user_fields_views_default_views() {
   $handler->display->display_options['defaults']['row_plugin'] = FALSE;
   $handler->display->display_options['defaults']['row_options'] = FALSE;
   $handler->display->display_options['defaults']['header'] = FALSE;
+  /* Header: Global: Text area */
+  $handler->display->display_options['header']['area']['id'] = 'area';
+  $handler->display->display_options['header']['area']['table'] = 'views';
+  $handler->display->display_options['header']['area']['field'] = 'area';
+  $handler->display->display_options['header']['area']['format'] = 'full_html';
   $handler->display->display_options['defaults']['fields'] = FALSE;
   /* Field: User: Last Name */
   $handler->display->display_options['fields']['field_last_name']['id'] = 'field_last_name';
@@ -325,6 +330,11 @@ function user_fields_views_default_views() {
   $handler->display->display_options['defaults']['row_plugin'] = FALSE;
   $handler->display->display_options['defaults']['row_options'] = FALSE;
   $handler->display->display_options['defaults']['header'] = FALSE;
+  /* Header: Global: Text area */
+  $handler->display->display_options['header']['area']['id'] = 'area';
+  $handler->display->display_options['header']['area']['table'] = 'views';
+  $handler->display->display_options['header']['area']['field'] = 'area';
+  $handler->display->display_options['header']['area']['format'] = 'full_html';
   $handler->display->display_options['defaults']['fields'] = FALSE;
   /* Field: User: Last Name */
   $handler->display->display_options['fields']['field_last_name']['id'] = 'field_last_name';
@@ -484,7 +494,7 @@ function user_fields_views_default_views() {
     'field_first_name' => 'field_first_name',
     'field_last_name' => 'field_last_name',
   );
-  /* Relationship: User: Choose your interests (field_interests) */
+  /* Relationship: User: Choose your Interests (field_interests) */
   $handler->display->display_options['relationships']['field_interests_tid']['id'] = 'field_interests_tid';
   $handler->display->display_options['relationships']['field_interests_tid']['table'] = 'field_data_field_interests';
   $handler->display->display_options['relationships']['field_interests_tid']['field'] = 'field_interests_tid';
@@ -655,7 +665,7 @@ function user_fields_views_default_views() {
   $handler->display->display_options['row_plugin'] = 'fields';
   $handler->display->display_options['defaults']['row_options'] = FALSE;
   $handler->display->display_options['defaults']['relationships'] = FALSE;
-  /* Relationship: User: Choose your interests (field_interests) */
+  /* Relationship: User: Choose your Interests (field_interests) */
   $handler->display->display_options['relationships']['field_interests_tid']['id'] = 'field_interests_tid';
   $handler->display->display_options['relationships']['field_interests_tid']['table'] = 'field_data_field_interests';
   $handler->display->display_options['relationships']['field_interests_tid']['field'] = 'field_interests_tid';
@@ -806,29 +816,26 @@ function user_fields_views_default_views() {
   $handler->display->display_options['header']['area']['table'] = 'views';
   $handler->display->display_options['header']['area']['field'] = 'area';
   $handler->display->display_options['header']['area']['content'] = '<p>This page has been created based on the pages you bookmarked and the specialty, interest and keep informed settings you configured on your user profile page. Click below to edit these settings in your profile.</p>
-<p><span class="button"><a href="/user">View/Edit Profile</span></p>';
+<p><span class="button"><a href="/user">View/Edit Profile</a></span></p>';
   $handler->display->display_options['header']['area']['format'] = 'full_html';
   $handler->display->display_options['header']['area']['tokenize'] = TRUE;
   $handler->display->display_options['defaults']['fields'] = FALSE;
-  /* Field: User: Choose your interests */
+  /* Field: User: Choose your Interests */
   $handler->display->display_options['fields']['field_interests']['id'] = 'field_interests';
   $handler->display->display_options['fields']['field_interests']['table'] = 'field_data_field_interests';
   $handler->display->display_options['fields']['field_interests']['field'] = 'field_interests';
-  $handler->display->display_options['fields']['field_interests']['label'] = 'Interests';
   $handler->display->display_options['fields']['field_interests']['type'] = 'taxonomy_term_reference_plain';
   $handler->display->display_options['fields']['field_interests']['delta_offset'] = '0';
   /* Field: User: Keep me informed on these topics */
   $handler->display->display_options['fields']['field_keep_informed']['id'] = 'field_keep_informed';
   $handler->display->display_options['fields']['field_keep_informed']['table'] = 'field_data_field_keep_informed';
   $handler->display->display_options['fields']['field_keep_informed']['field'] = 'field_keep_informed';
-  $handler->display->display_options['fields']['field_keep_informed']['label'] = 'Keep Informed';
   $handler->display->display_options['fields']['field_keep_informed']['type'] = 'taxonomy_term_reference_plain';
   $handler->display->display_options['fields']['field_keep_informed']['delta_offset'] = '0';
   /* Field: User: Select a specialty */
   $handler->display->display_options['fields']['field_specialty']['id'] = 'field_specialty';
   $handler->display->display_options['fields']['field_specialty']['table'] = 'field_data_field_specialty';
   $handler->display->display_options['fields']['field_specialty']['field'] = 'field_specialty';
-  $handler->display->display_options['fields']['field_specialty']['label'] = 'Specialty';
   $handler->display->display_options['fields']['field_specialty']['settings'] = array(
     'link' => 0,
   );

@@ -54,7 +54,6 @@ function services_products_ds_field_settings_info() {
         'link' => '1',
         'wrapper' => 'h2',
         'class' => '',
-        'ft' => array(),
       ),
     ),
     'more_link' => array(

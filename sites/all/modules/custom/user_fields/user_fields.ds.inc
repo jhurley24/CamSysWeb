@@ -19,23 +19,22 @@ function user_fields_ds_field_settings_info() {
   $ds_fieldsetting->settings = array(
     'field_credential' => array(
       'formatter_settings' => array(
-        'ft' => array(
-          'func' => 'theme_ds_field_minimal',
-        ),
+        'ft' => array(),
       ),
     ),
     'field_first_name' => array(
       'formatter_settings' => array(
-        'ft' => array(
-          'func' => 'theme_ds_field_minimal',
-        ),
+        'ft' => array(),
       ),
     ),
     'field_last_name' => array(
       'formatter_settings' => array(
-        'ft' => array(
-          'func' => 'theme_ds_field_minimal',
-        ),
+        'ft' => array(),
+      ),
+    ),
+    'field_user_photo' => array(
+      'formatter_settings' => array(
+        'ft' => array(),
       ),
     ),
   );
