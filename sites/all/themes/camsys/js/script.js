@@ -38,8 +38,12 @@ Drupal.behaviors.my_custom_behavior = {
 
     // remove links from menu items with .nolink class
     $('.block-menu-block li a.nolink').attr('href', 'javascript:void(0)');
-    $('.section-services-products .sidebar-menu li.services-products > .menu > li.is-expanded > a').attr('href', 'javascript:void(0)');
-
+    //$('.section-services-products .main-menu li.services-products > .menu > li > .menu > li > a').attr('href', 'javascript:void(0)');
+    //$('.section-services-products .sidebar-menu .menu-block-wrapper > .menu > li > .menu > li > a').attr('href', 'javascript:void(0)');
+    $('.section-services-products .main-menu li.services-products > .menu > li > .menu > li, .section-services-products .sidebar-menu .menu-block-wrapper > .menu > li > .menu > li').each(function() {
+      $(this).addClass('is-expanded');
+      $(this).children('a').attr('href', 'javascript:void(0)');
+    });
     // add active state to sidebar and top menu on rollover
     $('.block-menu-block .menu li.is-expanded').click(function() {
       if ($(this).hasClass('active')) {

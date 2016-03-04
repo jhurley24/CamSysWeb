@@ -200,8 +200,11 @@ function camsys_breadcrumb($variables) {
 
     return $output;
 }
-
-
+/*
+function camsys_preprocess_menu_link(&$vars) {
+    dsm($vars);
+}
+*/
 
 // alter search block form
 function camsys_form_alter (&$form, &$form_state, $form_id) {
