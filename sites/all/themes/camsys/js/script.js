@@ -40,7 +40,7 @@ Drupal.behaviors.my_custom_behavior = {
     $('.block-menu-block li a.nolink').attr('href', 'javascript:void(0)');
     //$('.section-services-products .main-menu li.services-products > .menu > li > .menu > li > a').attr('href', 'javascript:void(0)');
     //$('.section-services-products .sidebar-menu .menu-block-wrapper > .menu > li > .menu > li > a').attr('href', 'javascript:void(0)');
-    $('.section-services-products .main-menu li.services-products > .menu > li > .menu > li, .section-services-products .sidebar-menu .menu-block-wrapper > .menu > li > .menu > li').each(function() {
+    $('.section-services-products .main-menu li.services-products > .menu > li > .menu > li, .main-menu li.services-products > .menu > li > .menu > li').each(function() {
       $(this).addClass('is-expanded');
       $(this).children('a').attr('href', 'javascript:void(0)');
     });
