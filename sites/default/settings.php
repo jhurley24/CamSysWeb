@@ -624,3 +624,6 @@ $conf['404_fast_html'] = '<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML+RDFa 1.0//EN"
  * Remove the leading hash sign to enable.
  */
 # $conf['theme_debug'] = TRUE;
+
+/* add arg_separator ini to deal with Pantheon - reCaptcha issue */
+ini_set('arg_separator.output', '&');
