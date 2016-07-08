@@ -30,7 +30,8 @@
 ######################
 .DS_Store*
 ehthumbs.db
-Icon
+Icon
+
 Thumbs.db
 ._*
 
@@ -41,3 +42,9 @@ Thumbs.db
 # SASS #
 ##########
 .sass-cache
+
+# SETTINGS.PHP - FOR NOW #
+# becky says: i'd like to setup environments so there can just be some conditions for the settings based on the env, but for now, ignoring. #
+#############################################################################################################################################
+
+sites/default/settings.php
