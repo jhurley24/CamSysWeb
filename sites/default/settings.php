@@ -231,18 +231,40 @@ if (isset($_SERVER['PANTHEON_ENVIRONMENT']) &&
 
 
 // Local development configuration.
+
+// Becky's local settings
+
 if (!defined('PANTHEON_ENVIRONMENT')) {
     // Database.
     $databases['default']['default'] = array(
-        'database' => 'cs',
+        'database' => 'camsyslocal',
         'username' => 'root',
-        'password' => 'syproot',
+        'password' => 'root',
         'host' => 'localhost',
         'driver' => 'mysql',
         'port' => 3306,
         'prefix' => '',
     );
 }
+
+
+
+//Charlie's local settings
+
+// if (!defined('PANTHEON_ENVIRONMENT')) {
+//     // Database.
+//     $databases['default']['default'] = array(
+//         'database' => 'cs',
+//         'username' => 'root',
+//         'password' => 'syproot',
+//         'host' => 'localhost',
+//         'driver' => 'mysql',
+//         'port' => 3306,
+//         'prefix' => '',
+//     );
+// }
+
+
 
 
 /**
