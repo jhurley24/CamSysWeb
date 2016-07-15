@@ -23,6 +23,7 @@ if (($_SERVER['REQUEST_URI'] == '/beckytest') &&
   $newurl = 'http://www.google.com';
   header('HTTP/1.0 301 Moved Permanently');
   header("Location: $newurl");
+  exit();
 }
 
 
