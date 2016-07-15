@@ -18,7 +18,7 @@ if (isset($_SERVER['PANTHEON_ENVIRONMENT']) &&
 
 
 // 301 Redirect from /addyourword to surveygizmo url
-if (($_SERVER['REQUEST_URI'] == '/addyourword') &&
+if (($_SERVER['REQUEST_URI'] == '/beckytest') &&
   (php_sapi_name() != "cli")) {
   $newurl = 'http://www.google.com';
   header('HTTP/1.0 301 Moved Permanently');
