@@ -18,7 +18,7 @@ if (isset($_SERVER['PANTHEON_ENVIRONMENT']) &&
 
 
 // 301 Redirect from /addyourword to surveygizmo url
-if (($_SERVER['REQUEST_URI'] == '/addyourword' || '/AddYourWord' || 'add-your-word') &&
+if ((($_SERVER['REQUEST_URI'] == '/addyourword') || ($_SERVER['REQUEST_URI'] == '/add-your-word') || ($_SERVER['REQUEST_URI'] == '/AddYourWord')) &&
   (php_sapi_name() != "cli")) {
   $newurl = 'http://www.surveygizmo.com/s3/2525676/Add-Your-Word';
   header('HTTP/1.0 301 Moved Permanently');
