@@ -16,6 +16,17 @@ if (isset($_SERVER['PANTHEON_ENVIRONMENT']) &&
   }
 }
 
+
+// 301 Redirect from /addyourword to surveygizmo url
+if (($_SERVER['REQUEST_URI'] == '/addyourword') &&
+  (php_sapi_name() != "cli")) {
+  $newurl = 'http://www.surveygizmo.com/s3/2525676/Add-Your-Word'. $_SERVER['REQUEST_URI'];
+  header('HTTP/1.0 301 Moved Permanently');
+  header("Location: $newurl");
+  exit();
+}
+
+
 /**
  * @file
  * Drupal site-specific configuration file.
