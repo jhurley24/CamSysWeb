@@ -26,6 +26,15 @@ if ((($_SERVER['REQUEST_URI'] == '/addyourword') || ($_SERVER['REQUEST_URI'] == 
   exit();
 }
 
+// 301 Redirect for trb sub-page
+// 301 Redirect from /old to /new.
+if (($_SERVER['REQUEST_URI'] == '/trb') &&
+  (php_sapi_name() != "cli")) {
+  header('HTTP/1.0 301 Moved Permanently');
+  header('Location: http://test-cambridge-systematics.pantheonsite.io/sites/default/files/trb/index.html');
+  exit();
+}
+
 
 /**
  * @file
