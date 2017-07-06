@@ -17,7 +17,7 @@
         <a href="http://www.linkedin.com/company/cambridge-systematics/products" target="_blank"><i class="fa fa-linkedin"></i></a>
       </div>
       <div class="copyright">
-        &copy; Copyright 2017 Cambridge Systematics. All rights reserved
+        &copy; Copyright 2017 Cambridge Systematics. All rights reserved 
       </div>
     </div>
 
