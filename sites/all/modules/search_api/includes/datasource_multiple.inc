@@ -44,6 +44,9 @@ class SearchApiCombinedEntityDataSourceController extends SearchApiAbstractDataS
         $item->item_type = $type;
         $item->item_entity_id = $entity_id;
         $item->item_bundle = NULL;
+        // Add the item language so the "search_api_language" field will work
+        // correctly.
+        $item->language = isset($entity->language) ? $entity->language : NULL;
         try {
           list(, , $bundle) = entity_extract_ids($type, $entity);
           $item->item_bundle = $bundle ? "$type:$bundle" : NULL;
@@ -252,7 +255,7 @@ class SearchApiCombinedEntityDataSourceController extends SearchApiAbstractDataS
       '#type' => 'checkboxes',
       '#title' => t('Entity types'),
       '#description' => t('Select the entity types which should be included in this index.'),
-      '#options' => search_api_entity_type_options_list(),
+      '#options' => array_map('check_plain', search_api_entity_type_options_list()),
       '#attributes' => array('class' => array('search-api-checkboxes-list')),
       '#disabled' => !empty($form_state['index']),
       '#required' => TRUE,

@@ -22,7 +22,7 @@
 interface SearchApiDataSourceControllerInterface {
 
   /**
-   * Constructs a new data source controller.
+   * Constructs an SearchApiDataSourceControllerInterface object.
    *
    * @param string $type
    *   The item type for which this controller is created.
@@ -47,7 +47,7 @@ interface SearchApiDataSourceControllerInterface {
    * Loads items of the type of this data source controller.
    *
    * @param array $ids
-   *   The IDs of the items to laod.
+   *   The IDs of the items to load.
    *
    * @return array
    *   The loaded items, keyed by ID.
@@ -592,7 +592,7 @@ abstract class SearchApiAbstractDataSourceController implements SearchApiDataSou
    * {@inheritdoc}
    */
   public function trackItemInsert(array $item_ids, array $indexes) {
-    if (!$this->table) {
+    if (!$this->table || $item_ids === array()) {
       return;
     }
 
@@ -622,12 +622,11 @@ abstract class SearchApiAbstractDataSourceController implements SearchApiDataSou
    * {@inheritdoc}
    */
   public function trackItemChange($item_ids, array $indexes, $dequeue = FALSE) {
-    if (!$this->table) {
+    if (!$this->table || $item_ids === array()) {
       return NULL;
     }
 
-    $ret = array();
-
+    $indexes_by_id = array();
     foreach ($indexes as $index) {
       $this->checkIndex($index);
       $update = db_update($this->table)
@@ -639,12 +638,26 @@ abstract class SearchApiAbstractDataSourceController implements SearchApiDataSou
       if ($item_ids !== FALSE) {
         $update->condition($this->itemIdColumn, $item_ids, 'IN');
       }
-      if ($update->execute()) {
-        $ret[] = $index;
-      }
+      $update->execute();
+      $indexes_by_id[$index->id] = $index;
     }
 
-    return $ret;
+    // Determine and return the indexes with any changed items. If $item_ids is
+    // FALSE, all items are marked as changed and, thus, all indexes will be
+    // affected (unless they don't have any items, but no real point in treating
+    // that special case).
+    if ($item_ids !== FALSE) {
+      $indexes_with_items = db_select($this->table, 't')
+        ->fields('t', array($this->indexIdColumn))
+        ->distinct()
+        ->condition($this->indexIdColumn, array_keys($indexes_by_id), 'IN')
+        ->condition($this->itemIdColumn, $item_ids, 'IN')
+        ->execute()
+        ->fetchCol();
+      return array_intersect_key($indexes_by_id, array_flip($indexes_with_items));
+    }
+
+    return NULL;
   }
 
   /**
@@ -652,7 +665,7 @@ abstract class SearchApiAbstractDataSourceController implements SearchApiDataSou
    */
   public function trackItemQueued($item_ids, SearchApiIndex $index) {
     $this->checkIndex($index);
-    if (!$this->table) {
+    if (!$this->table || $item_ids === array()) {
       return;
     }
     $update = db_update($this->table)
@@ -670,7 +683,7 @@ abstract class SearchApiAbstractDataSourceController implements SearchApiDataSou
    * {@inheritdoc}
    */
   public function trackItemIndexed(array $item_ids, SearchApiIndex $index) {
-    if (!$this->table) {
+    if (!$this->table || $item_ids === array()) {
       return;
     }
     $this->checkIndex($index);
@@ -687,7 +700,7 @@ abstract class SearchApiAbstractDataSourceController implements SearchApiDataSou
    * {@inheritdoc}
    */
   public function trackItemDelete(array $item_ids, array $indexes) {
-    if (!$this->table) {
+    if (!$this->table || $item_ids === array()) {
       return NULL;
     }
 
@@ -715,7 +728,7 @@ abstract class SearchApiAbstractDataSourceController implements SearchApiDataSou
     }
     $this->checkIndex($index);
     $select = db_select($this->table, 't');
-    $select->addField('t', 'item_id');
+    $select->addField('t', $this->itemIdColumn);
     $select->condition($this->indexIdColumn, $index->id);
     $select->condition($this->changedColumn, 0, '>');
     $select->orderBy($this->changedColumn, 'ASC');
