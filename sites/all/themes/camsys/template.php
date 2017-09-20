@@ -219,6 +219,7 @@ function camsys_form_alter (&$form, &$form_state, $form_id) {
   }
     if ($form_id == 'global_filter_1') {
         $form['field_tags']['und']['#attributes']['class'] = array('auto_search_filter');
+        $form['field_tags']['und']['#attributes']['placeholder'] = t('Keyword Search');
         $form['submit']['#value'] = 'Search';
         $form['submit']['#attributes']['style'] = array( 'display: none' );
         $form['submit']['#suffix'] = '<button type="submit" class="btn btn-primary"><i class="fa fa-search"></i></button>';
