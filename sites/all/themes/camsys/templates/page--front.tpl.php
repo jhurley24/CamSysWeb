@@ -63,7 +63,6 @@
       <?php endif; ?>
       <!-- home page content here -->
       <div class="region-content-top">
-        <iframe style="padding: 0px 0px 80px 0px;" src="https://player.vimeo.com/video/235815957" width="100%" height="1000px" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
         <?php print render($page['content']); ?>
       </div>
       <?php print render($page['content_bottom']); ?>
