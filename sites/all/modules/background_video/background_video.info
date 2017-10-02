@@ -1,0 +1,13 @@
+name = Background Video
+description = This module provides the functionality to play video on background of the page
+core = 7.x
+configure = admin/config/media/background-video-settings
+dependencies[] = jquery_update
+dependencies[] = libraries
+
+; Information added by Drupal.org packaging script on 2016-11-07
+version = "7.x-1.0"
+core = "7.x"
+project = "background_video"
+datestamp = "1478499249"
+

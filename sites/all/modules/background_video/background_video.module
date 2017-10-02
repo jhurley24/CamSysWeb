@@ -1,0 +1,151 @@
+<?php
+/**
+ * @file
+ * This file provides basic functionality.
+ */
+
+/**
+ * Implements hook_help().
+ */
+function background_video_help($path, $arg) {
+  switch ($path) {
+    case 'admin/help#background_video':
+      $output = '';
+      $output .= '<h3>' . t('About') . '</h3>';
+      $output .= '<p>' . t('This Background Video module allows to play video in the background of the page. To play video background in the background what you have to do is just specify the name of the class to which you want to add the background video. There are some other specification like Loop the video, where to place the controls like play/pause and mute/unmute etc.') . '</p>';
+
+      return $output;
+  }
+}
+
+/**
+ * Implements hook_permission().
+ */
+function background_video_permission() {
+  return array(
+    'administer background video' => array(
+      'title' => t('Administer Background Video'),
+      'description' => t('Perform administration tasks for Background Video module.'),
+    ),
+  );
+}
+
+/**
+ * Implements hook_libraries_info().
+ *
+ * This function returns the informaion about the external library
+ * jquery-videobackground.
+ */
+function background_video_libraries_info() {
+  $libraries['jquery-videobackground'] = array(
+    'name' => 'jquery-videobackground',
+    'vendor url' => 'https://github.com/georgepaterson/jquery-videobackground',
+    'download url' => 'https://github.com/georgepaterson/jquery-videobackground/archive/master.zip',
+    'version arguments' => array(
+      'file' => 'script/jquery.videobackground.js',
+      'pattern' => '/jQuery Video Background v(\d+\.+\d+)/',
+      'lines' => 3,
+    ),
+    'version arguments' => array(
+      'file' => 'external/jquery.js',
+      'pattern' => '/jQuery v(\d+\.+\d+)/',
+    ),
+    'files' => array(
+      'js' => array(
+        'script/jquery.videobackground.js',
+      ),
+      'css' => array(
+        'themes/ui-darkness/jquery-ui-1.8.12.custom.css',
+        'themes/jquery.videobackground.css',
+      ),
+    ),
+  );
+
+  return $libraries;
+}
+
+/**
+ * Implements hook_library().
+ *
+ * This function is to load the Jquery and CSS defined in our module.
+ */
+function background_video_library() {
+  $libraries['background_video'] = array(
+    'title' => 'Play Background Video',
+    'version' => '1.2',
+    'js' => array(
+      drupal_get_path('module', 'background_video') . '/js/background_video.js' => array(),
+    ),
+    'css' => array(
+      drupal_get_path('module', 'background_video') . '/css/background_video.css' => array(),
+    ),
+  );
+  return $libraries;
+}
+
+/**
+ * Implements hook_menu().
+ */
+function background_video_menu() {
+  $items = array();
+  $items['admin/config/media/background-video-settings'] = array(
+    'title' => 'Background Video Settings',
+    'description' => 'This form is for taking the info of Video that you want to play in the background of the page',
+    'page callback' => 'drupal_get_form',
+    'page arguments' => array('background_video_settings_form'),
+    'access arguments' => array('administer background video'),
+    'file' => 'background_video.admin.inc',
+  );
+  return $items;
+}
+
+/**
+ * Implements hook_preprocess_HOOK().
+ *
+ * This function loads the Jquery Libraries and pass the configuration
+ * values to JS file.
+ */
+function background_video_preprocess_page(&$variables) {
+  $url_ogv = _background_video_geturl_preprocess_page('ogv');
+  $url_mp4 = _background_video_geturl_preprocess_page('mp4');
+  $url_webm = _background_video_geturl_preprocess_page('webm');
+  
+  $control_pos = variable_get('background_video_control_position', NULL);
+  $loop = variable_get('background_video_loop', NULL);
+  $video_id = check_plain(variable_get('background_video_id', NULL));
+  $auto_play = variable_get('background_video_autoplay', NULL);
+
+  if (!empty($url_ogv) && !empty($url_webm) && !empty($url_mp4) && !path_is_admin(current_path())) {
+
+    libraries_load('jquery-videobackground');
+    drupal_add_library('background_video', 'background_video');
+
+    drupal_add_js(
+      array(
+        'background_video' => array(
+          'ogv' => $url_ogv,
+          'mp4' => $url_mp4,
+          'webm' => $url_webm,
+          'control_pos' => $control_pos,
+          'loop' => $loop,
+          'video_id' => $video_id,
+          'auto_play' => $auto_play,
+        ),
+      ),
+      array('type' => 'setting')
+    );
+  }
+}
+
+/**
+ * Callback function to get the url of the videos.
+ */
+function _background_video_geturl_preprocess_page($type) {
+  $fid = variable_get('background_video_source_' . $type, NULL);
+  if (!empty($fid)) {
+    $file = file_load($fid);
+    if ($file) {
+      return file_create_url($file->uri);
+    }
+  }
+}
