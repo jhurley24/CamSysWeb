@@ -1,0 +1,70 @@
+<?php
+
+/**
+ * @file
+ * This file provides the uninstall function.
+ */
+
+/**
+ * Implements hook_uninstall().
+ * This function delete Background Video Directory and all videos from it.
+ * It also deletes all the system variables of this module.
+ */
+function background_video_uninstall() {
+
+	// Remove the background_video directory and uploaded files.
+  file_unmanaged_delete_recursive(file_default_scheme() . '://background_video');
+
+  $result = db_query("SELECT fid FROM {file_usage} WHERE module = 'background_video'");
+
+  // Remove all data used files.
+  foreach ($result as $record) {
+    $file = file_load($record->fid);
+    if ($file) {
+      // Remove all usage for this file by my_module_name.
+      file_usage_delete($file, 'background_video', 'background_video', NULL, 0);
+      // Should only delete if file not in use by another module.
+      file_delete($file);
+    }
+  }
+
+  variable_del('background_video');
+  variable_del('background_video_source_mp4');
+  variable_del('background_video_source_ogv');
+  variable_del('background_video_source_webm');
+  variable_del('background_video_id');
+  variable_del('background_video_control_position');
+  variable_del('background_video_source_poster');
+  variable_del('background_video_loop');
+  variable_del('background_video_autoplay');
+}
+
+/**
+ * Implements hook_requirements().
+ * This function check that the third party library Jquery-VideoBackground is
+ * available or not.
+ */
+function background_video_requirements($phase) {
+	$requirements = array();
+	$t = get_t();
+	if($phase == 'runtime') {
+    if (function_exists('libraries_detect')) {
+    	$info = libraries_detect('jquery-videobackground');
+    	if ($info['installed'] == FALSE) {
+    		$requirements['jquery-videobackground'] = array(
+          'title' => $t('jQuery VideoBackground'),
+          'severity' => REQUIREMENT_ERROR,
+          'value' => t('jquery-videobackground library not installed. Download it from <a href="@source-url" target="_blank">the official page</a>. This module expects the library to be at sites/all/libraries/jquery-videobackground/script/jquery.videobackground.js , along with other .js files.', array('@source-url' => 'https://github.com/georgepaterson/jquery-videobackground')),
+        );
+      }
+      else {
+      	$requirements['jquery-videobackground'] = array(
+          'title' => $t('jQuery VideoBackground'),
+          'severity' => REQUIREMENT_OK,
+          'value' => t('jquery-videobackground library installed. <strong>Version detected: @version</strong>.', array('@version' => $info['version'])),
+        );
+      }
+    }
+  }
+	return $requirements;
+}
