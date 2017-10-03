@@ -62,7 +62,12 @@
         <ul class="action-links"><?php print render($action_links); ?></ul>
       <?php endif; ?>
       <!-- home page content here -->
-      <div class="region-content-top">
+      <div class="region-content-top fullscreen-bg">
+        <video loop muted autoplay poster="img/videoframe.jpg" class="fullscreen-bg__video">
+          <source src="video/big_buck_bunny.webm" type="video/webm">
+          <source src="video/big_buck_bunny.mp4" type="video/mp4">
+          <source src="video/big_buck_bunny.ogv" type="video/ogg">
+        </video>
         <?php print render($page['content']); ?>
       </div>
       <?php print render($page['content_bottom']); ?>
