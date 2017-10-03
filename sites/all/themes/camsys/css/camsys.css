@@ -43,7 +43,7 @@ color:  #F88113
 
 @media (max-width: 767px) {
   .fullscreen-bg {
-    background: url('../img/videoframe.jpg') center center / cover no-repeat;
+    background: url('/sites/all/themes/camsys/images/master_45th_1.jpg') center center / cover no-repeat;
   }
 
   .fullscreen-bg__video {
