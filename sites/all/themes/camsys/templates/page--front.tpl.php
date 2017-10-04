@@ -62,15 +62,15 @@
         <ul class="action-links"><?php print render($action_links); ?></ul>
       <?php endif; ?>
       <!-- home page content here -->
-      <div class="region-content-top">
-        <?php print render($page['content']); ?>
-      </div>
-      <div class="fullscreen-bg" style="width:100%;">
-          <video loop muted autoplay poster="/sites/all/themes/camsys/images/video-poster.jpg" class="fullscreen-bg__video">
+      <div class="fullscreen-bg">
+          <video loop muted autoplay poster="/sites/all/themes/camsys/images/video-poster.jpg" style="width:100%;" class="fullscreen-bg__video">
               <source src="/sites/all/themes/camsys/images/master_45th_1.webm" type="video/webm">
               <source src="/sites/all/themes/camsys/images/master_45th_1.mp4" type="video/mp4">
               <source src="/sites/all/themes/camsys/images/master_45th_1.ogv" type="video/ogg">
           </video>
+      </div>
+      <div class="region-content-top">
+        <?php print render($page['content']); ?>
       </div>
       <?php print render($page['content_bottom']); ?>
     </div>
