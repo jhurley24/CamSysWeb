@@ -65,7 +65,7 @@
       <div class="region-content-top">
         <?php print render($page['content']); ?>
       </div>
-      <div class="fullscreen-bg">
+      <div class="fullscreen-bg" style="width:100%;">
           <video loop muted autoplay poster="/sites/all/themes/camsys/images/video-poster.jpg" class="fullscreen-bg__video">
               <source src="/sites/all/themes/camsys/images/master_45th_1.webm" type="video/webm">
               <source src="/sites/all/themes/camsys/images/master_45th_1.mp4" type="video/mp4">
