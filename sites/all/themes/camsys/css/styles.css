@@ -2791,14 +2791,14 @@ a {
 }
 /* line 566, ../sass/_camsys.scss */
 #main .region-sidebar-second, #main .sidebar-block-style {
-  color: #8f8f8f;
+  color: #414143;
 }
 /* line 568, ../sass/_camsys.scss */
 #main .region-sidebar-second .block-title, #main .region-sidebar-second h3, #main .sidebar-block-style .block-title, #main .sidebar-block-style h3 {
   font-size: 18px;
   text-transform: uppercase;
   margin: 0;
-  font-weight: normal;
+  font-weight: bold;
 }
 /* line 574, ../sass/_camsys.scss */
 #main .region-sidebar-second h3, #main .sidebar-block-style h3 {
