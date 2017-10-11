@@ -3027,9 +3027,9 @@ a {
 }
 /* line 763, ../sass/_camsys.scss */
 .front #main #content .region-content-top p.feature {
-  font-family: "univers_light", Arial, Helvetica;
-  font-size: 3rem;
-  padding: 10px 0;
+  font-family: "univers_cond_light", Arial, Helvetica;
+  font-size: 3.5rem;
+  padding: 10px 0px 30px 0px;
 }
 /* line 768, ../sass/_camsys.scss */
 .front #main #content .region-content-top .btn {
