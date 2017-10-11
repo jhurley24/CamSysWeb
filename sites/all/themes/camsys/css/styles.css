@@ -4011,6 +4011,7 @@ a {
   position: absolute;
   bottom: 0;
   z-index: 10;
+  display: none;
 }
 /* line 1722, ../sass/_camsys.scss */
 .node-type-landing-page.section-careers #main #content > .node .group-right .flexslider .slides .flex-caption {
