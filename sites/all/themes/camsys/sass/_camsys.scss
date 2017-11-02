@@ -533,7 +533,7 @@ a {
                   }
                 }
                 .menu {
-                  display: block;
+                  display: none;
                   li {
                     font-family: $univers-cond-light;
                     font-size: .9375rem;
@@ -550,10 +550,13 @@ a {
                   }
                 }
               }
-
             }
           }
-
+          &.active-trail {
+                  .menu {
+                    display: block;
+                  }
+                }
         }
       }
     }
