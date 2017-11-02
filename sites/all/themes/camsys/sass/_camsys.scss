@@ -539,6 +539,11 @@ a {
                     font-size: .9375rem;
                   }
                 }
+                &.is-active-trail {
+                  .menu {
+                    display: block;
+                  }
+                }
                 &.active {
                   > a {
                     &:after {
