@@ -533,15 +533,10 @@ a {
                   }
                 }
                 .menu {
-                  display: none;
+                  display: block;
                   li {
                     font-family: $univers-cond-light;
                     font-size: .9375rem;
-                  }
-                }
-                &.is-active-trail {
-                  .menu {
-                    display: block;
                   }
                 }
                 &.active {
