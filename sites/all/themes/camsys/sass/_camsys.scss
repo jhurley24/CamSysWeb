@@ -532,6 +532,11 @@ a {
                     margin-left: 5px;
                   }
                 }
+                &.is-active-trail {
+                    .menu {
+                      display: block;
+                    }
+                  }
                 .menu {
                   display: none;
                   li {
