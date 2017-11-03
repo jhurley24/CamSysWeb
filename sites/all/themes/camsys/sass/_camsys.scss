@@ -539,6 +539,11 @@ a {
                     font-size: .9375rem;
                   }
                 }
+                &:hover {
+                  .menu {
+                    display: block;
+                  }
+                }
                 &.active {
                   > a {
                     &:after {
@@ -550,12 +555,7 @@ a {
                   }
                 }
               }
-              &:hover {
-              .menu {
-                display: block;
-              }
 
-            }
             }
           }
           
