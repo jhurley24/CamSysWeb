@@ -2768,7 +2768,7 @@ a {
 }
 /* line 535, ../sass/_camsys.scss */
 #main .region-sidebar-first .sidebar-menu .menu li .menu li.is-expanded .menu {
-  display: block;
+  display: none;
 }
 /* line 537, ../sass/_camsys.scss */
 #main .region-sidebar-first .sidebar-menu .menu li .menu li.is-expanded .menu li {
@@ -2786,7 +2786,7 @@ a {
 @media (max-width: 779px) {
   /* line 561, ../sass/_camsys.scss */
   #main .region-sidebar-first .sidebar-menu {
-    display: block;
+    display: none;
   }
 }
 /* line 566, ../sass/_camsys.scss */
