@@ -550,13 +550,15 @@ a {
                   }
                 }
               }
+              &:hover {
+              .menu {
+                display: block;
+              }
+
+            }
             }
           }
-          &.active-trail {
-                  .menu {
-                    display: block;
-                  }
-                }
+          
         }
       }
     }
