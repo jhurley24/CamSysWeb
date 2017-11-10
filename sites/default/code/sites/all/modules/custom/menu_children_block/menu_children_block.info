@@ -1,7 +1,0 @@
-name = Menu Children Block
-description = "Displays teaser content from 2nd level pages based on main menu"
-core = 7.x
-dependencies[] = block
-
-version = "7.x-1.0"
-core = "7.x"

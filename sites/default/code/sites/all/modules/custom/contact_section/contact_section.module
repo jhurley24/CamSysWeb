@@ -1,7 +1,0 @@
-<?php
-/**
- * @file
- * Code for the Contact Section feature.
- */
-
-include_once 'contact_section.features.inc';

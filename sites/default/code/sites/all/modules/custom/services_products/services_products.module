@@ -1,7 +1,0 @@
-<?php
-/**
- * @file
- * Code for the Services & Products feature.
- */
-
-include_once 'services_products.features.inc';
