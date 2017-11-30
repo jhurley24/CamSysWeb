@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the Insights feature.
+ */
+
+include_once 'insights.features.inc';
